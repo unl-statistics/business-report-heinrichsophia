@@ -1,3 +1,40 @@
 ---
 title: "Draft: Data Documentation"
+bibliography: references.bib
+csl: chicago-syllabus.csl
+suppress-bibliography: true
+link-citations: false
+citations-hover: false
 ---
+
+#### References
+
+@StormEventsDatabasea
+
+#### About
+
+The Storm Events Database was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.
+
+#### Collection
+
+All data in the set was collected between January 1950 and October 2025. The National Weather Service receives its information from a variety of sources, which include but are not limited to: county, state, and federal emergency management officials, local law enforcement officials, skywarn spotters, NWS damage surveys, newspaper clipping services, the insurance industry, and the general public, among others. Because the NWS receives information from multiple sources, details are not provided on measurement instruments. New data for a given month is updated in the database 75-90 days after the end of that month.
+
+#### Structure & Formatting
+
+Since 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. Any given weather event entry, or row, has an eventID which links the event across each of the three data categories/file types for that year. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.
+
+Dates are recorded as *YYYYMM* or *DD-MM-YY HH:MM:SS*. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale, which is a categorical variable (F0-F5).
+
+As an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”
+
+[Repository](https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/)\
+[README](https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/README) - information on the naming conventions of the files.\
+[Storm Data Export Format](https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Export-Format.pdf) - description of columns across Event Details Files, Location Files, and Fatality Files
+
+#### Data Validation & Quality Control
+
+According to the “Storm Data FAQ Page”, “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”
+
+#### Data Reuse
+
+As a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.
