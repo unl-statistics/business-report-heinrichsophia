@@ -1,43 +1,46 @@
 [
   {
-    "objectID": "draft-data-doc.html",
-    "href": "draft-data-doc.html",
-    "title": "Appendix A — Draft: Data Documentation",
+    "objectID": "draft-results.html",
+    "href": "draft-results.html",
+    "title": "Appendix B — Draft: Results",
     "section": "",
-    "text": "A.0.0.1 References\nDOC/NOAA/NESDIS/NCEI “Storm Events Database  National Centers for Environmental Information” (https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/, 2026), https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nA.0.0.2 About\nThe Storm Events Database was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.\n\n\nA.0.0.3 Collection\nAll data in the set was collected between January 1950 and October 2025. The National Weather Service receives its information from a variety of sources, which include but are not limited to: county, state, and federal emergency management officials, local law enforcement officials, skywarn spotters, NWS damage surveys, newspaper clipping services, the insurance industry, and the general public, among others. Because the NWS receives information from multiple sources, details are not provided on measurement instruments. New data for a given month is updated in the database 75-90 days after the end of that month.\n\n\nA.0.0.4 Structure & Formatting\nSince 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. Any given weather event entry, or row, has an eventID which links the event across each of the three data categories/file types for that year. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.\nDates are recorded as YYYYMM or DD-MM-YY HH:MM:SS. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale, which is a categorical variable (F0-F5).\nAs an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”\nRepository\nREADME - information on the naming conventions of the files.\nStorm Data Export Format - description of columns across Event Details Files, Location Files, and Fatality Files\n\n\nA.0.0.5 Data Validation & Quality Control\nAccording to the “Storm Data FAQ Page”, “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”\n\n\nA.0.0.6 Data Reuse\nAs a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.",
+    "text": "B.1 Overview of the Study Population\nThe analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 20205. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in Figure _:\nTornado Path Trajectory and Shark-Lifting Potential\n\n\n1950-2025\n\n\nShark-Lifting Potential\nEvent Count\nProportion of Trajectory\n\n\n\n\nMoving Coastal\n\n\nHigh Potential\n2\n3.2%\n\n\nLow Potential\n60\n96.8%\n\n\nMoving Inland\n\n\nHigh Potential\n2\n2.7%\n\n\nLow Potential\n71\n97.3%\n\n\nOther Path\n\n\nHigh Potential\n3,799\n12.2%\n\n\nLow Potential\n27,411\n87.8%\nInitial findings indicate that while “High Potential” and “Moving Inland” events are a minority of total tornado occurrences, with only 2 total tornadoes meeting the criteria for “High Potential” and “Moving Inland”. Thus, these unique events are certainly are not impossible and present a specific kind of threat that current risk models might be missing.\nTODO add figure caption",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "draft-results.html#path-movement-intensity-analysis",
+    "href": "draft-results.html#path-movement-intensity-analysis",
+    "title": "Appendix B — Draft: Results",
+    "section": "B.2 Path Movement & Intensity Analysis",
+    "text": "B.2 Path Movement & Intensity Analysis\nTo evaluate the relationship between tornado path trajectory and intensity, the data was categorized by both path movement and its “Shark-Lifting” potential (with F3/F4/F5 tornadoes marked as “High Potential”). As seen in Figure _ below, there is a significant difference in tornadoes that remained completely inland (“Other Path”) compared to tornadoes that either originated or ended on the coasts. While “Moving Inland” trajectories are the primary focus when considering the risk of sharknadoes, on 2.7% of these tornadoes moving from the coast to the inland reached high-potential intensity. In contrast, “Other Path” tornadoes exhibited a high-potential rate of 12.2%.\nTODO add figure caption\n\n\n\n\n\n\n\n\n\nThis suggests that while the “Moving Inland” path is geographically unique, the prime atmospheric conditions needed for F3/F4/F5 tornadoes are far more prevalent once the storm has moved more inland over land. For insurance risk modeling, this indicates that while coastal-origin tornadoes are capable of lifting and moving sharks, they are statistically much less likely to reach the extreme wind speeds of their inland counterparts.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "objectID": "draft-results.html#regional-risk-distribution",
+    "href": "draft-results.html#regional-risk-distribution",
+    "title": "Appendix B — Draft: Results",
+    "section": "B.3 Regional Risk Distribution",
+    "text": "B.3 Regional Risk Distribution\nTo identify likely areas where we could find sharknadoes forming, the data was segmented by coastal region (Atlantic, Gulf, and Pacific). The analysis reveals a geographic imbalance in risk.\nThe Gulf Coast and Atlantic Coast account for the vast majority of “Moving Inland” events, with each coast responsible for 36 “Moving Inland” tornadoes. In, contrast the Pacific Coast only recorded 1 total “Moving Inland” tornado which was identified as “Low Potential” intensity. In all, though, the majority of the “Moving Inland” tornadoes produced by any of the 3 coasts were identified as “Low Potential” intensity.\n\n\n\n\n\n\n\n\n\nThis confirms that sharknado potential is a regional phenomenon, rather than a national one, with the Atlantic and Gulf Coasts requiring significantly different actuarial considerations than the West Coast.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\n“Storm Events Database  National Centers for\nEnvironmental Information.” 2026.\nhttps://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://doi.org/gov.noaa.ncdc:C00510.",
+    "objectID": "draft-results.html#economic-impact",
+    "href": "draft-results.html#economic-impact",
+    "title": "Appendix B — Draft: Results",
+    "section": "B.4 Economic Impact",
+    "text": "B.4 Economic Impact\nThe final phase of this analysis evaluated the economic impact of tornadoes based on their path trajectory. Across the 75-year study period, the total property damage recorded for all events summed to $3,334,748,030 with an average of $106,389 per tornado.\nAgain, when categorizing tornadoes by path movement, “Moving Inland” events resulted in an average property loss of $342,153 per storm. While these events are less frequent than inland-only “Other Path” tornadoes, their tendency to originate in high-value coastal zones contributes to a distinct loss profile.\n\n\n\n\n\n\n\n\n\nInterestingly, the data indicates that while ‘High Potential’ (F4/F5) storms cause the most catastrophic individual losses, the sheer volume of ‘Low Potential’ storms moving from coast to land creates a cumulative financial burden that could require specific actuarial attention.\nTODO add more charts to break down financials between categories",
     "crumbs": [
-      "References"
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
     ]
   }
 ]

@@ -1,0 +1,240 @@
+---
+title: "methods-code"
+format: html
+---
+
+
+<!-- # STATISTICAL METHOD -->
+<!-- # Make sure data is representative/enough to do either below. Visualize data -->
+<!-- # Proportion: Find what proportion of all high intesity tornadoes follow the coast-inland path -->
+<!-- # Logistic Regression: Predict liklihood of tornado being high intesity based on its origin and movement -->
+<!-- #   ex. HighIntesity ~ Trajecotry + Season + Region -->
+
+
+<!-- # Questions: inland -> coast? or coast -> inland? both? -->
+<!-- # how specific in defining these? -->
+
+<!-- # IDEAS -->
+
+<!-- #  use flow chart for data filtering -->
+
+<!-- # Get descriptive statistics of data set before filtering and after. -->
+<!-- # Show this on a plot? -->
+<!-- # include caption of plot -->
+<!-- Waterspouts (tornadoes over water) - https://www.spc.noaa.gov/faq/tornado/#:~:text=What%20is%20a%20waterspout,UP%20TO%20THE%20TOP -->
+
+<!-- Do more interesting research related to shark size and tornado strength -->
+
+
+```{r}
+library(sf)
+library(tigris)
+library(tidyverse)
+library(ggplot2)
+
+# GET TORNADO DATA
+tornado_event_file_list <- list.files(path = "data/", 
+                        pattern = "details.*\\.csv.gz$", 
+                        full.names = TRUE)
+
+process_sharknado_file <- function(file_path) {
+  # We read the file and pipe it directly into the filters and mutations
+  read_csv(file_path) %>%
+    # filter by event type tornado
+    filter(EVENT_TYPE == "Tornado") %>%
+    
+    # drop rows missing coordinates
+    drop_na(BEGIN_LAT, BEGIN_LON, END_LAT, END_LON) %>%
+    
+    # only keep necessary columns for analysis
+    select(EPISODE_ID, EVENT_ID, YEAR, MONTH_NAME, BEGIN_DATE_TIME, STATE, BEGIN_LAT, BEGIN_LON, END_LAT, END_LON, TOR_F_SCALE, DAMAGE_PROPERTY)
+}
+
+# process all years of data
+all_years_data <- map_df(tornado_event_file_list, process_sharknado_file)
+
+View(all_years_data)
+
+```
+
+```{r}
+# GET COASTLINE DATA
+us_coastline_buffer_3mi <- coastline(year = 2025) %>%
+  
+  filter(str_detect(NAME, "Atlantic|Pacific|Gulf")) %>%
+  
+  # st_transform converts from degrees to meters
+  # use EPSG:5070 so 'dist' can be measured in physical meters
+  st_transform(crs = 5070) %>%
+  
+  # st_buffer creates a 3-mile buffer around the line. 
+  # 4828 meters = 3 miles
+  st_buffer(dist = 4828) %>%   
+  
+  # st_simplify reduces number of points in the shape to speed up processing
+  # dTolerance = 100 -> any detail smaller than 100m is smoothed out.
+  st_simplify(dTolerance = 100) %>%
+  
+  mutate(Coast_name = str_remove(NAME, " Coast")) %>%
+  select(Coast_name, geometry)
+
+View(us_coastline_buffer_3mi)
+plot(st_geometry(us_coastline_buffer_3mi), main = "U.S. Coastal Risk Zone: 3-Mile Oceanic Buffer",)
+```
+
+```{r}
+
+# CLASSIFY TORNADO MOVEMENT WITH COASTLINE DATA
+start_buffer <- us_coastline_buffer_3mi %>% rename(Start_coast = Coast_name)
+end_buffer <- us_coastline_buffer_3mi %>% rename(End_coast = Coast_name)
+
+# Classify all STARTING coordinates as coastal or inland
+tornado_start_classified <- all_years_data %>%
+  
+  # convert spreadsheet rows into spatial points using Lat/Lon (4326)
+  st_as_sf(coords = c("BEGIN_LON", "BEGIN_LAT"), crs = 4326, remove = FALSE) %>%
+  
+  # project points to match the buffer's meter-based math
+  st_transform(crs = 5070) %>%
+  
+  # join with the buffer to identify which tornadoes started in the coastal zone
+  st_join(start_buffer, join = st_intersects) %>%
+  
+  mutate(
+     # determine if start location is coastal or not
+    Start_location = ifelse(!is.na(Start_coast), "Coastal", "Inland")) %>%
+  st_drop_geometry()
+
+View(tornado_start_classified)
+
+# Classify all ENDING coordinates as coastal or inland
+results_final <- tornado_start_classified %>%
+  # convert spreadsheet rows into spatial points using Lat/Lon (4326)
+  st_as_sf(coords = c("BEGIN_LON", "BEGIN_LAT"), crs = 4326, remove = FALSE) %>%
+  
+  # project points to match the buffer's meter-based math
+  st_transform(crs = 5070) %>%
+
+  # join with the buffer to identify which tornadoes ended in the coastal zone
+  st_join(end_buffer, join = st_intersects) %>% 
+  
+  mutate(
+    # determine if end location is coastal or not
+    End_location = ifelse(!is.na(End_coast), "Coastal", "Inland"),
+    
+    # determine the overall direction of the tornado  
+    is_sharknado_path = ifelse(Start_location == "Coastal" & End_location == "Inland", "Moving Inland", "Other Path"),
+   
+    # F4, F5 can lift sharks
+    shark_lifting_potential = ifelse(TOR_F_SCALE %in% c("F3", "F4", "F5", "EF3","EF4", "EF5"), 
+                             "High Potential", "Low Potential")) %>%
+
+  st_drop_geometry()
+   
+View(results_final)
+
+```
+
+```{r}
+# PIECE TOGETHER SEGMENTED TORNADO DATA
+
+
+# create a 'master_id' that uses the Episode ID for newer data and other descriptive data older historical records without an episode_id.
+tornado_segments_with_keys <- results_final %>%
+  mutate(
+    # Create the era-based key
+    master_id = case_when(
+      !is.na(EPISODE_ID) ~ as.character(EPISODE_ID),
+      TRUE ~ paste(YEAR, MONTH_NAME, STATE, BEGIN_LAT, BEGIN_LON)
+    )
+  )
+
+final_glued_events <- tornado_segments_with_keys %>%
+  group_by(master_id) %>%
+  summarize(
+    YEAR = first(YEAR),
+    MONTH_NAME = first(MONTH_NAME),
+    
+    # columns for beginning state and ending states
+    Beginning_State = first(STATE),
+    End_State       = last(STATE),
+    
+    # Start/end location and coast (if applicable)
+    Start_location = first(Start_location),
+    Start_coast    = first(Start_coast),
+    End_location   = last(End_location),
+    End_coast      = last(End_coast),
+    
+    # Use maximum tornado intensity across segments
+    TOR_F_SCALE_MAX = max(TOR_F_SCALE, na.rm = TRUE),
+    
+    # sum damage across segments
+    Total_Damage = sum(parse_number(DAMAGE_PROPERTY) * 1000, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    
+    # Classify path movement as "Moving [to the] Inland", "Moving [to the] Coastal", or "Other Path"
+    path_movement = case_when(
+      Start_location == "Coastal" & End_location == "Inland" ~ "Moving Inland",
+      Start_location == "Inland"  & End_location == "Coastal" ~ "Moving Coastal",
+      TRUE ~ "Other Path"
+    ),
+    
+    # Intensity Flag
+    shark_lifting_potential = ifelse(TOR_F_SCALE_MAX %in% c("F3", "F4", "F5", "EF3","EF4", "EF5"), 
+                             "High Potential", "Low Potential")
+  )
+
+View(final_glued_events)
+saveRDS(final_glued_events, "final_glued_events.rds")
+final_glued_events %>% 
+  filter(shark_lifting_potential == "High Potential") %>% 
+  filter(path_movement == "Moving Inland") %>% 
+
+  View()
+```
+
+```{r}
+# RESULTS - summary statistics
+path_summary <- final_glued_events %>%
+  group_by(path_movement, shark_lifting_potential) %>%
+  summarize(event_count = n(), .groups = "drop") %>%
+  # Calculate percentages to see the relative risk
+  group_by(path_movement) %>%
+  mutate(percentage = (event_count / sum(event_count)))
+
+
+print(path_summary)
+```
+
+```{r}
+# RESULTS - Probability Matrix
+
+# proportion table of event likelihoods
+path_intensity_table <- final_glued_events %>%
+  group_by(path_movement) %>%
+  summarize(
+    total_count = n(),
+    high_potential_count = sum(shark_lifting_potential == "High Potential"),
+    probability = (high_potential_count / total_count)
+  )
+
+print(path_intensity_table)
+```
+
+```{r}
+# RESULTS - Coastal Risk
+
+# Filter for only those moving inland and see which coast produced them
+coastal_risk_summary <- final_glued_events %>%
+  # filter(path_movement == "Moving Inland") %>%
+  group_by(path_movement) %>%
+  summarize(
+    event_count = n(),
+    avg_damage = mean(Total_Damage, na.rm = TRUE),
+    max_intensity = max(TOR_F_SCALE_MAX, na.rm = TRUE)
+  )
+
+print(coastal_risk_summary)
+```

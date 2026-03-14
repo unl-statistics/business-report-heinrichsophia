@@ -1,0 +1,17 @@
+---
+title: "Methodology"
+format: html
+---
+
+# Methodology
+
+(very general outline)
+
+-   Get tornado data 1950-2025
+-   Get coordinates for coastline 3 miles inland from shore of Atlantic, Pacific, Gulf
+-   Classify tornado movement as "Moving Inland", "Moving Coastal", "Other Path"
+    -   Classify start/end coordinates as coast or inland. If coast, identify which one
+    -   Determine movement based on start/end location classification
+-   Piece together tornado segments that belong to the same tornado
+    -   For data on or after 1996, tornado segments can be connected via EPISODE_ID
+    -   For data before 1996 (no EPISODE_ID), use dates/times and start/end coordinates to connect segments
