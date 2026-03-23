@@ -1,7 +1,3 @@
----
-title: "Methodology"
-format: html
----
 
 # Methodology
 
@@ -15,3 +11,10 @@ format: html
 -   Piece together tornado segments that belong to the same tornado
     -   For data on or after 1996, tornado segments can be connected via EPISODE_ID
     -   For data before 1996 (no EPISODE_ID), use dates/times and start/end coordinates to connect segments
+
+
+::: callout-note
+
+If you expand this slightly (put in paragraph form) and make it part of either your data section (## preprocessing) or a separate methods section, that would be excellent. Diagrams of how the process of piecing tornado segments together works and a pic of your classification with tornado paths as vectors would make some sense as well.
+
+:::
