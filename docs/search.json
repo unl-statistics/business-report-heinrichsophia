@@ -1,5 +1,66 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States",
+    "section": "",
+    "text": "Preface\nYou are a data scientist for a mid-sized business, in a small group of 3-4 data scientists. You’ve been tasked with creating a report evaluating a scenario for your business. Your colleagues will also be evaluating the same scenario, and your reports will be used in aggregate to determine a consensus (or lack thereof) on the company’s action. The reports will also be used to inform downsizing that is rumored to be coming - you want to ensure your report is better than your peers so that you aren’t as easy to cut.\nYou may talk to your peers who are assigned the same scenario, but you do not want to collaborate too closely, lest you both become targets of the rumored layoffs.\n\nI’ve scaffolded this report for you to make this process easier - as we talk about different sections of a report in class and read about how to create similar sections, you will practice by writing the equivalent section of your report.\nThe basic steps for this task are as follows:\n\nIdentify the research question from the business question\nIdentify data set(s) which are (1) publicly available (you don’t have a budget to pay for private data) and (2) relevant to your task\n\n(HW Week 6) Document your data sets in draft-data-doc.qmd\n\nConduct a statistical analysis to support your answer to your research and business questions\n\nWrite a methods section for your business report corresponding to your statistical analysis\n(HW Week 9) Draft of results section of business report with relevant graphics/visual aids in draft-results.qmd\n\nWrite your report\n\n(HW Week 10) Draft of Intro/Conclusion sections in draft-intro-conclusions.qmd\n(HW Week 11) Draft of Executive summary section in draft-exec-summary.qmd\n\nRevise your report\n\n(HW Week 12 – not turned in) Revise your report\n(HW Week 13) - Rough draft of report due. Create one or more qmd files for your report (you can overwrite or delete intro.qmd and summary.qmd), include the names of each file (in order) in _quarto.yml. You should use references (edit references.bib and use pandoc citations). Make sure your report compiles and looks reasonable in both html and pdf.\nDevelop a presentation to go along with your report (Week 13). Create slides for your report using quarto.\n\nPeer revise reports\n\nPeer revise reports\n(HW Week 14) - Make edits to your report from comments received from peer review\n\nFinal report & presentation due",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "methodology.html",
+    "href": "methodology.html",
+    "title": "2  Methodology",
+    "section": "",
+    "text": "3 Methodology\n(very general outline)\n\nGet tornado data 1950-2025\nGet coordinates for coastline 3 miles inland from shore of Atlantic, Pacific, Gulf\nClassify tornado movement as “Moving Inland”, “Moving Coastal”, “Other Path”\n\nClassify start/end coordinates as coast or inland. If coast, identify which one\nDetermine movement based on start/end location classification\n\nPiece together tornado segments that belong to the same tornado\n\nFor data on or after 1996, tornado segments can be connected via EPISODE_ID\nFor data before 1996 (no EPISODE_ID), use dates/times and start/end coordinates to connect segments",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methodology</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "DOC/NOAA/NESDIS/NCEI. 2026. “Storm Events Database \nNational Centers for Environmental Information.”\nhttps://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "draft-data-doc.html",
+    "href": "draft-data-doc.html",
+    "title": "Appendix A — Draft: Data Documentation",
+    "section": "",
+    "text": "A.0.0.1 References\nDOC/NOAA/NESDIS/NCEI “Storm Events Database  National Centers for Environmental Information” (https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/, 2026), https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nA.0.0.2 About\nThe Storm Events Database was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.\n\n\nA.0.0.3 Collection\nAll data in the set was collected between January 1950 and October 2025. The National Weather Service receives its information from a variety of sources, which include but are not limited to: county, state, and federal emergency management officials, local law enforcement officials, skywarn spotters, NWS damage surveys, newspaper clipping services, the insurance industry, and the general public, among others. Because the NWS receives information from multiple sources, details are not provided on measurement instruments. New data for a given month is updated in the database 75-90 days after the end of that month.\n\n\nA.0.0.4 Structure & Formatting\nSince 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. Any given weather event entry, or row, has an eventID which links the event across each of the three data categories/file types for that year. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.\nDates are recorded as YYYYMM or DD-MM-YY HH:MM:SS. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale, which is a categorical variable (F0-F5).\nAs an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”\nRepository\nREADME - information on the naming conventions of the files.\nStorm Data Export Format - description of columns across Event Details Files, Location Files, and Fatality Files\n\n\nA.0.0.5 Data Validation & Quality Control\nAccording to the “Storm Data FAQ Page”, “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”\n\n\nA.0.0.6 Data Reuse\nAs a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
+    ]
+  },
+  {
     "objectID": "draft-results.html",
     "href": "draft-results.html",
     "title": "Appendix B — Draft: Results",
