@@ -1,14 +1,13 @@
----
-title: "Draft: Results"
----
+# Draft: Results
 
 ## Overview of the Study Population
 
-The analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 20205. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in Figure \_:
+The analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 20205. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in @tbl-shark-results:
 
 ```{r}
 #| echo: false
 #| warning: false
+#| label: tbl-shark-results
 library(gt)
 library(tidyverse)
 
@@ -25,6 +24,7 @@ shark_results_tbl %>%
     title = "Tornado Path Trajectory and Shark-Lifting Potential",
     subtitle = "1950-2025"
   ) %>%
+  tab_caption("A table caption") %>%
   cols_label(
     shark_lifting_potential = "Shark-Lifting Potential",
     event_count = "Event Count",
@@ -169,3 +169,9 @@ ggplot(damage_plot_data, aes(x = path_movement, y = total_loss, fill = path_move
 Interestingly, the data indicates that while 'High Potential' (F4/F5) storms cause the most catastrophic individual losses, the sheer volume of 'Low Potential' storms moving from coast to land creates a cumulative financial burden that could require specific actuarial attention.
 
 TODO add more charts to break down financials between categories
+
+::: callout-note
+
+I love the way you've written this.
+
+:::
