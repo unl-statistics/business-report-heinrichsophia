@@ -172,7 +172,7 @@ table_data %>%
   ) %>%
   tab_caption("Categorized all tornadoes by path trajectory and calculated total and average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.") %>%
   cols_label(
-    shark_lifting_potential = "Intensity Potential",
+    shark_lifting_potential = "Shark-Lifting Potential",
     event_count = "Total Events",
     total_loss = "Cumulative Damage",
     avg_loss = "Avg. Damage per Event"
@@ -278,3 +278,5 @@ ggplot(damage_plot_data_avg, aes(x = path_movement, y = avg_loss, fill = shark_l
 ```
 
 Ultimately, when looking at the tornadoes with sharknado characteristics ("Moving Inland" with high shark-lifting potential), only **$183K** in damages has been inflicted in the last 75 years with an average damage of **\$91.5K per storm**. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that "Sharknado-style" events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.
+
+TODO add a trending graph that shows trends of tornado intensity

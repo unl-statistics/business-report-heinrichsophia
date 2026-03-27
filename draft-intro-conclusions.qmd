@@ -27,10 +27,38 @@ Using this logic, we can assume that EF3 tornadoes (and larger) are strong enoug
 
 While tornado intensity is well-studied and the ability for a high intensity tornado to pick up a shark has been logically proven, there is a gap in the analysis of the two together. To ensure the profitability of the insurance agency, we need to know how serious is the threat of sharknadoes to the insurance agency's bottom line given the warming climate and shifting trends in tornado activity. Thus, we will use the historical data found in the NOAA Storm Events Database to evaluate the likelihood and economic impact of a high-intensity tornado with a coastal-origin moving inland (since these are the types of tornadoes that have the ability to transport sharks from the ocean) to answer the research question:
 
-***What is the historical probability, frequency, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those moving from inland to the coast?***
+***What is the historical probability, frequency, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those following other trajectories?***
 
-# Conclusion
+# Conclusion & Discussion
 
-TODO Include the caveat about tornado water spouts not being about to pick up water/sharks that we ignored
+TODO make sure we've provided a CLEAR answer to research question
 
-TODO fix push error
+## Frequency of Sharknadoes
+
+Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland and had enough strength to carry a shark (category F3, F4, or F5). In the last 75 years, we found that only 2 out of 31,345 recorded tornadoes exhibited these characteristics, indicating that storms like this are highly rare events. Given that the concept of a sharknado originated from a fictional movie, this result was to be expected. To further reduce concern regarding high shark-lifting potential tornadoes, we identified only 2 tornadoes with this intensity for both trajectory categories of "Moving Inland" (originating on the coast and moving inland) "Moving Coastal" (originating inland and moving to the coast). This was expectedly insignificant compared to the 3,799 high shark-lifting potential tornadoes in the "Other Path" trajectory category, which makes sense since the inland Tornado Alley region breeds optimal conditions for high intensity tornadoes compared to the coasts.
+
+## Regions of Concern
+
+However, as previously mentioned, there has been an upward trend of tornadoes in atypical regions such as the Southeastern United States [@TornadoesClimateChange], and perhaps unexpectedly, the majority of tornadoes categorized as "Moving Inland" originated in the Atlantic or Gulf coasts near the southeastern side of the United States. With the southeast region already exhibiting these storm characteristics and with climate change creating volatility in extreme weather events, an increase in storms with sharknado potential in the southeast is not completely out of the question. 
+
+## Economic Impact
+
+In terms of the economic impact of sharknadoes, tornadoes with a path "Moving Inland" accounted for only 0.75% of all recorded tornado property damage, and even less of that was contributed by high shark-lifting potential tornadoes moving inland. Over 75 years, tornadoes "Moving Inland" with a high shark-lifting potential resulted in a total cumulative damage of \$183K and an average of \$91K per storm, \$14.9K less than the average damage caused by all recorded tornadoes. Additionally, this was significantly less damage than tornadoes classified was "Other Path" with a high shark-lifting potential, which resulted in a total cumulative damage of \$682M and an average of \$179K per storm. This suggests that tornadoes originating in more typical regions (such as Tornado Alley) have historically caused far more damage overall and also on a per-storm basis. Thus, an insurance company covering property damages should be less concerned with sharknadoes, and more concerned with typical inland tornadoes.
+
+## Limitations & Future Exploration
+
+TODO write out in paragraph form 
+
+- NOAA data set connects tornado segments differently before vs after 1996. Before 1996, using date/time and coordinates to link events (room for error since guessing with context clues) After 1996 straightforward when connecting using EPISODE_ID.
+- Tornado records have improved over the years. Might make newer data better and older data less accurate or more arbitrary. Could have an impact on time series trends.
+- 75 years is a relatively short time span. 
+- VERY small populations for "sharknado"-like events. Makes it comparing averages kind of insignificant. 
+- Tornadoes used to be categorized differently (F vs EF). We treated F3 and EF3 the synonymously (should we be more careful about this?)
+- Previously mentioned caveat about tornadic water spouts not even being able to pick up a shark and sharks being scared of storms makes it nearly impossible in the first place.
+- "Other Path" category included Inland -> Inland storms as well as Coastal -> Coastal storms. The Coastal -> Coastal was done to filter out tornadoes that never made it to land (which is good) but also filters out tornadoes that made it to land inside the 3 mile coastal boundary.
+- 3-mile coastal boundary is arbitrary. Could re-test with larger/smaller bounds.
+
+
+## Going Forward
+
+Ultimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn't hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.
