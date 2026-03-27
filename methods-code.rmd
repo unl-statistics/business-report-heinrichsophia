@@ -129,7 +129,8 @@ results_final <- tornado_start_classified %>%
     shark_lifting_potential = ifelse(TOR_F_SCALE %in% c("F3", "F4", "F5", "EF3","EF4", "EF5"), 
                              "High Potential", "Low Potential")) %>%
 
-  st_drop_geometry()
+  st_drop_geometry() %>%
+  
    
 View(results_final)
 
@@ -188,8 +189,8 @@ final_glued_events <- tornado_segments_with_keys %>%
 
 View(final_glued_events)
 saveRDS(final_glued_events, "final_glued_events.rds")
-final_glued_events %>% 
-  filter(shark_lifting_potential == "High Potential") %>% 
+final_glued_events %>% filter
+  (shark_lifting_potential == "High Potential") %>% 
   filter(path_movement == "Moving Inland") %>% 
 
   View()
@@ -203,7 +204,6 @@ path_summary <- final_glued_events %>%
   # Calculate percentages to see the relative risk
   group_by(path_movement) %>%
   mutate(percentage = (event_count / sum(event_count)))
-
 
 print(path_summary)
 ```
@@ -228,13 +228,10 @@ print(path_intensity_table)
 
 # Filter for only those moving inland and see which coast produced them
 coastal_risk_summary <- final_glued_events %>%
-  # filter(path_movement == "Moving Inland") %>%
-  group_by(path_movement) %>%
-  summarize(
-    event_count = n(),
-    avg_damage = mean(Total_Damage, na.rm = TRUE),
-    max_intensity = max(TOR_F_SCALE_MAX, na.rm = TRUE)
-  )
+  filter(path_movement == "Moving Inland") %>%
+  group_by(Start_coast, shark_lifting_potential) %>%
+  summarize(count = n(), .groups = "drop")
+
 
 print(coastal_risk_summary)
 ```

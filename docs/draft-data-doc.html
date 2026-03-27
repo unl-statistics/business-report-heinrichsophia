@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -178,8 +198,17 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#collection" id="toc-collection" class="nav-link active" data-scroll-target="#collection"><span class="header-section-number">A.1</span> Collection</a></li>
+  <li><a href="#structure-formatting" id="toc-structure-formatting" class="nav-link" data-scroll-target="#structure-formatting"><span class="header-section-number">A.2</span> Structure &amp; Formatting</a></li>
+  <li><a href="#data-validation-quality-control" id="toc-data-validation-quality-control" class="nav-link" data-scroll-target="#data-validation-quality-control"><span class="header-section-number">A.3</span> Data Validation &amp; Quality Control</a></li>
+  <li><a href="#data-reuse" id="toc-data-reuse" class="nav-link" data-scroll-target="#data-reuse"><span class="header-section-number">A.4</span> Data Reuse</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -203,20 +232,13 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="references" class="level4" data-number="A.0.0.1">
-<h4 data-number="A.0.0.1" class="anchored" data-anchor-id="references"><span class="header-section-number">A.0.0.1</span> References</h4>
-<p><span class="citation" data-cites="StormEventsDatabasea">DOC/NOAA/NESDIS/NCEI <span>“Storm Events Database <span></span> National Centers for Environmental Information”</span> (https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/, 2026), <a href="https://www.ncei.noaa.gov/stormevents/ftp.jsp">https://www.ncei.noaa.gov/stormevents/ftp.jsp</a>.</span></p>
-</section>
-<section id="about" class="level4" data-number="A.0.0.2">
-<h4 data-number="A.0.0.2" class="anchored" data-anchor-id="about"><span class="header-section-number">A.0.0.2</span> About</h4>
-<p>The Storm Events Database was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.</p>
-</section>
-<section id="collection" class="level4" data-number="A.0.0.3">
-<h4 data-number="A.0.0.3" class="anchored" data-anchor-id="collection"><span class="header-section-number">A.0.0.3</span> Collection</h4>
+<p>The Storm Events Database <span class="citation" data-cites="StormEventsDatabasea">(<a href="references.html#ref-StormEventsDatabasea" role="doc-biblioref">DOC/NOAA/NESDIS/NCEI 2026</a>)</span> was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.</p>
+<section id="collection" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="collection"><span class="header-section-number">A.1</span> Collection</h2>
 <p>All data in the set was collected between January 1950 and October 2025. The National Weather Service receives its information from a variety of sources, which include but are not limited to: county, state, and federal emergency management officials, local law enforcement officials, skywarn spotters, NWS damage surveys, newspaper clipping services, the insurance industry, and the general public, among others. Because the NWS receives information from multiple sources, details are not provided on measurement instruments. New data for a given month is updated in the database 75-90 days after the end of that month.</p>
 </section>
-<section id="structure-formatting" class="level4" data-number="A.0.0.4">
-<h4 data-number="A.0.0.4" class="anchored" data-anchor-id="structure-formatting"><span class="header-section-number">A.0.0.4</span> Structure &amp; Formatting</h4>
+<section id="structure-formatting" class="level2" data-number="A.2">
+<h2 data-number="A.2" class="anchored" data-anchor-id="structure-formatting"><span class="header-section-number">A.2</span> Structure &amp; Formatting</h2>
 <p>Since 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. Any given weather event entry, or row, has an eventID which links the event across each of the three data categories/file types for that year. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.</p>
 <p>Dates are recorded as <em>YYYYMM</em> or <em>DD-MM-YY HH:MM:SS</em>. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale, which is a categorical variable (F0-F5).</p>
 <p>As an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”</p>
@@ -224,15 +246,33 @@ ul.task-list li input[type="checkbox"] {
 <a href="https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/README">README</a> - information on the naming conventions of the files.<br>
 <a href="https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Export-Format.pdf">Storm Data Export Format</a> - description of columns across Event Details Files, Location Files, and Fatality Files</p>
 </section>
-<section id="data-validation-quality-control" class="level4" data-number="A.0.0.5">
-<h4 data-number="A.0.0.5" class="anchored" data-anchor-id="data-validation-quality-control"><span class="header-section-number">A.0.0.5</span> Data Validation &amp; Quality Control</h4>
+<section id="data-validation-quality-control" class="level2" data-number="A.3">
+<h2 data-number="A.3" class="anchored" data-anchor-id="data-validation-quality-control"><span class="header-section-number">A.3</span> Data Validation &amp; Quality Control</h2>
 <p>According to the “Storm Data FAQ Page”, “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”</p>
 </section>
-<section id="data-reuse" class="level4" data-number="A.0.0.6">
-<h4 data-number="A.0.0.6" class="anchored" data-anchor-id="data-reuse"><span class="header-section-number">A.0.0.6</span> Data Reuse</h4>
+<section id="data-reuse" class="level2" data-number="A.4">
+<h2 data-number="A.4" class="anchored" data-anchor-id="data-reuse"><span class="header-section-number">A.4</span> Data Reuse</h2>
 <p>As a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I’ve taken the liberty of adjusting your formatting to use sections and subsections. Please update any other documents likewise.</p>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-StormEventsDatabasea" class="csl-entry" role="listitem">
+DOC/NOAA/NESDIS/NCEI. 2026. <span>“Storm Events Database <span></span> National Centers for Environmental Information.”</span> https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. <a href="https://www.ncei.noaa.gov/stormevents/ftp.jsp">https://www.ncei.noaa.gov/stormevents/ftp.jsp</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -597,6 +637,43 @@ ul.task-list li input[type="checkbox"] {
             }
           });
         }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
   });
   </script>
 <nav class="page-navigation">

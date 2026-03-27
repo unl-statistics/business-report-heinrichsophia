@@ -2,29 +2,38 @@
 
 ## Overview of the Study Population
 
-The analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 20205. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in @tbl-shark-results:
+The analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 2025. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone, and only 73 of those ultimately moved from the coast to the inland. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in @tbl-population-breakdown:
 
 ```{r}
 #| echo: false
 #| warning: false
-#| label: tbl-shark-results
+#| label: tbl-population-breakdown
+library(gt)
+library(tidyverse)
+#| echo: false
+#| warning: false
+#| label: tbl-population-breakdown
 library(gt)
 library(tidyverse)
 
-shark_results_tbl <- tibble(
-  path_movement = c("Moving Coastal", "Moving Coastal", "Moving Inland", "Moving Inland", "Other Path", "Other Path"),
-  shark_lifting_potential = c("High Potential", "Low Potential", "High Potential", "Low Potential", "High Potential", "Low Potential"),
-  event_count = c(2, 60, 2, 71, 3799, 27411),
-  percentage = c(0.0323, 0.968, 0.0274, 0.973, 0.122, 0.878)
-)
+final_glued_events <- readRDS("final_glued_events.rds")
 
-shark_results_tbl %>%
+# generate the summary data
+shark_results_summary <- final_glued_events %>%
+  group_by(path_movement, shark_lifting_potential) %>%
+  summarise(event_count = n(), .groups = "drop") %>%
+  group_by(path_movement) %>%
+  mutate(percentage = event_count / sum(event_count)) %>%
+  ungroup()
+
+# table
+shark_results_summary %>%
   gt(groupname_col = "path_movement") %>%
   tab_header(
     title = "Tornado Path Trajectory and Shark-Lifting Potential",
     subtitle = "1950-2025"
   ) %>%
-  tab_caption("A table caption") %>%
+  tab_caption("Population breakdown: categorized all tornadoes by path trajectory and calculated counts and proportions of high vs. low shark-lifting potential within each path trajectory group.") %>%
   cols_label(
     shark_lifting_potential = "Shark-Lifting Potential",
     event_count = "Event Count",
@@ -52,19 +61,17 @@ shark_results_tbl %>%
   )
 ```
 
-Initial findings indicate that while "High Potential" and "Moving Inland" events are a minority of total tornado occurrences, with only **2 total** tornadoes meeting the criteria for "High Potential" and "Moving Inland". Thus, these unique events are certainly are not impossible and present a specific kind of threat that current risk models might be missing.
-
-TODO add figure caption
+Initial findings indicate that "High Potential" and "Moving Inland" events are a minority of total tornado occurrences, with only **2 total** tornadoes meeting the criteria for "High Potential" and "Moving Inland". While these unique events are quite rare, they are certainly not impossible and present a specific kind of threat that current risk models might be missing.
 
 ## Path Movement & Intensity Analysis
 
-To evaluate the relationship between tornado path trajectory and intensity, the data was categorized by both path movement and its "Shark-Lifting" potential (with F3/F4/F5 tornadoes marked as "High Potential"). As seen in Figure \_ below, there is a significant difference in tornadoes that remained completely inland ("Other Path") compared to tornadoes that either originated or ended on the coasts. While "Moving Inland" trajectories are the primary focus when considering the risk of sharknadoes, on **2.7%** of these tornadoes moving from the coast to the inland reached high-potential intensity. In contrast, "Other Path" tornadoes exhibited a high-potential rate of **12.2%**.
-
-TODO add figure caption
+To further evaluate the relationship between tornado path trajectory and intensity, we can visualize the metrics from the previous @tbl-population-breakdown. In @fig-trajectory-intensity below, we can see a noticeable difference in tornadoes that remained completely inland ("Other Path") compared to tornadoes that either originated or ended on the coasts. While "Moving Inland" trajectories are the primary focus when considering the risk of sharknadoes, only **2.7%** of these tornadoes moving from the coast to the inland reached high-potential intensity. In contrast, "Other Path" tornadoes exhibited a much larger high-potential rate of **12.2%**.
 
 ```{r}
 #| echo: false
 #| warning: false
+#| label: fig-trajectory-intensity
+#| fig-cap: "Categorized all tornadoes by path trajectory and visualized the percentages of high vs. low shark-lifting potential within each path trajectory group."
 library(ggplot2)
 library(dplyr)
 
@@ -94,17 +101,19 @@ ggplot(plot_data, aes(x = path_movement, y = percent, fill = shark_lifting_poten
   )
 ```
 
-This suggests that while the "Moving Inland" path is geographically unique, the prime atmospheric conditions needed for F3/F4/F5 tornadoes are far more prevalent once the storm has moved more inland over land. For insurance risk modeling, this indicates that while coastal-origin tornadoes are *capable* of lifting and moving sharks, they are statistically much less likely to reach the extreme wind speeds of their inland counterparts.
+This suggests that while the "Moving Inland" path is geographically unique, the prime atmospheric conditions needed for F3/F4/F5 tornadoes are far more prevalent once the storm has moved more inland over land. For insurance risk modeling, this indicates that while coastal-origin tornadoes are *capable* of transporting sharks, they are statistically much less likely to reach the extreme wind speeds of their inland counterparts.
 
 ## Regional Risk Distribution
 
-To identify likely areas where we could find sharknadoes forming, the data was segmented by coastal region (Atlantic, Gulf, and Pacific). The analysis reveals a geographic imbalance in risk.
+To identify likely areas where we could find sharknadoes forming, the data was segmented by coastal region (Atlantic, Gulf, and Pacific). The analysis in @fig-moving-inland-regions reveals a geographic imbalance in risk.
 
-The **Gulf Coast** and **Atlantic Coast** account for the vast majority of "Moving Inland" events, with each coast responsible for 36 "Moving Inland" tornadoes. In, contrast the **Pacific Coast** only recorded **1 total** "Moving Inland" tornado which was identified as "Low Potential" intensity. In all, though, the majority of the "Moving Inland" tornadoes produced by any of the 3 coasts were identified as "Low Potential" intensity.
+The **Gulf Coast** and **Atlantic Coast** account for the vast majority of "Moving Inland" events, with each coast responsible for 36 "Moving Inland" tornadoes. In, contrast the **Pacific Coast** only recorded **1 total** "Moving Inland" tornado which was identified as "Low Potential" intensity. The **Atlantic Coast** was the only coastal region that has recorded a "Moving Inland" tornado with **high shark-lifting potential** (2 total occurrences recorded). Overall, though, the majority of the "Moving Inland" tornadoes produced by any of the 3 coasts were identified as "Low Potential" intensity.
 
 ```{r}
 #| echo: false
 #| warning: false
+#| label: fig-moving-inland-regions
+#| fig-cap: "Categorized only 'Moving Inland' trajectory tornadoes by coastal region and visualized the percentages of high vs. low shark-lifting potential within each coastal region group."
 library(ggplot2)
 library(dplyr)
 library(scales)
@@ -134,44 +143,142 @@ ggplot(regional_plot_data, aes(x = reorder(Start_coast, -count, sum), y = count,
 This confirms that sharknado potential is a regional phenomenon, rather than a national one, with the Atlantic and Gulf Coasts requiring significantly different actuarial considerations than the West Coast. 
 
 ## Economic Impact
-The final phase of this analysis evaluated the economic impact of tornadoes based on their path trajectory. Across the 75-year study period, the total property damage recorded for all events summed to \$3,334,748,030 with an average of \$106,389 per tornado.
-
-Again, when categorizing tornadoes by path movement, "Moving Inland" events resulted in an average property loss of \$342,153 per storm. While these events are less frequent than inland-only "Other Path" tornadoes, their tendency to originate in high-value coastal zones contributes to a distinct loss profile.
+The final phase of this analysis evaluated the economic impact of tornadoes based on their path trajectory. Across the 75-year study period, the total property damage recorded for all events summed to **\$3.33B** with an average of \$106,389 per tornado. The summary of economic impact by tornado trajectory and shark-lifting potential is in @tbl-trajectory-damage below: 
 
 ```{r}
 #| echo: false
 #| warning: false
+#| label: tbl-trajectory-damage
+
+library(gt)
+library(dplyr)
+library(scales)
+
+table_data <- final_glued_events %>%
+  group_by(path_movement, shark_lifting_potential) %>%
+  summarize(
+    event_count = n(),
+    total_loss = sum(Total_Damage, na.rm = TRUE),
+    avg_loss = mean(Total_Damage, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(path_movement, desc(shark_lifting_potential))
+
+table_data %>%
+  gt(groupname_col = "path_movement") %>%
+  tab_header(
+    title = "Economic Impact Analysis by Tornado Trajectory",
+    subtitle = "Property damage and frequency (1950-2025)"
+  ) %>%
+  tab_caption("Categorized all tornadoes by path trajectory and calculated total and average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.") %>%
+  cols_label(
+    shark_lifting_potential = "Intensity Potential",
+    event_count = "Total Events",
+    total_loss = "Cumulative Damage",
+    avg_loss = "Avg. Damage per Event"
+  ) %>%
+  # Format numbers as Currency
+  fmt_currency(
+    columns = c(total_loss, avg_loss),
+    currency = "USD",
+    suffixing = TRUE 
+  ) %>%
+  # Format the count with commas
+  fmt_number(
+    columns = event_count,
+    decimals = 0
+  ) %>%
+  # --- APPLIED STYLING TO MATCH POPULATION TABLE ---
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_row_groups()
+  ) %>%
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) %>%
+  tab_options(
+    table.width = pct(90),
+    heading.title.font.size = px(20),
+    # Removing shading as requested previously
+    row.striping.include_table_body = FALSE,
+    row_group.background.color = "white",
+    table.background.color = "white"
+  )
+```
+
+As visualized in @fig-trajectory-damage-total below, tornadoes following "Other Path" trajectories have contributed to **`r round(((682.77+2580)/3334) * 100, 2)`%** of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland ("Moving Inland") have contributed to only **`r round(((24.79+0.183)/3334) * 100, 2)`%** of all recorded tornado property damage, with only **$183K** in damages resulting from high shark-lifting potential tornadoes. 
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-trajectory-damage-total
+#| fig-cap: "Categorized all tornadoes by trajectory and visualized the total property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group."
+
 library(ggplot2)
 library(dplyr)
 library(scales)
 
 damage_plot_data <- final_glued_events %>%
-  group_by(path_movement) %>%
-  summarize(total_loss = sum(Total_Damage, na.rm = TRUE))
+  group_by(path_movement, shark_lifting_potential) %>%
+  summarize(total_loss = sum(Total_Damage, na.rm = TRUE), .groups = "drop")
 
-ggplot(damage_plot_data, aes(x = path_movement, y = total_loss, fill = path_movement)) +
-  geom_bar(stat = "identity", width = 0.6) +
+
+ggplot(damage_plot_data, aes(x = path_movement, y = total_loss, fill = shark_lifting_potential)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) + 
   scale_y_continuous(labels = label_dollar(scale = 1e-6, suffix = "M")) +
-  scale_fill_manual(values = c("Moving Inland" = "#1b9e77", 
-                               "Moving Coastal" = "#d95f02", 
-                               "Other Path" = "#7570b3")) +
+  scale_fill_manual(values = c("High Potential" = "#b2182b", "Low Potential" = "#4393c3")) +
   theme_minimal() +
   labs(
-    title = "Cumulative Economic Impact by Trajectory",
-    subtitle = "Total property damage (1950-2025) in Millions of USD",
+    title = "Cumulative Economic Impact by Trajectory and Intensity",
+    subtitle = "Total property damage (1950-2025) grouped by Path Trajectory and Shark-Lifting Potential",
     x = "Tornado Path Category",
-    y = "Total Property Damage (Millions)",
-    fill = "Path Category"
+    y = "Total Property Damage (Millions USD)",
+    fill = "Lifting Potential"
   ) +
-  theme(legend.position = "none", plot.title = element_text(face = "bold"))
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "bottom"
+  )
 ```
 
-Interestingly, the data indicates that while 'High Potential' (F4/F5) storms cause the most catastrophic individual losses, the sheer volume of 'Low Potential' storms moving from coast to land creates a cumulative financial burden that could require specific actuarial attention.
+Based on the visual analysis provided in @fig-trajectory-damage-avg, a hasty conclusion would be that tornadoes originating inland and moving to the coast ("Moving Coastal") result in the most property damage on average. Which based on the calculations, this is technically true. However, it's important to note that for "Moving Coastal" and "Moving Inland" tornadoes classified as high shark-lifting potential, the population only consists of **2 total recorded events** for both groups. 
 
-TODO add more charts to break down financials between categories
 
-::: callout-note
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-trajectory-damage-avg
+#| fig-cap: "Categorized all tornadoes by trajectory and visualized the average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group."
 
-I love the way you've written this.
+library(ggplot2)
+library(dplyr)
+library(scales)
 
-:::
+# Calculate the mean instead of the sum
+damage_plot_data_avg <- final_glued_events %>%
+  group_by(path_movement, shark_lifting_potential) %>%
+  summarize(avg_loss = mean(Total_Damage, na.rm = TRUE), .groups = "drop")
+
+ggplot(damage_plot_data_avg, aes(x = path_movement, y = avg_loss, fill = shark_lifting_potential)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) + 
+  # Using Millions (M) suffix; if values are smaller, you can remove 'scale' and 'suffix'
+  scale_y_continuous(labels = label_dollar(scale = 1e-6, suffix = "M")) +
+  scale_fill_manual(values = c("High Potential" = "#b2182b", "Low Potential" = "#4393c3")) +
+  theme_minimal() +
+  labs(
+    title = "Average Economic Impact by Trajectory and Intensity",
+    subtitle = "Mean property damage (1950-2025) grouped by Path Trajectory and Shark-Lifting Potential",
+    x = "Tornado Path Category",
+    y = "Average Property Damage (Millions USD)",
+    fill = "Lifting Potential"
+  ) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    legend.position = "bottom",
+    axis.text.x = element_text(angle = 0, hjust = 0.5)
+  )
+```
+
+Ultimately, when looking at the tornadoes with sharknado characteristics ("Moving Inland" with high shark-lifting potential), only **$183K** in damages has been inflicted in the last 75 years with an average damage of **\$91.5K per storm**. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that "Sharknado-style" events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.
