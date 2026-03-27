@@ -80,7 +80,7 @@ final_glued_events <- readRDS("final_glued_events.rds")
 plot_data <- final_glued_events %>%
   count(path_movement, shark_lifting_potential) %>%
   group_by(path_movement) %>%
-  mutate(percent = n / sum(n)) # Calculate relative proportion for better comparison
+  mutate(percent = n / sum(n))
 
 ggplot(plot_data, aes(x = path_movement, y = percent, fill = shark_lifting_potential)) +
   geom_bar(stat = "identity", position = "fill", color = "white") +
@@ -177,18 +177,15 @@ table_data %>%
     total_loss = "Cumulative Damage",
     avg_loss = "Avg. Damage per Event"
   ) %>%
-  # Format numbers as Currency
   fmt_currency(
     columns = c(total_loss, avg_loss),
     currency = "USD",
     suffixing = TRUE 
   ) %>%
-  # Format the count with commas
   fmt_number(
     columns = event_count,
     decimals = 0
   ) %>%
-  # --- APPLIED STYLING TO MATCH POPULATION TABLE ---
   tab_style(
     style = cell_text(weight = "bold"),
     locations = cells_row_groups()
@@ -200,7 +197,6 @@ table_data %>%
   tab_options(
     table.width = pct(90),
     heading.title.font.size = px(20),
-    # Removing shading as requested previously
     row.striping.include_table_body = FALSE,
     row_group.background.color = "white",
     table.background.color = "white"
