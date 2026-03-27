@@ -279,4 +279,46 @@ ggplot(damage_plot_data_avg, aes(x = path_movement, y = avg_loss, fill = shark_l
 
 Ultimately, when looking at the tornadoes with sharknado characteristics ("Moving Inland" with high shark-lifting potential), only **$183K** in damages has been inflicted in the last 75 years with an average damage of **\$91.5K per storm**. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that "Sharknado-style" events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.
 
-TODO add a trending graph that shows trends of tornado intensity
+TODO add a trending graph that shows trends of tornado intensity. secondary analysis?
+
+```{r}
+#| label: fig-historical-intensity-trends
+#| echo: false
+#| warning: false
+#| fig-cap: All tornadoes categorized by (Enhanced) Fujita category and counts are plotted from 1950-2025
+
+library(tidyverse)
+
+# 1. Prepare Data with Year Filter
+intensity_trends_filtered <- final_glued_events %>%
+  mutate(
+    # Combine F and EF scales by extracting just the number
+    scale_num = str_extract(TOR_F_SCALE_MAX, "\\d"),
+    intensity_label = paste0("Category ", scale_num)
+  ) %>%
+  filter(!is.na(scale_num)) %>%
+  mutate(intensity_label = factor(intensity_label, 
+                                  levels = paste0("Category ", 0:5))) %>%
+  count(YEAR, intensity_label)
+
+# 2. Create the Clean Line Graph
+ggplot(intensity_trends_filtered, aes(x = YEAR, y = n, color = intensity_label)) +
+  # Standard lines only (no smoothing)
+  geom_line(linewidth = 1) + 
+  scale_color_viridis_d(option = "plasma", end = 0.9) +
+  labs(
+    title = "Tornado Intensity Trends (1950 - 2025)",
+    subtitle = "Aggregated F and EF Scale counts by category",
+    x = "Year",
+    y = "Annual Count",
+    color = "Intensity Category"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  ) +
+  scale_x_continuous(breaks = seq(1950, 2025, 5))
+
+```
