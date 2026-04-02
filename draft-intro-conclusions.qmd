@@ -2,6 +2,12 @@
 title: "Draft: Intro/Conclusions"
 ---
 
+::: callout-note
+
+I remember a fake pic in 2001 when Tropical Storm Alison hit Houston that showed sharks in the tunnels connecting the skyscrapers downtown... in coastal areas this has been a "meme"-ish possibility for a long time, even before Sharknado -- though usually storm-surge rather than wind driven...
+
+:::
+
 # Introduction
 
 Before the release of the movie, Sharknado [@Sharknado], most people probably had not thought about the possibility of a tornado close enough to water and so powerful that it could pick up a shark and hurl it onto the land. However, with the recent rise in extreme weather events due to climate change [@TornadoesClimateChange], Anthony Ferrante's idea of a sharknado in today's climate environment may not be as laughable as it was back in 2013. Thus, there exists a motivation to investigate if sharknadoes could become a real threat to the safety of our communities (and the profitability of insurance companies).
@@ -62,3 +68,11 @@ TODO write out in paragraph form
 ## Going Forward
 
 Ultimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn't hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.
+
+::: callout-note
+
+Work on actionable items to put in a executive-friendly callout box :).
+
+Otherwise, this is great!
+
+:::
