@@ -177,8 +177,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary"><span class="header-section-number">E</span> Executive Summary</a>
+  <ul class="collapse">
+  <li><a href="#purpose-of-report" id="toc-purpose-of-report" class="nav-link" data-scroll-target="#purpose-of-report"><span class="header-section-number">E.1</span> Purpose of Report</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">E.2</span> Methods</a></li>
+  <li><a href="#findings-conclusions" id="toc-findings-conclusions" class="nav-link" data-scroll-target="#findings-conclusions"><span class="header-section-number">E.3</span> Findings &amp; Conclusions</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -202,8 +213,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="executive-summary" class="level1" data-number="E">
+<h1 data-number="E"><span class="header-section-number">E</span> Executive Summary</h1>
+<section id="purpose-of-report" class="level2" data-number="E.1">
+<h2 data-number="E.1" class="anchored" data-anchor-id="purpose-of-report"><span class="header-section-number">E.1</span> Purpose of Report</h2>
+<p>The insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the ‘Sharknado’ phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe storms could lead to a higher likelihood of shark-infested weather events. The purpose of this report is to</p>
+<ul>
+<li><strong>Determine the likelihood of sharknadoes to form</strong></li>
+<li><strong>Determine the economic impact of sharknadoes</strong></li>
+</ul>
+</section>
+<section id="methods" class="level2" data-number="E.2">
+<h2 data-number="E.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">E.2</span> Methods</h2>
+<p>75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.</p>
+<p>A tornado’s <em>path trajectory</em> was classified as one of three labels:</p>
+<p>TODO make cool visual chart to supplement</p>
+<ul>
+<li><strong>Moving Inland</strong>: tornado originated on the coast and moved inland</li>
+<li><strong>Moving Coastal</strong>: tornado originated on inland and moved to the coast</li>
+<li><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin</li>
+</ul>
+<p>A tornado’s <em>shark-lifting potential</em> was classified as one of two labels:</p>
+<ul>
+<li><strong>Low Potential</strong>: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale</li>
+<li><strong>High Potential</strong>: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale</li>
+</ul>
+</section>
+<section id="findings-conclusions" class="level2" data-number="E.3">
+<h2 data-number="E.3" class="anchored" data-anchor-id="findings-conclusions"><span class="header-section-number">E.3</span> Findings &amp; Conclusions</h2>
+<p>Throughout the analysis, storms classified as “Moving Inland” and “High [shark-lifting] Potential” were of highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both “Moving Inland” and “High Potential” for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for “Moving Inland” storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, “Moving Inland” storm with high shark-lifting potential account for less that 0.01% of total historical property damage ($183K over 75 years).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Reccomendations
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Treat Marine-Origin Events as Rare Events:</strong> High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.</li>
+<li><strong>Maintain Standard Inland Risk Models</strong>: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.</li>
+<li><strong>Monitor Southeast Regional Shifts:</strong> While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change <em>may</em> be increasing the frequency of atypical, high-intensity coastal events.</li>
+</ul>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

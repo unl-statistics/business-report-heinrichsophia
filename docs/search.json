@@ -182,28 +182,6 @@
     ]
   },
   {
-    "objectID": "draft-intro-conclusions.html#going-forward",
-    "href": "draft-intro-conclusions.html#going-forward",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.5 Going Forward",
-    "text": "E.5 Going Forward\nUltimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn’t hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.\n\n\n\n\n“2004 Hallam Tornado.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&oldid=1345145456.\n\n\nFerrante, Anthony. 2013. Sharknado. Syfy.\n\n\nFisheries, NOAA. 2025. “Sharks in Atlantic, Gulf, and Caribbean Coastal Waters. NOAA Fisheries.” NOAA Fisheries. February 26, 2025. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters.\n\n\nMartini, Dr. Kim. 2013. “Recipe for a Sharknado  Deep Sea News. Deep Sea News.” August 9, 2013. https://deepseanews.com/2013/08/recipe-for-a-sharknado/.\n\n\nNational Weather Service, NOAA’s. 2025. “The Enhanced Fujita Scale (EF Scale). Storm Prediction Center.” NOAA’s National Weather Service. May 21, 2025. https://www.spc.noaa.gov/efscale/.\n\n\n“Tornado Alley.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=Tornado_Alley&oldid=1339195322.\n\n\n“Tornadoes and Climate Change. National Geographic Education.” 2023. October 19, 2023. https://education.nationalgeographic.org/resource/tornadoes-and-climate-change.\n\n\n“What Is a Tornado? Let’s Talk Science.” 2020. February 26, 2020. https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html#limitations",
-    "href": "draft-intro-conclusions.html#limitations",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.4 Limitations",
-    "text": "E.4 Limitations\n\nTornado records have improved over the years\nTornadoes used to be categorized differently (F vs EF). We treated F3 and EF3 the synonymously.\nPreviously mentioned caveat about tornadic water spouts not even being able to pick up a shark and sharks being scared of storms makes it nearly impossible in the first place.\n“Other Path” category included Inland -&gt; Inland storms as well as Coastal -&gt; Coastal storms. The Coastal -&gt; Coastal was done to filter out tornadoes that never made it to land (which is good) but also filters out tornadoes that made it to land inside the 3 mile coastal boundary.\n3-mile coastal boundary is arbitrary. Could re-test with larger/smaller bounds.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
     "objectID": "draft-intro-conclusions.html#limitations-future-exploration",
     "href": "draft-intro-conclusions.html#limitations-future-exploration",
     "title": "Appendix C — Draft: Intro/Conclusions",
@@ -212,6 +190,72 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
+    ]
+  },
+  {
+    "objectID": "draft-intro-conclusions.html#going-forward",
+    "href": "draft-intro-conclusions.html#going-forward",
+    "title": "Appendix C — Draft: Intro/Conclusions",
+    "section": "E.5 Going Forward",
+    "text": "E.5 Going Forward\nUltimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn’t hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.\n\n\n\n\n\n\nTipAction Items\n\n\n\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.\n\n\n\n\n\n\n\n“2004 Hallam Tornado.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&oldid=1345145456.\n\n\nFerrante, Anthony. 2013. Sharknado. Syfy.\n\n\nFisheries, NOAA. 2025. “Sharks in Atlantic, Gulf, and Caribbean Coastal Waters. NOAA Fisheries.” NOAA Fisheries. February 26, 2025. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters.\n\n\nMartini, Dr. Kim. 2013. “Recipe for a Sharknado  Deep Sea News. Deep Sea News.” August 9, 2013. https://deepseanews.com/2013/08/recipe-for-a-sharknado/.\n\n\nNational Weather Service, NOAA’s. 2025. “The Enhanced Fujita Scale (EF Scale). Storm Prediction Center.” NOAA’s National Weather Service. May 21, 2025. https://www.spc.noaa.gov/efscale/.\n\n\n“Tornado Alley.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=Tornado_Alley&oldid=1339195322.\n\n\n“Tornadoes and Climate Change. National Geographic Education.” 2023. October 19, 2023. https://education.nationalgeographic.org/resource/tornadoes-and-climate-change.\n\n\n“What Is a Tornado? Let’s Talk Science.” 2020. February 26, 2020. https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
+    ]
+  },
+  {
+    "objectID": "draft-exec-summary.html",
+    "href": "draft-exec-summary.html",
+    "title": "Appendix D — Draft: Executive Summary",
+    "section": "",
+    "text": "E Executive Summary",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
+    ]
+  },
+  {
+    "objectID": "draft-exec-summary.html#purpose-of-report",
+    "href": "draft-exec-summary.html#purpose-of-report",
+    "title": "Appendix D — Draft: Executive Summary",
+    "section": "E.1 Purpose of Report",
+    "text": "E.1 Purpose of Report\nThe insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the ‘Sharknado’ phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe storms could lead to a higher likelihood of shark-infested weather events. The purpose of this report is to\n\nDetermine the likelihood of sharknadoes to form\nDetermine the economic impact of sharknadoes",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
+    ]
+  },
+  {
+    "objectID": "draft-exec-summary.html#methods",
+    "href": "draft-exec-summary.html#methods",
+    "title": "Appendix D — Draft: Executive Summary",
+    "section": "E.2 Methods",
+    "text": "E.2 Methods\n75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.\nA tornado’s path trajectory was classified as one of three labels:\nTODO make cool visual chart to supplement\n\nMoving Inland: tornado originated on the coast and moved inland\nMoving Coastal: tornado originated on inland and moved to the coast\nOther Path: tornado originated either inland or on the coast and stayed in the same region of origin\n\nA tornado’s shark-lifting potential was classified as one of two labels:\n\nLow Potential: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale\nHigh Potential: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
+    ]
+  },
+  {
+    "objectID": "draft-exec-summary.html#findings-conclusions",
+    "href": "draft-exec-summary.html#findings-conclusions",
+    "title": "Appendix D — Draft: Executive Summary",
+    "section": "E.3 Findings & Conclusions",
+    "text": "E.3 Findings & Conclusions\nThroughout the analysis, storms classified as “Moving Inland” and “High [shark-lifting] Potential” were of highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both “Moving Inland” and “High Potential” for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for “Moving Inland” storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, “Moving Inland” storm with high shark-lifting potential account for less that 0.01% of total historical property damage ($183K over 75 years).\n\n\n\n\n\n\nTipReccomendations\n\n\n\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
+    ]
+  },
+  {
+    "objectID": "draft-exec-summary.html#recommendations",
+    "href": "draft-exec-summary.html#recommendations",
+    "title": "Appendix D — Draft: Executive Summary",
+    "section": "E.4 Recommendations",
+    "text": "E.4 Recommendations\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
     ]
   }
 ]

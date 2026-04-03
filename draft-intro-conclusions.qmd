@@ -3,9 +3,7 @@ title: "Draft: Intro/Conclusions"
 ---
 
 ::: callout-note
-
 I remember a fake pic in 2001 when Tropical Storm Alison hit Houston that showed sharks in the tunnels connecting the skyscrapers downtown... in coastal areas this has been a "meme"-ish possibility for a long time, even before Sharknado -- though usually storm-surge rather than wind driven...
-
 :::
 
 # Introduction
@@ -16,10 +14,9 @@ Historically, we have seen tornadoes primarily occurring in Central United State
 
 ![This is map highlights the Central United States, historically referred to as Tornado Alley [@TornadoAlley2026].](assets/Tornado_Alley_Diagram.png){#fig-tornado-alley}
 
-
 ![This is a diagram illustrating the strength, wind speed, and damage typically caused by a tornado at each classification on the Enhanced Fujita Scale [@WhatTornadoLets2020].](assets/EF_Scale.png){#fig-ef-scale}
 
-Additionally, the 75 years of tornado data provided by the NOAA  (which we will later analyze in more detail) records a small, but not impossible, set of coastal tornado occurrences. With various species of sharks existing along the Atlantic, Pacific, and Gulf Coasts of the US, a coastal tornado’s "inventory" of sharks is not limited to any specific region [@fisheriesSharksAtlanticGulf2025]. Furthermore, with an increasing number of tornadoes in atypical regions such as the Southeastern United States [@TornadoesClimateChange], tornadoes' proximity to sharks and ability to pick them up may be increasing as well.
+Additionally, the 75 years of tornado data provided by the NOAA (which we will later analyze in more detail) records a small, but not impossible, set of coastal tornado occurrences. With various species of sharks existing along the Atlantic, Pacific, and Gulf Coasts of the US, a coastal tornado’s "inventory" of sharks is not limited to any specific region [@fisheriesSharksAtlanticGulf2025]. Furthermore, with an increasing number of tornadoes in atypical regions such as the Southeastern United States [@TornadoesClimateChange], tornadoes' proximity to sharks and ability to pick them up may be increasing as well.
 
 While there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics [@martiniRecipeSharknadoDeep2013]. Her analysis resulted in several conclusions:
 
@@ -45,7 +42,7 @@ Using 75 years of tornado storm data from the NOAA, we analyzed the potential fo
 
 ## Regions of Concern
 
-However, as previously mentioned, there has been an upward trend of tornadoes in atypical regions such as the Southeastern United States [@TornadoesClimateChange], and perhaps unexpectedly, the majority of tornadoes categorized as "Moving Inland" originated in the Atlantic or Gulf coasts near the southeastern side of the United States. With the southeast region already exhibiting these storm characteristics and with climate change creating volatility in extreme weather events, an increase in storms with sharknado potential in the southeast is not completely out of the question. 
+However, as previously mentioned, there has been an upward trend of tornadoes in atypical regions such as the Southeastern United States [@TornadoesClimateChange], and perhaps unexpectedly, the majority of tornadoes categorized as "Moving Inland" originated in the Atlantic or Gulf coasts near the southeastern side of the United States. With the southeast region already exhibiting these storm characteristics and with climate change creating volatility in extreme weather events, an increase in storms with sharknado potential in the southeast is not completely out of the question.
 
 ## Economic Impact
 
@@ -53,26 +50,25 @@ In terms of the economic impact of sharknadoes, tornadoes with a path "Moving In
 
 ## Limitations & Future Exploration
 
-TODO write out in paragraph form 
+TODO write out in paragraph form
 
-- NOAA data set connects tornado segments differently before vs after 1996. Before 1996, using date/time and coordinates to link events (room for error since guessing with context clues) After 1996 straightforward when connecting using EPISODE_ID.
-- Tornado records have improved over the years. Might make newer data better and older data less accurate or more arbitrary. Could have an impact on time series trends.
-- 75 years is a relatively short time span. 
-- VERY small populations for "sharknado"-like events. Makes it comparing averages kind of insignificant. 
-- Tornadoes used to be categorized differently (F vs EF). We treated F3 and EF3 the synonymously (should we be more careful about this?)
-- Previously mentioned caveat about tornadic water spouts not even being able to pick up a shark and sharks being scared of storms makes it nearly impossible in the first place.
-- "Other Path" category included Inland -> Inland storms as well as Coastal -> Coastal storms. The Coastal -> Coastal was done to filter out tornadoes that never made it to land (which is good) but also filters out tornadoes that made it to land inside the 3 mile coastal boundary.
-- 3-mile coastal boundary is arbitrary. Could re-test with larger/smaller bounds.
-
+-   NOAA data set connects tornado segments differently before vs after 1996. Before 1996, using date/time and coordinates to link events (room for error since guessing with context clues) After 1996 straightforward when connecting using EPISODE_ID.
+-   Tornado records have improved over the years. Might make newer data better and older data less accurate or more arbitrary. Could have an impact on time series trends.
+-   75 years is a relatively short time span.
+-   VERY small populations for "sharknado"-like events. Makes it comparing averages kind of insignificant.
+-   Tornadoes used to be categorized differently (F vs EF). We treated F3 and EF3 the synonymously (should we be more careful about this?)
+-   Previously mentioned caveat about tornadic water spouts not even being able to pick up a shark and sharks being scared of storms makes it nearly impossible in the first place.
+-   "Other Path" category included Inland -\> Inland storms as well as Coastal -\> Coastal storms. The Coastal -\> Coastal was done to filter out tornadoes that never made it to land (which is good) but also filters out tornadoes that made it to land inside the 3 mile coastal boundary.
+-   3-mile coastal boundary is arbitrary. Could re-test with larger/smaller bounds.
 
 ## Going Forward
 
 Ultimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn't hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.
 
-::: callout-note
+::: callout-tip
+# Action Items
 
-Work on actionable items to put in a executive-friendly callout box :).
-
-Otherwise, this is great!
-
+-   **Treat Marine-Origin Events as Rare Events:** High-intensity "Moving Inland" tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, "long-tail" risks rather than primary drivers of annual catastrophe loss.
+-   **Maintain Standard Inland Risk Models**: With 97.86% of historical property damage occurring in "Other Path" trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized "Sharknado" or marine-origin coverages.
+-   **Monitor Southeast Regional Shifts:** While national "Sharknado" risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change *may* be increasing the frequency of atypical, high-intensity coastal events.
 :::
