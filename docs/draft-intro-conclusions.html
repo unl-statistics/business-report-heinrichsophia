@@ -91,6 +91,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -206,10 +235,19 @@ div.csl-indent {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">D</span> Introduction</a></li>
   <li><a href="#conclusion-discussion" id="toc-conclusion-discussion" class="nav-link" data-scroll-target="#conclusion-discussion"><span class="header-section-number">E</span> Conclusion &amp; Discussion</a>
   <ul class="collapse">
-  <li><a href="#frequency-of-sharknadoes" id="toc-frequency-of-sharknadoes" class="nav-link" data-scroll-target="#frequency-of-sharknadoes"><span class="header-section-number">E.1</span> Frequency of Sharknadoes</a></li>
+  <li><a href="#frequency-probability-of-sharknadoes" id="toc-frequency-probability-of-sharknadoes" class="nav-link" data-scroll-target="#frequency-probability-of-sharknadoes"><span class="header-section-number">E.1</span> Frequency &amp; Probability of Sharknadoes</a></li>
   <li><a href="#regions-of-concern" id="toc-regions-of-concern" class="nav-link" data-scroll-target="#regions-of-concern"><span class="header-section-number">E.2</span> Regions of Concern</a></li>
   <li><a href="#economic-impact" id="toc-economic-impact" class="nav-link" data-scroll-target="#economic-impact"><span class="header-section-number">E.3</span> Economic Impact</a></li>
-  <li><a href="#limitations-future-exploration" id="toc-limitations-future-exploration" class="nav-link" data-scroll-target="#limitations-future-exploration"><span class="header-section-number">E.4</span> Limitations &amp; Future Exploration</a></li>
+  <li><a href="#limitations-future-exploration" id="toc-limitations-future-exploration" class="nav-link" data-scroll-target="#limitations-future-exploration"><span class="header-section-number">E.4</span> Limitations &amp; Future Exploration</a>
+  <ul class="collapse">
+  <li><a href="#physics-preventing-sharkadoes" id="toc-physics-preventing-sharkadoes" class="nav-link" data-scroll-target="#physics-preventing-sharkadoes"><span class="header-section-number">E.4.1</span> Physics Preventing Sharkadoes</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="header-section-number">E.4.2</span> Dataset Structure</a></li>
+  <li><a href="#data-validity" id="toc-data-validity" class="nav-link" data-scroll-target="#data-validity"><span class="header-section-number">E.4.3</span> Data Validity</a></li>
+  <li><a href="#data-biases" id="toc-data-biases" class="nav-link" data-scroll-target="#data-biases"><span class="header-section-number">E.4.4</span> Data Biases</a></li>
+  <li><a href="#sample-size-temporal-constraints" id="toc-sample-size-temporal-constraints" class="nav-link" data-scroll-target="#sample-size-temporal-constraints"><span class="header-section-number">E.4.5</span> Sample Size &amp; Temporal Constraints</a></li>
+  <li><a href="#storm-intensity-ratings" id="toc-storm-intensity-ratings" class="nav-link" data-scroll-target="#storm-intensity-ratings"><span class="header-section-number">E.4.6</span> Storm Intensity Ratings</a></li>
+  <li><a href="#definition-of-coast-and-other-path" id="toc-definition-of-coast-and-other-path" class="nav-link" data-scroll-target="#definition-of-coast-and-other-path"><span class="header-section-number">E.4.7</span> Definition of “Coast” and “Other Path”</a></li>
+  </ul></li>
   <li><a href="#going-forward" id="toc-going-forward" class="nav-link" data-scroll-target="#going-forward"><span class="header-section-number">E.5</span> Going Forward</a></li>
   </ul></li>
   </ul>
@@ -253,7 +291,7 @@ Note
 <section id="introduction" class="level1" data-number="D">
 <h1 data-number="D"><span class="header-section-number">D</span> Introduction</h1>
 <p>Before the release of the movie, Sharknado <span class="citation" data-cites="Sharknado">(<a href="references.html#ref-Sharknado" role="doc-biblioref">Ferrante 2013</a>)</span>, most people probably had not thought about the possibility of a tornado close enough to water and so powerful that it could pick up a shark and hurl it onto the land. However, with the recent rise in extreme weather events due to climate change <span class="citation" data-cites="TornadoesClimateChange">(<a href="references.html#ref-TornadoesClimateChange" role="doc-biblioref"><span>“Tornadoes and Climate Change. National Geographic Education”</span> 2023</a>)</span>, Anthony Ferrante’s idea of a sharknado in today’s climate environment may not be as laughable as it was back in 2013. Thus, there exists a motivation to investigate if sharknadoes could become a real threat to the safety of our communities (and the profitability of insurance companies).</p>
-<p>Historically, we have seen tornadoes primarily occurring in Central United States region, which has gained the nickname “Tornado Alley”. Tornadoes typically last for a few minutes and travel for short distances of 1 to 5 miles, though long-track events can exceed 50 miles. The intensity of a tornado is ranked on a scale of EF0 to EF5; while the original Fujita (F) scale was used historically, the modern Enhanced Fujita (EF) scale focuses on degrees of damage to better estimate wind speeds <span class="citation" data-cites="centerNOAAsNWSStorm">(<a href="references.html#ref-centerNOAAsNWSStorm" role="doc-biblioref">National Weather Service 2025</a>)</span>. Under this system, an EF1 tornado is strong enough to do moderate damage, such as stripping roof surfaces or upsetting mobile homes, while an EF5 tornado is strong enough to lift incredibly heavy objects—including automobiles and entire frame houses—and cause incredible structural devastation.</p>
+<p>Historically, we have seen tornadoes primarily occurring in Central United States region, which has gained the nickname “Tornado Alley” (see <a href="#fig-tornado-alley" class="quarto-xref">Figure&nbsp;<span>D.1</span></a>). Tornadoes typically last for a few minutes and travel for short distances of 1 to 5 miles, though long-track events can exceed 50 miles. The intensity of a tornado is ranked on a scale of EF0 to EF5; while the original Fujita (F) scale was used historically, the modern Enhanced Fujita (EF) scale focuses on degrees of damage to better estimate wind speeds <span class="citation" data-cites="centerNOAAsNWSStorm">(<a href="references.html#ref-centerNOAAsNWSStorm" role="doc-biblioref">National Weather Service 2025</a>)</span>. Under this system, an EF1 tornado is strong enough to do moderate damage, such as stripping roof surfaces or upsetting mobile homes, while an EF5 tornado is strong enough to lift incredibly heavy objects—including automobiles and entire frame houses—and cause incredible structural devastation (see <a href="#fig-ef-scale" class="quarto-xref">Figure&nbsp;<span>D.2</span></a>).</p>
 <div id="fig-tornado-alley" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tornado-alley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -274,10 +312,11 @@ Figure&nbsp;D.2: This is a diagram illustrating the strength, wind speed, and da
 </figcaption>
 </figure>
 </div>
-<p>Additionally, the 75 years of tornado data provided by the NOAA (which we will later analyze in more detail) records a small, but not impossible, set of coastal tornado occurrences. With various species of sharks existing along the Atlantic, Pacific, and Gulf Coasts of the US, a coastal tornado’s “inventory” of sharks is not limited to any specific region <span class="citation" data-cites="fisheriesSharksAtlanticGulf2025">(<a href="references.html#ref-fisheriesSharksAtlanticGulf2025" role="doc-biblioref">Fisheries 2025</a>)</span>. Furthermore, with an increasing number of tornadoes in atypical regions such as the Southeastern United States <span class="citation" data-cites="TornadoesClimateChange">(<a href="references.html#ref-TornadoesClimateChange" role="doc-biblioref"><span>“Tornadoes and Climate Change. National Geographic Education”</span> 2023</a>)</span>, tornadoes’ proximity to sharks and ability to pick them up may be increasing as well.</p>
+<p>Additionally, the 75 years of tornado data provided by the NOAA <span class="citation" data-cites="StormEventsDatabasea">(<a href="references.html#ref-StormEventsDatabasea" role="doc-biblioref">DOC/NOAA/NESDIS/NCEI 2026</a>)</span> (which we will later analyze in more detail) records a small, but not impossible, set of coastal tornado occurrences. With various species of sharks existing along the Atlantic, Pacific, and Gulf Coasts of the US, a coastal tornado’s “inventory” of sharks is not limited to any specific region <span class="citation" data-cites="fisheriesSharksAtlanticGulf2025">(<a href="references.html#ref-fisheriesSharksAtlanticGulf2025" role="doc-biblioref">Fisheries 2025</a>)</span>. Furthermore, with an increasing number of tornadoes in atypical regions such as the Southeastern United States <span class="citation" data-cites="TornadoesClimateChange">(<a href="references.html#ref-TornadoesClimateChange" role="doc-biblioref"><span>“Tornadoes and Climate Change. National Geographic Education”</span> 2023</a>)</span>, tornadoes’ proximity to sharks and ability to pick them up may be increasing as well.</p>
 <p>While there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr.&nbsp;Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics <span class="citation" data-cites="martiniRecipeSharknadoDeep2013">(<a href="references.html#ref-martiniRecipeSharknadoDeep2013" role="doc-biblioref">Martini 2013</a>)</span>. Her analysis resulted in several conclusions:</p>
 <ol type="1">
-<li><strong>A typical tornado flying over a typical reef could pick up about</strong> <strong>150 sharks</strong>. <em>Rationale</em>: A typical tornado is about 0.1 miles wide, travels about 5 miles, and covers an area of 0.5 square miles. A healthy reef typically has a shark density of about 300 sharks per square mile. However, she notes that one of the largest tornadoes in history was 2.6 miles wide and traveled 52 miles <span class="citation" data-cites="2004HallamTornado2026">(<a href="references.html#ref-2004HallamTornado2026" role="doc-biblioref"><span>“2004 Hallam Tornado”</span> 2026</a>)</span>, making it hypothetically capable of picking up over 40,000 sharks.</li>
+<li><strong>A typical tornado flying over a typical reef could pick up about</strong> <strong>150 sharks</strong>.<br>
+<em>Rationale</em>: A typical tornado is about 0.1 miles wide, travels about 5 miles, and covers an area of 0.5 square miles. A healthy reef typically has a shark density of about 300 sharks per square mile. However, she notes that one of the largest tornadoes in history was 2.6 miles wide and traveled 52 miles <span class="citation" data-cites="2004HallamTornado2026">(<a href="references.html#ref-2004HallamTornado2026" role="doc-biblioref"><span>“2004 Hallam Tornado”</span> 2026</a>)</span>, making it hypothetically capable of picking up over 40,000 sharks.</li>
 <li><strong>It is highly unlikely that a tornado could suck a shark out of the water.<br>
 </strong><em>Rationale</em>: Tornadic water spouts don’t typically suck up water, and tagged sharks typically dive deep when there are approaching thunderstorms (which can cause tornadoes).</li>
 <li><strong>Intense tornadoes are strong enough to keep a shark airborne.<br>
@@ -285,14 +324,15 @@ Figure&nbsp;D.2: This is a diagram illustrating the strength, wind speed, and da
 </ol>
 <p>Using this logic, we can assume that EF3 tornadoes (and larger) are strong enough to pick up small sharks, given that the shark was transported from the water into the tornado by some odd means. This transportation of the shark from water to tornado already makes the occurrence of a sharknado highly unlikely. However, for the purposes of this report, we will ignore this improbability and assume the physical transport of sharks is possible, so we can continue analyzing the geographic and economic frequency of the storm paths themselves.</p>
 <p>While tornado intensity is well-studied and the ability for a high intensity tornado to pick up a shark has been logically proven, there is a gap in the analysis of the two together. To ensure the profitability of the insurance agency, we need to know how serious is the threat of sharknadoes to the insurance agency’s bottom line given the warming climate and shifting trends in tornado activity. Thus, we will use the historical data found in the NOAA Storm Events Database to evaluate the likelihood and economic impact of a high-intensity tornado with a coastal-origin moving inland (since these are the types of tornadoes that have the ability to transport sharks from the ocean) to answer the research question:</p>
-<p><strong><em>What is the historical probability, frequency, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those following other trajectories?</em></strong></p>
+<p><strong><em>What is the historical frequency, probability, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those following other trajectories?</em></strong></p>
 </section>
 <section id="conclusion-discussion" class="level1" data-number="E">
 <h1 data-number="E"><span class="header-section-number">E</span> Conclusion &amp; Discussion</h1>
-<p>TODO make sure we’ve provided a CLEAR answer to research question</p>
-<section id="frequency-of-sharknadoes" class="level2" data-number="E.1">
-<h2 data-number="E.1" class="anchored" data-anchor-id="frequency-of-sharknadoes"><span class="header-section-number">E.1</span> Frequency of Sharknadoes</h2>
-<p>Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland and had enough strength to carry a shark (category F3, F4, or F5). In the last 75 years, we found that only 2 out of 31,345 recorded tornadoes exhibited these characteristics, indicating that storms like this are highly rare events. Given that the concept of a sharknado originated from a fictional movie, this result was to be expected. To further reduce concern regarding high shark-lifting potential tornadoes, we identified only 2 tornadoes with this intensity for both trajectory categories of “Moving Inland” (originating on the coast and moving inland) “Moving Coastal” (originating inland and moving to the coast). This was expectedly insignificant compared to the 3,799 high shark-lifting potential tornadoes in the “Other Path” trajectory category, which makes sense since the inland Tornado Alley region breeds optimal conditions for high intensity tornadoes compared to the coasts.</p>
+<p>Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland (“Moving Inland”) and had enough strength to carry a shark (category F3, F4, or F5).</p>
+<section id="frequency-probability-of-sharknadoes" class="level2" data-number="E.1">
+<h2 data-number="E.1" class="anchored" data-anchor-id="frequency-probability-of-sharknadoes"><span class="header-section-number">E.1</span> Frequency &amp; Probability of Sharknadoes</h2>
+<p>In the last 75 years, we found that only 2 out of 31,345 recorded tornadoes exhibited characteristics of “Moving Inland” and “High Potential” for shark lifting. Thus, the empirical probability of a sharknado-like storm is 0.0064% or approximately 1 in 15,673 U.S. tornado events, indicating that storms like this are highly rare events. This frequency is significantly lower than that of high-intensity storms with a path classification of “Other Path”, which occur at a rate of roughly 12.1%. Given that the concept of a sharknado originated from a fictional movie, this result was to be expected.</p>
+<p>To further reduce concern regarding high shark-lifting potential tornadoes, we identified only 2 tornadoes with this intensity for both trajectory categories of “Moving Inland” (originating on the coast and moving inland) “Moving Coastal” (originating inland and moving to the coast). This was expectedly insignificant compared to the 3,799 high shark-lifting potential tornadoes in the “Other Path” trajectory category, which makes sense since the inland Tornado Alley region breeds optimal conditions for high intensity tornadoes compared to the coasts.</p>
 </section>
 <section id="regions-of-concern" class="level2" data-number="E.2">
 <h2 data-number="E.2" class="anchored" data-anchor-id="regions-of-concern"><span class="header-section-number">E.2</span> Regions of Concern</h2>
@@ -304,17 +344,37 @@ Figure&nbsp;D.2: This is a diagram illustrating the strength, wind speed, and da
 </section>
 <section id="limitations-future-exploration" class="level2" data-number="E.4">
 <h2 data-number="E.4" class="anchored" data-anchor-id="limitations-future-exploration"><span class="header-section-number">E.4</span> Limitations &amp; Future Exploration</h2>
-<p>TODO write out in paragraph form</p>
-<ul>
-<li>NOAA data set connects tornado segments differently before vs after 1996. Before 1996, using date/time and coordinates to link events (room for error since guessing with context clues) After 1996 straightforward when connecting using EPISODE_ID.</li>
-<li>Tornado records have improved over the years. Might make newer data better and older data less accurate or more arbitrary. Could have an impact on time series trends.</li>
-<li>75 years is a relatively short time span.</li>
-<li>VERY small populations for “sharknado”-like events. Makes it comparing averages kind of insignificant.</li>
-<li>Tornadoes used to be categorized differently (F vs EF). We treated F3 and EF3 the synonymously (should we be more careful about this?)</li>
-<li>Previously mentioned caveat about tornadic water spouts not even being able to pick up a shark and sharks being scared of storms makes it nearly impossible in the first place.</li>
-<li>“Other Path” category included Inland -&gt; Inland storms as well as Coastal -&gt; Coastal storms. The Coastal -&gt; Coastal was done to filter out tornadoes that never made it to land (which is good) but also filters out tornadoes that made it to land inside the 3 mile coastal boundary.</li>
-<li>3-mile coastal boundary is arbitrary. Could re-test with larger/smaller bounds.</li>
-</ul>
+<section id="physics-preventing-sharkadoes" class="level3" data-number="E.4.1">
+<h3 data-number="E.4.1" class="anchored" data-anchor-id="physics-preventing-sharkadoes"><span class="header-section-number">E.4.1</span> Physics Preventing Sharkadoes</h3>
+<p>As mentioned in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>, it is nearly impossible for a tornadic water spout to pickup a shark out of the water. This is because tornadic water spouts don’t typically suck up water, and the behavior of tagged sharks has shown that they usually dive deep when there are approaching storms. So, while this report analyzes the frequency, probability, and economic impact of sharknado-like storms, the actual probability of a shark being lifted by a tornado remains close to zero regardless of storm intensity. This study intentionally overlooks these mechanical improbabilities to provide a worst-case scenario baseline for the insurance agency.</p>
+</section>
+<section id="dataset-structure" class="level3" data-number="E.4.2">
+<h3 data-number="E.4.2" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">E.4.2</span> Dataset Structure</h3>
+<p>The Storm Events Database <span class="citation" data-cites="StormEventsDatabasea">(<a href="references.html#ref-StormEventsDatabasea" role="doc-biblioref">DOC/NOAA/NESDIS/NCEI 2026</a>)</span> was the core data used in this report. One of the major drawbacks of the data’s structure is that a single storm may be recorded as multiple different storm segments. A new storm segments is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named <code>EPISODE_ID</code>, making the process of connecting segments relatively straightforward.</p>
+<p>However, storms occurring before 1996 do not have a value in the <code>EPISODE_ID</code> column. To connect storm segments in this case, we matched two segments’ dates, time, and start/end location coordinates. Because this is less precise than simply using a unique identifier to connect storm segments, there could be some room for error in the way full storm data was aggregated for storms occurring before 1996.</p>
+<p>Further analysis could be conducted to compare the pre and post 1996 storms to ensure the difference in segment connection methods doesn’t have any unforeseen effects.</p>
+</section>
+<section id="data-validity" class="level3" data-number="E.4.3">
+<h3 data-number="E.4.3" class="anchored" data-anchor-id="data-validity"><span class="header-section-number">E.4.3</span> Data Validity</h3>
+<p>The NOAA states that some of the data appearing in the Storm Events Database may be gathered from sources outside the National Weather Service. “An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS.” Therefore, the NOAA cautions users as the NWS does not guarantee accuracy or validity of the information <span class="citation" data-cites="StormEventsDatabaseb">(<a href="references.html#ref-StormEventsDatabaseb" role="doc-biblioref">National Weather Service n.d.</a>)</span>.</p>
+</section>
+<section id="data-biases" class="level3" data-number="E.4.4">
+<h3 data-number="E.4.4" class="anchored" data-anchor-id="data-biases"><span class="header-section-number">E.4.4</span> Data Biases</h3>
+<p>Due to significant advancements in meteorological technology and communication systems over the last 75 years, tornado data and records have certainly improved. In the early decades of the NOAA Storm Database, tornado records relied heavily on visual confirmation and manual reporting, which often resulted in under-reporting or less precise measurements in less populated regions. This could have an impact on time-series trends because the apparent increase in tornado frequency over time may be related to improved detection capabilities, as opposed to increased climate risk.</p>
+</section>
+<section id="sample-size-temporal-constraints" class="level3" data-number="E.4.5">
+<h3 data-number="E.4.5" class="anchored" data-anchor-id="sample-size-temporal-constraints"><span class="header-section-number">E.4.5</span> Sample Size &amp; Temporal Constraints</h3>
+<p>While the dataset of <span class="math inline">\(N=31345\)</span> events provides a solid foundation for analyzing modern tornado trends, the 75-year study period represents a relatively narrow window in terms of climate history. This limited temporal scope may not fully capture long-term climate patterns. Furthermore, the extreme rarity of “Moving Inland” and “High Potential” for shark-lifting (<span class="math inline">\(n=2\)</span>) limits our ability to make causal inferences or generalizations about the economic impact to future populations.</p>
+</section>
+<section id="storm-intensity-ratings" class="level3" data-number="E.4.6">
+<h3 data-number="E.4.6" class="anchored" data-anchor-id="storm-intensity-ratings"><span class="header-section-number">E.4.6</span> Storm Intensity Ratings</h3>
+<p>In the analysis, storm intensity ratings using the Fujita (F) scale and the Enhanced Fujita (EF) scale were consolidated into a single intensity metric (i.e., an F5 tornado was treated the same as an EF5 tornado). While the Enhanced Fujita Scale was derived from the original Fujita scale, there could be some unforeseen consequences as the scales are technically different. Treating an F5 tornado as exactly equivalent to an EF5 tornado may introduce a degree of measurement error, especially when comparing 20th century storms to those occurring after th 2007 implementation of the EF system <span class="citation" data-cites="usdepartmentofcommerceEFScale">(<a href="references.html#ref-usdepartmentofcommerceEFScale" role="doc-biblioref">National Weather Service 2015</a>)</span>. This inconsistency could potentially skew time-series trends, as the criteria for a “High Potential” storm may have shifted slightly between the two time periods However, for the purposes of this report, treating the scales synonymously is the most practical method for initial analysis.</p>
+</section>
+<section id="definition-of-coast-and-other-path" class="level3" data-number="E.4.7">
+<h3 data-number="E.4.7" class="anchored" data-anchor-id="definition-of-coast-and-other-path"><span class="header-section-number">E.4.7</span> Definition of “Coast” and “Other Path”</h3>
+<p>In the methodology, a rather arbitrary buffer of 3 miles was used to geographically and geometrically define the coast. The <code>st_buffer()</code> function from the <code>sf</code> package equally centers the buffer over a line (like the coastline), resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Since only 73 out of 31,345 storms were identified as “Moving Inland” (originating on the coast and traveling inland), further analysis could be conducted by testing different buffer values, especially larger ones, to see if the recorded number of “Moving Inland” storms is affected.</p>
+<p>Additionally, storm trajectories classified as “Other Path” included storms that started and remained inland, along with storms that started on the coast and remained on the coast. However, with the 3 mile buffer zone, storms that started on the coast and remained on the coast could technically include storms that originated within the 1.5 mile extension into the ocean and ended on land within the 1.5 mile extension inland. Thus, decreasing the buffer zone’s size or moving the buffer zone closer to the water could shift some “Other Path” classifications to “Moving Inland”.</p>
+</section>
 </section>
 <section id="going-forward" class="level2" data-number="E.5">
 <h2 data-number="E.5" class="anchored" data-anchor-id="going-forward"><span class="header-section-number">E.5</span> Going Forward</h2>
@@ -342,6 +402,9 @@ Figure&nbsp;D.2: This is a diagram illustrating the strength, wind speed, and da
 <div id="ref-2004HallamTornado2026" class="csl-entry" role="listitem">
 <span>“2004 Hallam Tornado.”</span> 2026. In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&amp;oldid=1345145456">https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&amp;oldid=1345145456</a>.
 </div>
+<div id="ref-StormEventsDatabasea" class="csl-entry" role="listitem">
+DOC/NOAA/NESDIS/NCEI. 2026. <span>“Storm Events Database <span></span> National Centers for Environmental Information.”</span> https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. <a href="https://www.ncei.noaa.gov/stormevents/ftp.jsp">https://www.ncei.noaa.gov/stormevents/ftp.jsp</a>.
+</div>
 <div id="ref-Sharknado" class="csl-entry" role="listitem">
 Ferrante, Anthony. 2013. <em>Sharknado</em>. Syfy.
 </div>
@@ -351,8 +414,14 @@ Fisheries, NOAA. 2025. <span>“Sharks in Atlantic, Gulf, and Caribbean Coastal 
 <div id="ref-martiniRecipeSharknadoDeep2013" class="csl-entry" role="listitem">
 Martini, Dr. Kim. 2013. <span>“Recipe for a Sharknado <span></span> Deep Sea News. Deep Sea News.”</span> August 9, 2013. <a href="https://deepseanews.com/2013/08/recipe-for-a-sharknado/">https://deepseanews.com/2013/08/recipe-for-a-sharknado/</a>.
 </div>
+<div id="ref-usdepartmentofcommerceEFScale" class="csl-entry" role="listitem">
+National Weather Service, NOAA’s. 2015. <span>“<span>EF</span> Scale. National Weather Service.”</span> <span>NOAA</span>’s National Weather Service. March 27, 2015. <a href="https://www.weather.gov/lsx/enhancedfujitascale">https://www.weather.gov/lsx/enhancedfujitascale</a>.
+</div>
 <div id="ref-centerNOAAsNWSStorm" class="csl-entry" role="listitem">
-National Weather Service, NOAA’s. 2025. <span>“The Enhanced Fujita Scale (<span>EF</span> Scale). Storm Prediction Center.”</span> <span>NOAA</span>’s National Weather Service. May 21, 2025. <a href="https://www.spc.noaa.gov/efscale/">https://www.spc.noaa.gov/efscale/</a>.
+———. 2025. <span>“The Enhanced Fujita Scale (<span>EF</span> Scale). Storm Prediction Center.”</span> <span>NOAA</span>’s National Weather Service. May 21, 2025. <a href="https://www.spc.noaa.gov/efscale/">https://www.spc.noaa.gov/efscale/</a>.
+</div>
+<div id="ref-StormEventsDatabaseb" class="csl-entry" role="listitem">
+———. n.d. <span>“Storm Events Database - <span>FAQ</span>. National Centers for Environmental Information.”</span> Accessed April 9, 2026. <a href="https://www.ncei.noaa.gov/stormevents/faq.jsp">https://www.ncei.noaa.gov/stormevents/faq.jsp</a>.
 </div>
 <div id="ref-TornadoAlley2026" class="csl-entry" role="listitem">
 <span>“Tornado Alley.”</span> 2026. In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=Tornado_Alley&amp;oldid=1339195322">https://en.wikipedia.org/w/index.php?title=Tornado_Alley&amp;oldid=1339195322</a>.

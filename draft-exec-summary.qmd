@@ -1,8 +1,4 @@
----
-title: "Draft: Executive Summary"
----
-
-# Executive Summary
+# Draft: Executive Summary
 
 ## Purpose of Report
 
@@ -15,13 +11,14 @@ The insurance agency has seen a rise in property payouts driven by the intensify
 
 75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.
 
-A tornado's *path trajectory* was classified as one of three labels:
+A tornado's *path trajectory* was classified as one of three labels: 
 
-TODO make cool visual chart to supplement
+<!-- -   **Moving Inland**: tornado originated on the coast and moved inland -->
+<!-- -   **Moving Coastal**: tornado originated on inland and moved to the coast -->
+<!-- -   **Other Path**: tornado originated either inland or on the coast and stayed in the same region of origin -->
 
--   **Moving Inland**: tornado originated on the coast and moved inland
--   **Moving Coastal**: tornado originated on inland and moved to the coast
--   **Other Path**: tornado originated either inland or on the coast and stayed in the same region of origin
+![This is a diagram illustratingthe movement of tornadoes relative to the coast and inland, with path trajectory labels of "Moving Inland", "Moving Coastal", and "Other Path".](assets/path-trajectories.jpeg){#fig-path-trajectories}
+
 
 A tornado's *shark-lifting potential* was classified as one of two labels:
 
@@ -33,7 +30,7 @@ A tornado's *shark-lifting potential* was classified as one of two labels:
 Throughout the analysis, storms classified as "Moving Inland" and "High \[shark-lifting\] Potential" were of highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both "Moving Inland" and "High Potential" for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for "Moving Inland" storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, "Moving Inland" storm with high shark-lifting potential account for less that 0.01% of total historical property damage (\$183K over 75 years).
 
 ::: callout-tip
-# Reccomendations
+# Reccome
 
 -   **Treat Marine-Origin Events as Rare Events:** High-intensity "Moving Inland" tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, "long-tail" risks rather than primary drivers of annual catastrophe loss.
 -   **Maintain Standard Inland Risk Models**: With 97.86% of historical property damage occurring in "Other Path" trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized "Sharknado" or marine-origin coverages.
