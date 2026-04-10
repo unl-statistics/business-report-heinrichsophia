@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./results.html" rel="next">
 <link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -111,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Executive Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -128,8 +128,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion &amp; Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -178,8 +184,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-define-sharknado" id="toc-sec-define-sharknado" class="nav-link active" data-scroll-target="#sec-define-sharknado"><span class="header-section-number">2.1</span> Defining Sharknado</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">2.2</span> Data Sources</a></li>
+  <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link" data-scroll-target="#data-pipeline"><span class="header-section-number">2.3</span> Data Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#sec-coastline-data" id="toc-sec-coastline-data" class="nav-link" data-scroll-target="#sec-coastline-data"><span class="header-section-number">2.3.1</span> US Coastline Data</a></li>
+  <li><a href="#noaa-storm-event-database" id="toc-noaa-storm-event-database" class="nav-link" data-scroll-target="#noaa-storm-event-database"><span class="header-section-number">2.3.2</span> NOAA Storm Event Database</a></li>
+  </ul></li>
+  <li><a href="#statistical-approach" id="toc-statistical-approach" class="nav-link" data-scroll-target="#statistical-approach"><span class="header-section-number">2.4</span> Statistical Approach</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -203,36 +222,163 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>(very general outline)</p>
-<ul>
-<li>Get tornado data 1950-2025</li>
-<li>Get coordinates for coastline 3 miles inland from shore of Atlantic, Pacific, Gulf</li>
-<li>Classify tornado movement as “Moving Inland”, “Moving Coastal”, “Other Path”
-<ul>
-<li>Classify start/end coordinates as coast or inland. If coast, identify which one</li>
-<li>Determine movement based on start/end location classification</li>
-</ul></li>
-<li>Piece together tornado segments that belong to the same tornado
-<ul>
-<li>For data on or after 1996, tornado segments can be connected via EPISODE_ID</li>
-<li>For data before 1996 (no EPISODE_ID), use dates/times and start/end coordinates to connect segments</li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>In order to answer the research question (stated at the end of <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>), we must</p>
+<ol type="1">
+<li>Define what qualifies as a storm as a potential “sharknado”</li>
+<li>Use publicly available historical data to determine the frequency, probability, and economic impact of sharknadoes</li>
+</ol>
+<section id="sec-define-sharknado" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-define-sharknado"><span class="header-section-number">2.1</span> Defining Sharknado</h2>
+<p>For a tornado to be a potential “sharknado”, it has to have a few characteristics:</p>
+<ol type="1">
+<li>Originates on the coast</li>
+<li>Strong enough to sustain lifting a shark</li>
+<li>Path trajectory moves to the inland</li>
+</ol>
+<p>From this, we have to also answer “What is the ‘coast’ vs what is ‘inland’?” and “What indicates a tornado is ‘strong enough’ to sustain lifting a shark?”</p>
+<p><strong>What is the “coast” vs what is “inland”?</strong></p>
+<p>For the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline (<a href="https://coast.noaa.gov/data/czm/landconservation/media/StateCZBoundaries.pdf">source</a>).</p>
+<p>TODO help how do i cite that pdf</p>
+<p>Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. <a href="#sec-coastline-data" class="quarto-xref"><span>Section 2.3.1</span></a> details how this coastal buffer zone was represented in the data.</p>
+<p><strong>What indicates a tornado is “strong enough” to sustain lifting a shark?</strong></p>
+<p>Based on the physical analysis done by Dr.&nbsp;Kim Martini (discussed in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. <a href="#sec-aggregate-segments" class="quarto-xref"><span>Section 2.3.2.3</span></a> details how shark-lifting potential is identified in the data.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you expand this slightly (put in paragraph form) and make it part of either your data section (## preprocessing) or a separate methods section, that would be excellent. Diagrams of how the process of piecing tornado segments together works and a pic of your classification with tornado paths as vectors would make some sense as well.</p>
+<p>For the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). <a href="conclusion.html#sec-limitations" class="quarto-xref"><span>Section 4.4</span></a> discusses potential limitations of this.</p>
 </div>
 </div>
+<p>TODO help how to fix that section reference</p>
+</section>
+<section id="data-sources" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">2.2</span> Data Sources</h2>
+<p>The primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States as it provides standardized metrics for storm intensity, location, and property damage.</p>
+<p>Additionally, a shapefile of the 2025 United States coastline was downloaded into R using R package <code>tigris</code>. In the analysis, this shapefile is used to establish the study’s geographic boundaries between coast and inland.</p>
+<p>TODO add the above to data documentation file?</p>
+<p>For more documentation on these data sources, please refer to <a href="draft-data-doc.html" class="quarto-xref"><span>Appendix A</span></a>.</p>
+<p>TODO help idk why the data doc section reference isnt rendering</p>
+</section>
+<section id="data-pipeline" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="data-pipeline"><span class="header-section-number">2.3</span> Data Pipeline</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="#fig-data-pipeline" class="quarto-xref">Figure&nbsp;<span>2.3</span></a> for a diagram of the full data pipeline.</p>
+</div>
+</div>
+<section id="sec-coastline-data" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="sec-coastline-data"><span class="header-section-number">2.3.1</span> US Coastline Data</h3>
+<p>To implement the above definition of “Coast” and “Inland” (see <a href="#sec-define-sharknado" class="quarto-xref"><span>Section 2.1</span></a>), we used the R package <code>tigris</code> which provides a shapefile of the US Coastline. Once the original coastline shapefile was imported, it was filtered to only include the Atlantic, Pacific, and Gulf of Mexico coasts as requested in the original scenario prompt. The units of the coastline data were converted from degrees to meters using the <code>st_transform</code> function from the <code>tigris</code> package prepare for a meter-based buffer. Using the <code>st_buffer</code> function from the <code>tigris</code> package, a 3-mile (4828 meter) buffer was equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. Finally, any coastline details smaller than 100m were smoothed using the <code>st_simplify</code> function from the <code>tigris</code> package to increase computational efficiency without sacrificing regional accuracy.</p>
+<p>TODO question: should I break up the paragraph?</p>
+<p>A visual representation of this data can be seen in <a href="#fig-coast-buffer" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>.</p>
+<div id="fig-coast-buffer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coast-buffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/coast-buffer.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coast-buffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: This is a visual representation of the US Coastline 3-mile buffer zone generated in the code.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="noaa-storm-event-database" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="noaa-storm-event-database"><span class="header-section-number">2.3.2</span> NOAA Storm Event Database</h3>
+<section id="pre-cleaning-filtering" class="level4" data-number="2.3.2.1">
+<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="pre-cleaning-filtering"><span class="header-section-number">2.3.2.1</span> Pre-cleaning &amp; Filtering</h4>
+<p>To begin processing the NOAA Storm Events Database, we <code>filter</code> the data to only include events that are <code>EVENT_TYPE = Tornado</code>. Additionally, any entries that are missing location coordinates for the features <code>BEGIN_LAT</code>, <code>BEGIN_LON</code>, <code>END_LAT</code>, <code>END_LON</code> were removed since we wouldn’t be able to calculate their path trajectories. Finally, any features <strong>not</strong> in the following list were removed since they were not needed for the analysis:</p>
+<ul>
+<li><p><code>EPISODE_ID</code></p></li>
+<li><p><code>EVENT_ID</code></p></li>
+<li><p><code>YEAR</code></p></li>
+<li><p><code>MONTH_NAME</code></p></li>
+<li><p><code>BEGIN_DATE_TIME</code></p></li>
+<li><p><code>STATE</code></p></li>
+<li><p><code>BEGIN_LAT</code></p></li>
+<li><p><code>BEGIN_LON</code></p></li>
+<li><p><code>END_LAT</code></p></li>
+<li><p><code>END_LON</code></p></li>
+<li><p><code>TOR_F_SCALE</code></p></li>
+<li><p><code>DAMAGE_PROPERTY</code></p></li>
+</ul>
+</section>
+<section id="geographical-classifications" class="level4" data-number="2.3.2.2">
+<h4 data-number="2.3.2.2" class="anchored" data-anchor-id="geographical-classifications"><span class="header-section-number">2.3.2.2</span> Geographical Classifications</h4>
+<p>Beginning the work needed to classify tornado path trajectories, we started by engineering two new features <code>Start_coast</code> and <code>End_coast</code>, which classify the tornado segment as starting/ending in the “Atlantic”, “Pacific”, “Gulf”, or N/A. This is done by comparing the <code>BEGIN_LAT</code>, <code>BEGIN_LON</code>, <code>END_LAT</code>, <code>END_LON</code> features to the modified coastline shapefile.</p>
+<p>From here, two more features were created <code>Start_location</code> and <code>End_location</code>, which classify the tornado segment as starting/ending on the “Coastal” or “Inland” based on if the <code>Start_coast</code> and <code>End_coast</code> columns are empty for the feature.</p>
+</section>
+<section id="sec-aggregate-segments" class="level4" data-number="2.3.2.3">
+<h4 data-number="2.3.2.3" class="anchored" data-anchor-id="sec-aggregate-segments"><span class="header-section-number">2.3.2.3</span> Aggregate Storm Segments</h4>
+<p>NOAA Storm Events Database is structured so that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named <code>EPISODE_ID</code>, making the process of connecting segments relatively straightforward. However, storms occurring before 1996 do not have a value in the <code>EPISODE_ID</code> column. To connect storm segments from this era, we matched segments’ dates, times, and start/end location coordinates.</p>
+<p>Once tornado segments were stitched together into one full tornado entry, a new feature, <code>master_id</code>, was created to serve as an ultimate unique identifier for each full tornado. For pre-1996 storms, the unique <code>master_id</code> was formatted as <code>YEAR MONTH_NAME STATE BEGIN_LAT BEGIN_LON</code> (e.g., 1950 September OKLAHOMA 35 -96.25). For post-1996 storms, the <code>EPISODE_ID</code> was used for the <code>master_id</code> since it is already a unique identifier for each full storm.</p>
+<p>Because multiple tornado segments were stitched together, we needed to consolidate all of the data from each of the segments into a single entry. The following list summarizes how the data was consolidated for each feature:</p>
+<ul>
+<li><code>YEAR</code>: use the year of the first segment</li>
+<li><code>MONTH_NAME</code>: use the month name from the first segment</li>
+<li><code>Beginning_State</code>: use the state of the first segment</li>
+<li><code>End_State</code>: use the state of the last segment</li>
+<li><code>Start_location</code>: use the start location of the first segment</li>
+<li><code>End_location</code>: use the end location of the last segment</li>
+<li><code>Start_coast</code>: use the start coast of the first segment</li>
+<li><code>End_coast</code>: use the end coast of the last segment</li>
+<li><code>TOR_F_SCALE_MAX</code>: maximum (Enhanced) Fujita scale ranking across all segments</li>
+<li><code>Total_Damage</code>: sum of <code>DAMAGE_PROPERTY</code> across all segments</li>
+</ul>
+<p>From here, a new feature <code>path_movement</code> was created, which classifies the path trajectory of the full tornado as “Moving Inland”, “Moving Coastal”, or “Other Path” based on the <code>Start_location</code> and <code>End_location</code> features. Below further describes the characteristics of each path trajectory, along with an illustration in <a href="draft-exec-summary.html#fig-path-trajectories" class="quarto-xref">Figure&nbsp;<span>D.1</span></a>.</p>
+<ul>
+<li><p><strong>Moving Inland</strong>: tornado originated on the coast and moved inland</p></li>
+<li><p><strong>Moving Coastal</strong>: tornado originated on inland and moved to the coast</p></li>
+<li><p><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin</p></li>
+</ul>
+<div id="fig-path-trajectories" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-path-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/path-trajectories.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-path-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of “Moving Inland”, “Moving Coastal”, and “Other Path”.
+</figcaption>
+</figure>
+</div>
+<p>Finally, a new feature <code>shark_lifting_potential</code> was created, which classifies the shark-lifting potential of the full tornado as “High Potential” or “Low Potential”, based on the <code>TOR_F_SCALE_MAX</code> feature. Below further describes the characteristics of these labels:</p>
+<ul>
+<li><strong>Low Potential</strong>: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale</li>
+<li><strong>High Potential</strong>: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale</li>
+</ul>
+<p>TODO question: how can i better display this diagram? should it be in its own section? it’s kinda just sitting there at the end of the subsection.</p>
+<div id="fig-data-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/Sharknado Data Processing.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: This is a diagram illustrating the steps used to process data and engineer features from the NOAA Storm Events Database and US Coastline shapefile.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+<section id="statistical-approach" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="statistical-approach"><span class="header-section-number">2.4</span> Statistical Approach</h2>
+<p>TODO question: is this section necessary? or will it just blur the line between methods and results. I hesitate to add this section because the statistical analysis in my results is mostly just summary statistics and proportions.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -642,8 +788,8 @@ Note
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./results.html" class="pagination-link" aria-label="Results">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

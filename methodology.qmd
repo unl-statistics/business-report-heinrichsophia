@@ -1,16 +1,143 @@
 # Methodology
 
-(very general outline)
+In order to answer the research question (stated at the end of @sec-introduction), we must
 
--   Get tornado data 1950-2025
--   Get coordinates for coastline 3 miles inland from shore of Atlantic, Pacific, Gulf
--   Classify tornado movement as "Moving Inland", "Moving Coastal", "Other Path"
-    -   Classify start/end coordinates as coast or inland. If coast, identify which one
-    -   Determine movement based on start/end location classification
--   Piece together tornado segments that belong to the same tornado
-    -   For data on or after 1996, tornado segments can be connected via EPISODE_ID
-    -   For data before 1996 (no EPISODE_ID), use dates/times and start/end coordinates to connect segments
+1.  Define what qualifies as a storm as a potential "sharknado"
+2.  Use publicly available historical data to determine the frequency, probability, and economic impact of sharknadoes
 
-::: callout-note
-If you expand this slightly (put in paragraph form) and make it part of either your data section (## preprocessing) or a separate methods section, that would be excellent. Diagrams of how the process of piecing tornado segments together works and a pic of your classification with tornado paths as vectors would make some sense as well.
+## Defining Sharknado {#sec-define-sharknado}
+
+For a tornado to be a potential "sharknado", it has to have a few characteristics:
+
+1.  Originates on the coast
+2.  Strong enough to sustain lifting a shark
+3.  Path trajectory moves to the inland
+
+From this, we have to also answer "What is the 'coast' vs what is 'inland'?" and "What indicates a tornado is 'strong enough' to sustain lifting a shark?"
+
+**What is the "coast" vs what is "inland"?**
+
+For the boundary between the coast and open water, the general definition of a state's coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline ([source](https://coast.noaa.gov/data/czm/landconservation/media/StateCZBoundaries.pdf)).
+
+TODO help how do i cite that pdf
+
+Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the "Coast" for the purposes of this analysis. Any point further inland than the buffer zone is considered "Inland". @sec-coastline-data details how this coastal buffer zone was represented in the data.
+
+**What indicates a tornado is "strong enough" to sustain lifting a shark?**
+
+Based on the physical analysis done by Dr. Kim Martini (discussed in @sec-introduction), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it's logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as "strong enough" to sustain lifting a shark. @sec-aggregate-segments details how shark-lifting potential is identified in the data.
+
+:::callout-important
+For the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). @sec-limitations discusses potential limitations of this.
 :::
+
+TODO help how to fix that section reference
+
+## Data Sources
+
+The primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States as it provides standardized metrics for storm intensity, location, and property damage.
+
+Additionally, a shapefile of the 2025 United States coastline was downloaded into R using R package `tigris`. In the analysis, this shapefile is used to establish the study's geographic boundaries between coast and inland.
+
+TODO add the above to data documentation file?
+
+For more documentation on these data sources, please refer to @sec-data-doc.
+
+TODO help idk why the data doc section reference isnt rendering
+
+## Data Pipeline
+
+:::callout-tip
+See @fig-data-pipeline for a diagram of the full data pipeline.
+::: 
+
+### US Coastline Data {#sec-coastline-data}
+
+To implement the above definition of "Coast" and "Inland" (see @sec-define-sharknado), we used the R package `tigris` which provides a shapefile of the US Coastline. Once the original coastline shapefile was imported, it was filtered to only include the Atlantic, Pacific, and Gulf of Mexico coasts as requested in the original scenario prompt. The units of the coastline data were converted from degrees to meters using the `st_transform` function from the `tigris` package prepare for a meter-based buffer. Using the `st_buffer` function from the `tigris` package, a 3-mile (4828 meter) buffer was equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the "Coast" for the purposes of this analysis. Any point further inland than the buffer zone is considered "Inland". Finally, any coastline details smaller than 100m were smoothed using the `st_simplify` function from the `tigris` package to increase computational efficiency without sacrificing regional accuracy.
+
+TODO question: should I break up the paragraph?
+
+A visual representation of this data can be seen in @fig-coast-buffer.
+
+![This is a visual representation of the US Coastline 3-mile buffer zone generated in the code.](assets/coast-buffer.png){#fig-coast-buffer}
+
+### NOAA Storm Event Database
+
+#### Pre-cleaning & Filtering
+
+To begin processing the NOAA Storm Events Database, we `filter` the data to only include events that are `EVENT_TYPE = Tornado`. Additionally, any entries that are missing location coordinates for the features `BEGIN_LAT`, `BEGIN_LON`, `END_LAT`, `END_LON` were removed since we wouldn't be able to calculate their path trajectories. Finally, any features **not** in the following list were removed since they were not needed for the analysis:
+
+-   `EPISODE_ID`
+
+-   `EVENT_ID`
+
+-   `YEAR`
+
+-   `MONTH_NAME`
+
+-   `BEGIN_DATE_TIME`
+
+-   `STATE`
+
+-   `BEGIN_LAT`
+
+-   `BEGIN_LON`
+
+-   `END_LAT`
+
+-   `END_LON`
+
+-   `TOR_F_SCALE`
+
+-   `DAMAGE_PROPERTY`
+
+#### Geographical Classifications
+
+Beginning the work needed to classify tornado path trajectories, we started by engineering two new features `Start_coast` and `End_coast`, which classify the tornado segment as starting/ending in the "Atlantic", "Pacific", "Gulf", or N/A. This is done by comparing the `BEGIN_LAT`, `BEGIN_LON`, `END_LAT`, `END_LON` features to the modified coastline shapefile.
+
+From here, two more features were created `Start_location` and `End_location`, which classify the tornado segment as starting/ending on the "Coastal" or "Inland" based on if the `Start_coast` and `End_coast` columns are empty for the feature.
+
+#### Aggregate Storm Segments {#sec-aggregate-segments}
+
+NOAA Storm Events Database is structured so that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named `EPISODE_ID`, making the process of connecting segments relatively straightforward. However, storms occurring before 1996 do not have a value in the `EPISODE_ID` column. To connect storm segments from this era, we matched segments' dates, times, and start/end location coordinates.
+
+Once tornado segments were stitched together into one full tornado entry, a new feature, `master_id`, was created to serve as an ultimate unique identifier for each full tornado. For pre-1996 storms, the unique `master_id` was formatted as `YEAR MONTH_NAME STATE BEGIN_LAT BEGIN_LON` (e.g., 1950 September OKLAHOMA 35 -96.25). For post-1996 storms, the `EPISODE_ID` was used for the `master_id` since it is already a unique identifier for each full storm.
+
+Because multiple tornado segments were stitched together, we needed to consolidate all of the data from each of the segments into a single entry. The following list summarizes how the data was consolidated for each feature:
+
+-  `YEAR`: use the year of the first segment
+-  `MONTH_NAME`: use the month name from the first segment
+- `Beginning_State`: use the state of the first segment
+- `End_State`: use the state of the last segment
+- `Start_location`: use the start location of the first segment
+- `End_location`: use the end location of the last segment
+- `Start_coast`: use the start coast of the first segment
+- `End_coast`: use the end coast of the last segment
+- `TOR_F_SCALE_MAX`: maximum (Enhanced) Fujita scale ranking across all segments
+- `Total_Damage`: sum of `DAMAGE_PROPERTY` across all segments 
+
+From here, a new feature `path_movement` was created, which classifies the path trajectory of the full tornado as "Moving Inland", "Moving Coastal", or "Other Path" based on the `Start_location` and `End_location` features. Below further describes the characteristics of each path trajectory, along with an illustration in @fig-path-trajectories.   
+
+-   **Moving Inland**: tornado originated on the coast and moved inland
+
+-   **Moving Coastal**: tornado originated on inland and moved to the coast
+
+-   **Other Path**: tornado originated either inland or on the coast and stayed in the same region of origin
+
+![This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of "Moving Inland", "Moving Coastal", and "Other Path".](assets/path-trajectories.jpeg){#fig-path-trajectories}
+
+Finally, a new feature `shark_lifting_potential` was created, which classifies the shark-lifting potential of the full tornado as "High Potential" or "Low Potential", based on the `TOR_F_SCALE_MAX` feature. Below further describes the characteristics of these labels:
+
+-   **Low Potential**: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale
+-   **High Potential**: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale
+
+
+TODO question: how can i better display this diagram? should it be in its own section? it's kinda just sitting there at the end of the subsection.
+
+![This is a diagram illustrating the steps used to process data and engineer features from the NOAA Storm Events Database and US Coastline shapefile.](assets/Sharknado%20Data%20Processing.png){#fig-data-pipeline}
+
+## Statistical Approach
+
+TODO question: is this section necessary? or will it just blur the line between methods and results. I hesitate to add this section because the statistical analysis in my results is mostly just summary statistics and proportions.  
+
+

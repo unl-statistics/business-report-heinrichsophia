@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Summary – Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States</title>
+<title>4&nbsp; Conclusion &amp; Discussion – Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,7 +51,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./methodology.html" rel="prev">
+<link href="./results.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +91,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./summary.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./conclusion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion &amp; Discussion</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Executive Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -128,8 +177,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  <a href="./results.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion &amp; Discussion</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -178,15 +233,34 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#frequency-probability-of-sharknadoes" id="toc-frequency-probability-of-sharknadoes" class="nav-link active" data-scroll-target="#frequency-probability-of-sharknadoes"><span class="header-section-number">4.1</span> Frequency &amp; Probability of Sharknadoes</a></li>
+  <li><a href="#regions-of-concern" id="toc-regions-of-concern" class="nav-link" data-scroll-target="#regions-of-concern"><span class="header-section-number">4.2</span> Regions of Concern</a></li>
+  <li><a href="#economic-impact" id="toc-economic-impact" class="nav-link" data-scroll-target="#economic-impact"><span class="header-section-number">4.3</span> Economic Impact</a></li>
+  <li><a href="#sec-limitations" id="toc-sec-limitations" class="nav-link" data-scroll-target="#sec-limitations"><span class="header-section-number">4.4</span> Limitations &amp; Future Exploration</a>
+  <ul class="collapse">
+  <li><a href="#physics-preventing-sharkadoes" id="toc-physics-preventing-sharkadoes" class="nav-link" data-scroll-target="#physics-preventing-sharkadoes"><span class="header-section-number">4.4.1</span> Physics Preventing Sharkadoes</a></li>
+  <li><a href="#dataset-structure" id="toc-dataset-structure" class="nav-link" data-scroll-target="#dataset-structure"><span class="header-section-number">4.4.2</span> Dataset Structure</a></li>
+  <li><a href="#data-validity" id="toc-data-validity" class="nav-link" data-scroll-target="#data-validity"><span class="header-section-number">4.4.3</span> Data Validity</a></li>
+  <li><a href="#data-biases" id="toc-data-biases" class="nav-link" data-scroll-target="#data-biases"><span class="header-section-number">4.4.4</span> Data Biases</a></li>
+  <li><a href="#sample-size-temporal-constraints" id="toc-sample-size-temporal-constraints" class="nav-link" data-scroll-target="#sample-size-temporal-constraints"><span class="header-section-number">4.4.5</span> Sample Size &amp; Temporal Constraints</a></li>
+  <li><a href="#storm-intensity-ratings" id="toc-storm-intensity-ratings" class="nav-link" data-scroll-target="#storm-intensity-ratings"><span class="header-section-number">4.4.6</span> Storm Intensity Ratings</a></li>
+  <li><a href="#definition-of-coast-and-other-path" id="toc-definition-of-coast-and-other-path" class="nav-link" data-scroll-target="#definition-of-coast-and-other-path"><span class="header-section-number">4.4.7</span> Definition of “Coast” and “Other Path”</a></li>
+  </ul></li>
+  <li><a href="#going-forward" id="toc-going-forward" class="nav-link" data-scroll-target="#going-forward"><span class="header-section-number">4.5</span> Going Forward</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Summary</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion &amp; Discussion</span></h1>
 </div>
 
 
@@ -203,9 +277,91 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In summary, this book has no content whatsoever.</p>
+<p>Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland (“Moving Inland”) and had enough strength to carry a shark (category F3, F4, or F5).</p>
+<section id="frequency-probability-of-sharknadoes" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="frequency-probability-of-sharknadoes"><span class="header-section-number">4.1</span> Frequency &amp; Probability of Sharknadoes</h2>
+<p>In the last 75 years, we found that only 2 out of 31,345 recorded tornadoes exhibited characteristics of “Moving Inland” and “High Potential” for shark lifting. Thus, the empirical probability of a sharknado-like storm is 0.0064% or approximately 1 in 15,673 U.S. tornado events, indicating that storms like this are highly rare events. This frequency is significantly lower than that of high-intensity storms with a path classification of “Other Path”, which occur at a rate of roughly 12.1%. Given that the concept of a sharknado originated from a fictional movie, this result was to be expected.</p>
+<p>To further reduce concern regarding high shark-lifting potential tornadoes, we identified only 2 tornadoes with this intensity for both trajectory categories of “Moving Inland” (originating on the coast and moving inland) “Moving Coastal” (originating inland and moving to the coast). This was expectedly insignificant compared to the 3,799 high shark-lifting potential tornadoes in the “Other Path” trajectory category, which makes sense since the inland Tornado Alley region breeds optimal conditions for high intensity tornadoes compared to the coasts.</p>
+</section>
+<section id="regions-of-concern" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="regions-of-concern"><span class="header-section-number">4.2</span> Regions of Concern</h2>
+<p>However, as previously mentioned, there has been an upward trend of tornadoes in atypical regions such as the Southeastern United States <span class="citation" data-cites="TornadoesClimateChange">(<a href="references.html#ref-TornadoesClimateChange" role="doc-biblioref"><span>“Tornadoes and Climate Change. National Geographic Education”</span> 2023</a>)</span>, and perhaps unexpectedly, the majority of tornadoes categorized as “Moving Inland” originated in the Atlantic or Gulf coasts near the southeastern side of the United States. With the southeast region already exhibiting these storm characteristics and with climate change creating volatility in extreme weather events, an increase in storms with sharknado potential in the southeast is not completely out of the question.</p>
+</section>
+<section id="economic-impact" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="economic-impact"><span class="header-section-number">4.3</span> Economic Impact</h2>
+<p>In terms of the economic impact of sharknadoes, tornadoes with a path “Moving Inland” accounted for only 0.75% of all recorded tornado property damage, and even less of that was contributed by high shark-lifting potential tornadoes moving inland. Over 75 years, tornadoes “Moving Inland” with a high shark-lifting potential resulted in a total cumulative damage of $183K and an average of $91K per storm, $14.9K less than the average damage caused by all recorded tornadoes. Additionally, this was significantly less damage than tornadoes classified was “Other Path” with a high shark-lifting potential, which resulted in a total cumulative damage of $682M and an average of $179K per storm. This suggests that tornadoes originating in more typical regions (such as Tornado Alley) have historically caused far more damage overall and also on a per-storm basis. Thus, an insurance company covering property damages should be less concerned with sharknadoes, and more concerned with typical inland tornadoes.</p>
+</section>
+<section id="sec-limitations" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sec-limitations"><span class="header-section-number">4.4</span> Limitations &amp; Future Exploration</h2>
+<section id="physics-preventing-sharkadoes" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="physics-preventing-sharkadoes"><span class="header-section-number">4.4.1</span> Physics Preventing Sharkadoes</h3>
+<p>As mentioned in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>, it is nearly impossible for a tornadic water spout to pickup a shark out of the water. This is because tornadic water spouts don’t typically suck up water, and the behavior of tagged sharks has shown that they usually dive deep when there are approaching storms. So, while this report analyzes the frequency, probability, and economic impact of sharknado-like storms, the actual probability of a shark being lifted by a tornado remains close to zero regardless of storm intensity. This study intentionally overlooks these mechanical improbabilities to provide a worst-case scenario baseline for the insurance agency.</p>
+</section>
+<section id="dataset-structure" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="dataset-structure"><span class="header-section-number">4.4.2</span> Dataset Structure</h3>
+<p>The Storm Events Database <span class="citation" data-cites="StormEventsDatabasea">(<a href="references.html#ref-StormEventsDatabasea" role="doc-biblioref">DOC/NOAA/NESDIS/NCEI 2026</a>)</span> was the core data used in this report. One of the major drawbacks of the data’s structure is that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named <code>EPISODE_ID</code>, making the process of connecting segments relatively straightforward.</p>
+<p>However, storms occurring before 1996 do not have a value in the <code>EPISODE_ID</code> column. To connect storm segments in this case, we matched two segments’ dates, time, and start/end location coordinates. Because this is less precise than simply using a unique identifier to connect storm segments, there could be some room for error in the way full storm data was aggregated for storms occurring before 1996.</p>
+<p>Further analysis could be conducted to compare the pre and post 1996 storms to ensure the difference in segment connection methods doesn’t have any unforeseen effects.</p>
+</section>
+<section id="data-validity" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="data-validity"><span class="header-section-number">4.4.3</span> Data Validity</h3>
+<p>The NOAA states that some of the data appearing in the Storm Events Database may be gathered from sources outside the National Weather Service. “An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS.” Therefore, the NOAA cautions users as the NWS does not guarantee accuracy or validity of the information <span class="citation" data-cites="StormEventsDatabaseb">(<a href="references.html#ref-StormEventsDatabaseb" role="doc-biblioref">National Weather Service n.d.</a>)</span>.</p>
+</section>
+<section id="data-biases" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="data-biases"><span class="header-section-number">4.4.4</span> Data Biases</h3>
+<p>Due to significant advancements in meteorological technology and communication systems over the last 75 years, tornado data and records have certainly improved. In the early decades of the NOAA Storm Database, tornado records relied heavily on visual confirmation and manual reporting, which often resulted in under-reporting or less precise measurements in less populated regions. This could have an impact on time-series trends because the apparent increase in tornado frequency over time may be related to improved detection capabilities, as opposed to increased climate risk.</p>
+</section>
+<section id="sample-size-temporal-constraints" class="level3" data-number="4.4.5">
+<h3 data-number="4.4.5" class="anchored" data-anchor-id="sample-size-temporal-constraints"><span class="header-section-number">4.4.5</span> Sample Size &amp; Temporal Constraints</h3>
+<p>While the dataset of <span class="math inline">\(N=31345\)</span> events provides a solid foundation for analyzing modern tornado trends, the 75-year study period represents a relatively narrow window in terms of climate history. This limited temporal scope may not fully capture long-term climate patterns. Furthermore, the extreme rarity of “Moving Inland” and “High Potential” for shark-lifting (<span class="math inline">\(n=2\)</span>) limits our ability to make causal inferences or generalizations about the economic impact to future populations.</p>
+</section>
+<section id="storm-intensity-ratings" class="level3" data-number="4.4.6">
+<h3 data-number="4.4.6" class="anchored" data-anchor-id="storm-intensity-ratings"><span class="header-section-number">4.4.6</span> Storm Intensity Ratings</h3>
+<p>In the analysis, storm intensity ratings using the Fujita (F) scale and the Enhanced Fujita (EF) scale were consolidated into a single intensity metric (i.e., an F5 tornado was treated the same as an EF5 tornado). While the Enhanced Fujita Scale was derived from the original Fujita scale, there could be some unforeseen consequences as the scales are technically different. Treating an F5 tornado as exactly equivalent to an EF5 tornado may introduce a degree of measurement error, especially when comparing 20th century storms to those occurring after th 2007 implementation of the EF system <span class="citation" data-cites="usdepartmentofcommerceEFScale">(<a href="references.html#ref-usdepartmentofcommerceEFScale" role="doc-biblioref">National Weather Service 2015</a>)</span>. This inconsistency could potentially skew time-series trends, as the criteria for a “High Potential” storm may have shifted slightly between the two time periods However, for the purposes of this report, treating the scales synonymously is the most practical method for initial analysis.</p>
+</section>
+<section id="definition-of-coast-and-other-path" class="level3" data-number="4.4.7">
+<h3 data-number="4.4.7" class="anchored" data-anchor-id="definition-of-coast-and-other-path"><span class="header-section-number">4.4.7</span> Definition of “Coast” and “Other Path”</h3>
+<p>In the methodology, a rather arbitrary buffer of 3 miles was used to geographically and geometrically define the coast. The <code>st_buffer()</code> function from the <code>sf</code> package equally centers the buffer over a line (like the coastline), resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Since only 73 out of 31,345 storms were identified as “Moving Inland” (originating on the coast and traveling inland), further analysis could be conducted by testing different buffer values, especially larger ones, to see if the recorded number of “Moving Inland” storms is affected.</p>
+<p>Additionally, storm trajectories classified as “Other Path” included storms that started and remained inland, along with storms that started on the coast and remained on the coast. However, with the 3 mile buffer zone, storms that started on the coast and remained on the coast could technically include storms that originated within the 1.5 mile extension into the ocean and ended on land within the 1.5 mile extension inland. Thus, decreasing the buffer zone’s size or moving the buffer zone closer to the water could shift some “Other Path” classifications to “Moving Inland”.</p>
+</section>
+</section>
+<section id="going-forward" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="going-forward"><span class="header-section-number">4.5</span> Going Forward</h2>
+<p>Ultimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn’t hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Action Items
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Treat Marine-Origin Events as Rare Events:</strong> High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.</li>
+<li><strong>Maintain Standard Inland Risk Models</strong>: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.</li>
+<li><strong>Monitor Southeast Regional Shifts:</strong> While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change <em>may</em> be increasing the frequency of atypical, high-intensity coastal events.</li>
+</ul>
+</div>
+</div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-StormEventsDatabasea" class="csl-entry" role="listitem">
+DOC/NOAA/NESDIS/NCEI. 2026. <span>“Storm Events Database <span></span> National Centers for Environmental Information.”</span> https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. <a href="https://www.ncei.noaa.gov/stormevents/ftp.jsp">https://www.ncei.noaa.gov/stormevents/ftp.jsp</a>.
+</div>
+<div id="ref-usdepartmentofcommerceEFScale" class="csl-entry" role="listitem">
+National Weather Service, NOAA’s. 2015. <span>“<span>EF</span> Scale. National Weather Service.”</span> <span>NOAA</span>’s National Weather Service. March 27, 2015. <a href="https://www.weather.gov/lsx/enhancedfujitascale">https://www.weather.gov/lsx/enhancedfujitascale</a>.
+</div>
+<div id="ref-StormEventsDatabaseb" class="csl-entry" role="listitem">
+———. n.d. <span>“Storm Events Database - <span>FAQ</span>. National Centers for Environmental Information.”</span> Accessed April 9, 2026. <a href="https://www.ncei.noaa.gov/stormevents/faq.jsp">https://www.ncei.noaa.gov/stormevents/faq.jsp</a>.
+</div>
+<div id="ref-TornadoesClimateChange" class="csl-entry" role="listitem">
+<span>“Tornadoes and Climate Change. National Geographic Education.”</span> 2023. October 19, 2023. <a href="https://education.nationalgeographic.org/resource/tornadoes-and-climate-change">https://education.nationalgeographic.org/resource/tornadoes-and-climate-change</a>.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -610,8 +766,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./methodology.html" class="pagination-link" aria-label="Methodology">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Methodology</span></span>
+      <a href="./results.html" class="pagination-link" aria-label="Results">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

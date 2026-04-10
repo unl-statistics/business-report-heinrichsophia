@@ -11,14 +11,15 @@ The insurance agency has seen a rise in property payouts driven by the intensify
 
 75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.
 
-A tornado's *path trajectory* was classified as one of three labels: 
+A tornado's *path trajectory* was classified as one of three labels:
 
 <!-- -   **Moving Inland**: tornado originated on the coast and moved inland -->
+
 <!-- -   **Moving Coastal**: tornado originated on inland and moved to the coast -->
+
 <!-- -   **Other Path**: tornado originated either inland or on the coast and stayed in the same region of origin -->
 
-![This is a diagram illustratingthe movement of tornadoes relative to the coast and inland, with path trajectory labels of "Moving Inland", "Moving Coastal", and "Other Path".](assets/path-trajectories.jpeg){#fig-path-trajectories}
-
+![This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of "Moving Inland", "Moving Coastal", and "Other Path".](assets/path-trajectories.jpeg){#fig-path-trajectories}
 
 A tornado's *shark-lifting potential* was classified as one of two labels:
 

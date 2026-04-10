@@ -1,4 +1,6 @@
-# Draft: Data Documentation
+# Draft: Data Documentation {#sec-data-doc}
+
+TODO where does this go in the order of pages?
 
 The Storm Events Database [@StormEventsDatabasea] was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.
 

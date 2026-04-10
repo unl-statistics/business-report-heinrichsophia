@@ -79,7 +79,7 @@ us_coastline_buffer_3mi <- coastline(year = 2025) %>%
   select(Coast_name, geometry)
 
 View(us_coastline_buffer_3mi)
-plot(st_geometry(us_coastline_buffer_3mi), main = "U.S. Coastal Risk Zone: 3-Mile Oceanic Buffer",)
+plot(st_geometry(us_coastline_buffer_3mi), main = "U.S. Coastal Zone: 3-Mile Oceanic Buffer",)
 ```
 
 ```{r}
