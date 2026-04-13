@@ -17,9 +17,7 @@ From this, we have to also answer "What is the 'coast' vs what is 'inland'?" and
 
 **What is the "coast" vs what is "inland"?**
 
-For the boundary between the coast and open water, the general definition of a state's coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline ([source](https://coast.noaa.gov/data/czm/landconservation/media/StateCZBoundaries.pdf)).
-
-TODO help how do i cite that pdf
+For the boundary between the coast and open water, the general definition of a state's coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline [@NationalCoastalZone].
 
 Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the "Coast" for the purposes of this analysis. Any point further inland than the buffer zone is considered "Inland". @sec-coastline-data details how this coastal buffer zone was represented in the data.
 
@@ -31,8 +29,6 @@ Based on the physical analysis done by Dr. Kim Martini (discussed in @sec-introd
 For the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). @sec-limitations discusses potential limitations of this.
 :::
 
-TODO help how to fix that section reference
-
 ## Data Sources
 
 The primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States as it provides standardized metrics for storm intensity, location, and property damage.
@@ -42,8 +38,6 @@ Additionally, a shapefile of the 2025 United States coastline was downloaded int
 TODO add the above to data documentation file?
 
 For more documentation on these data sources, please refer to @sec-data-doc.
-
-TODO help idk why the data doc section reference isnt rendering
 
 ## Data Pipeline
 
