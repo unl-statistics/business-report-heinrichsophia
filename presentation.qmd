@@ -1,0 +1,27 @@
+---
+title: "Project Sharknado"
+subtitle: "Evaluating the Actuarial Risk of Coastal-Origin Tornadoes in the United States"
+author: "Sophia Heinrich"
+format: revealjs
+---
+<!-- To render: quarto render presentation.qmd -->
+
+## Overview
+- Introduction & Motivation
+- Research Question
+- 
+
+## Introduction & Motivation
+
+- 
+
+## Methods
+- Keep brief and interesting
+
+## Results
+
+## Action Items
+
+## Thank you! Questions?
+
+

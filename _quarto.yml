@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States"
+  title: "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States"
   author: "Sophia Heinrich"
   page-footer:
     left: "Copyright 2026, Sophia Heinrich"
