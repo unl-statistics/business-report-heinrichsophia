@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Methodology – Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States</title>
+<title>2&nbsp; Methodology – Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -98,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States</a> 
+      <a href="./">Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -237,8 +257,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>From this, we have to also answer “What is the ‘coast’ vs what is ‘inland’?” and “What indicates a tornado is ‘strong enough’ to sustain lifting a shark?”</p>
 <p><strong>What is the “coast” vs what is “inland”?</strong></p>
-<p>For the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline (<a href="https://coast.noaa.gov/data/czm/landconservation/media/StateCZBoundaries.pdf">source</a>).</p>
-<p>TODO help how do i cite that pdf</p>
+<p>For the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline <span class="citation" data-cites="NationalCoastalZone">(<a href="references.html#ref-NationalCoastalZone" role="doc-biblioref">Coastal Management n.d.</a>)</span>.</p>
 <p>Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. <a href="#sec-coastline-data" class="quarto-xref"><span>Section 2.3.1</span></a> details how this coastal buffer zone was represented in the data.</p>
 <p><strong>What indicates a tornado is “strong enough” to sustain lifting a shark?</strong></p>
 <p>Based on the physical analysis done by Dr.&nbsp;Kim Martini (discussed in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. <a href="#sec-aggregate-segments" class="quarto-xref"><span>Section 2.3.2.3</span></a> details how shark-lifting potential is identified in the data.</p>
@@ -255,7 +274,6 @@ Important
 <p>For the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). <a href="conclusion.html#sec-limitations" class="quarto-xref"><span>Section 4.4</span></a> discusses potential limitations of this.</p>
 </div>
 </div>
-<p>TODO help how to fix that section reference</p>
 </section>
 <section id="data-sources" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">2.2</span> Data Sources</h2>
@@ -263,7 +281,6 @@ Important
 <p>Additionally, a shapefile of the 2025 United States coastline was downloaded into R using R package <code>tigris</code>. In the analysis, this shapefile is used to establish the study’s geographic boundaries between coast and inland.</p>
 <p>TODO add the above to data documentation file?</p>
 <p>For more documentation on these data sources, please refer to <a href="draft-data-doc.html" class="quarto-xref"><span>Appendix A</span></a>.</p>
-<p>TODO help idk why the data doc section reference isnt rendering</p>
 </section>
 <section id="data-pipeline" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="data-pipeline"><span class="header-section-number">2.3</span> Data Pipeline</h2>
@@ -378,6 +395,11 @@ Figure&nbsp;2.3: This is a diagram illustrating the steps used to process data a
 <p>TODO question: is this section necessary? or will it just blur the line between methods and results. I hesitate to add this section because the statistical analysis in my results is mostly just summary statistics and proportions.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-NationalCoastalZone" class="csl-entry" role="listitem">
+Coastal Management, Office for. n.d. <span>“Coastal Zone Management Programs. Office for Coastal Management <span></span> <span>NOAA</span>.”</span> Accessed April 13, 2026. <a href="https://coast.noaa.gov/czm/mystate/">https://coast.noaa.gov/czm/mystate/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

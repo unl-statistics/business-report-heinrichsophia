@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States",
+    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
     "section": "",
     "text": "Executive Summary",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#purpose-of-report",
     "href": "index.html#purpose-of-report",
-    "title": "Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States",
+    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
     "section": "Purpose of Report",
     "text": "Purpose of Report\nThe insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the ‘Sharknado’ phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe storms could lead to a higher likelihood of shark-infested weather events (as depicted in Figure 1). The purpose of this report is to\n\nDetermine the likelihood of sharknadoes to form\nDetermine the economic impact of sharknadoes",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#methods",
     "href": "index.html#methods",
-    "title": "Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States",
+    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
     "section": "Methods",
     "text": "Methods\n75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.\nA tornado’s path trajectory was classified as one of three labels (see Figure D.1):\n\n\n\n\n\n\n\n\n\nFigure 2: This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of “Moving Inland”, “Moving Coastal”, and “Other Path”.\n\n\n\nA tornado’s shark-lifting potential was classified as one of two labels:\n\nLow Potential: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale\nHigh Potential: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#findings-conclusions",
     "href": "index.html#findings-conclusions",
-    "title": "Project Sharknado: Evaluating the Actuarial Risk of Coastal-Origin Atmospheric Tornadoes in the United States",
+    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
     "section": "Findings & Conclusions",
     "text": "Findings & Conclusions\nThroughout the analysis, storms classified as “Moving Inland” and “High [shark-lifting] Potential” were of highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both “Moving Inland” and “High Potential” for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for “Moving Inland” storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, “Moving Inland” storm with high shark-lifting potential account for less that 0.01% of total historical property damage ($183K over 75 years).\n\n\n\n\n\n\nTipReccome\n\n\n\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.",
     "crumbs": [
@@ -54,7 +54,7 @@
     "href": "methodology.html",
     "title": "2  Methodology",
     "section": "",
-    "text": "2.1 Defining Sharknado\nIn order to answer the research question (stated at the end of Chapter 1), we must\nFor a tornado to be a potential “sharknado”, it has to have a few characteristics:\nFrom this, we have to also answer “What is the ‘coast’ vs what is ‘inland’?” and “What indicates a tornado is ‘strong enough’ to sustain lifting a shark?”\nWhat is the “coast” vs what is “inland”?\nFor the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline (source).\nTODO help how do i cite that pdf\nSince there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. Section 2.3.1 details how this coastal buffer zone was represented in the data.\nWhat indicates a tornado is “strong enough” to sustain lifting a shark?\nBased on the physical analysis done by Dr. Kim Martini (discussed in Chapter 1), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. Section 2.3.2.3 details how shark-lifting potential is identified in the data.\nTODO help how to fix that section reference",
+    "text": "2.1 Defining Sharknado\nIn order to answer the research question (stated at the end of Chapter 1), we must\nFor a tornado to be a potential “sharknado”, it has to have a few characteristics:\nFrom this, we have to also answer “What is the ‘coast’ vs what is ‘inland’?” and “What indicates a tornado is ‘strong enough’ to sustain lifting a shark?”\nWhat is the “coast” vs what is “inland”?\nFor the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline (Coastal Management n.d.).\nSince there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. Section 2.3.1 details how this coastal buffer zone was represented in the data.\nWhat indicates a tornado is “strong enough” to sustain lifting a shark?\nBased on the physical analysis done by Dr. Kim Martini (discussed in Chapter 1), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. Section 2.3.2.3 details how shark-lifting potential is identified in the data.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methodology</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "methodology.html#sec-define-sharknado",
     "title": "2  Methodology",
     "section": "",
-    "text": "Originates on the coast\nStrong enough to sustain lifting a shark\nPath trajectory moves to the inland\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFor the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). Section 4.4 discusses potential limitations of this.",
+    "text": "Originates on the coast\nStrong enough to sustain lifting a shark\nPath trajectory moves to the inland\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFor the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). Section 4.4 discusses potential limitations of this.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methodology</span>"
     ]
@@ -74,7 +74,7 @@
     "href": "methodology.html#data-sources",
     "title": "2  Methodology",
     "section": "2.2 Data Sources",
-    "text": "2.2 Data Sources\nThe primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States as it provides standardized metrics for storm intensity, location, and property damage.\nAdditionally, a shapefile of the 2025 United States coastline was downloaded into R using R package tigris. In the analysis, this shapefile is used to establish the study’s geographic boundaries between coast and inland.\nTODO add the above to data documentation file?\nFor more documentation on these data sources, please refer to Appendix A.\nTODO help idk why the data doc section reference isnt rendering",
+    "text": "2.2 Data Sources\nThe primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States as it provides standardized metrics for storm intensity, location, and property damage.\nAdditionally, a shapefile of the 2025 United States coastline was downloaded into R using R package tigris. In the analysis, this shapefile is used to establish the study’s geographic boundaries between coast and inland.\nTODO add the above to data documentation file?\nFor more documentation on these data sources, please refer to Appendix A.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methodology</span>"
     ]
@@ -94,7 +94,7 @@
     "href": "methodology.html#statistical-approach",
     "title": "2  Methodology",
     "section": "2.4 Statistical Approach",
-    "text": "2.4 Statistical Approach\nTODO question: is this section necessary? or will it just blur the line between methods and results. I hesitate to add this section because the statistical analysis in my results is mostly just summary statistics and proportions.",
+    "text": "2.4 Statistical Approach\nTODO question: is this section necessary? or will it just blur the line between methods and results. I hesitate to add this section because the statistical analysis in my results is mostly just summary statistics and proportions.\n\n\n\n\nCoastal Management, Office for. n.d. “Coastal Zone Management Programs. Office for Coastal Management  NOAA.” Accessed April 13, 2026. https://coast.noaa.gov/czm/mystate/.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methodology</span>"
     ]
