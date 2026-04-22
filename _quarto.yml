@@ -17,10 +17,6 @@ book:
   appendices:
     - technical-methodology.qmd
     - data-doc.qmd
-    - draft-data-doc.qmd
-    - draft-results.qmd
-    - draft-intro-conclusions.qmd
-    - draft-exec-summary.qmd
 
 bibliography: references.bib
 

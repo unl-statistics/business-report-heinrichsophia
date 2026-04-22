@@ -107,7 +107,7 @@ This suggests that while the "Moving Inland" path is geographically unique, the 
 
 To identify likely areas where we could find sharknadoes forming, the data was segmented by coastal region (Atlantic, Gulf, and Pacific). The analysis in @fig-moving-inland-regions reveals a geographic imbalance in risk.
 
-The **Gulf Coast** and **Atlantic Coast** account for the vast majority of "Moving Inland" events, with each coast responsible for 36 "Moving Inland" tornadoes. In, contrast the **Pacific Coast** only recorded **1 total** "Moving Inland" tornado which was identified as "Low Potential" intensity. The **Atlantic Coast** was the only coastal region that has recorded a "Moving Inland" tornado with **high shark-lifting potential** (2 total occurrences recorded). Overall, though, the majority of the "Moving Inland" tornadoes produced by any of the 3 coasts were identified as "Low Potential" intensity.
+The **Gulf Coast** and **Atlantic Coast** account for the vast majority of "Moving Inland" events, with each coast responsible for 36 "Moving Inland" tornadoes. In contrast, the **Pacific Coast** only recorded **1 total** "Moving Inland" tornado, which was identified as "Low Potential" intensity. The **Atlantic Coast** was the only coastal region that had recorded a "Moving Inland" tornado with **high shark-lifting potential** (2 total occurrences recorded). Overall, though, the majority of the "Moving Inland" tornadoes produced by any of the 3 coasts were identified as "Low Potential" intensity.
 
 ```{r}
 #| echo: false
@@ -239,7 +239,7 @@ ggplot(damage_plot_data, aes(x = path_movement, y = total_loss, fill = shark_lif
   )
 ```
 
-Based on the visual analysis provided in @fig-trajectory-damage-avg, a hasty conclusion would be that tornadoes originating inland and moving to the coast ("Moving Coastal") result in the most property damage on average. Which based on the calculations, this is technically true. However, it's important to note that for "Moving Coastal" and "Moving Inland" tornadoes classified as high shark-lifting potential, the population only consists of **2 total recorded events** for both groups. 
+Based on the visual analysis provided in @fig-trajectory-damage-avg, a hasty conclusion would be that tornadoes originating inland and moving to the coast ("Moving Coastal") result in the most property damage on average. Based on the calculations, this is technically true. However, it's important to note that for "Moving Coastal" and "Moving Inland" tornadoes classified as high shark-lifting potential, the population consists only of **2 total recorded events** for both groups. 
 
 
 ```{r}
@@ -279,7 +279,9 @@ ggplot(damage_plot_data_avg, aes(x = path_movement, y = avg_loss, fill = shark_l
 
 Ultimately, when looking at the tornadoes with sharknado characteristics ("Moving Inland" with high shark-lifting potential), only **$183K** in damages has been inflicted in the last 75 years with an average damage of **\$91.5K per storm**. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that "Sharknado-style" events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.
 
-TODO add a trending graph that shows trends of tornado intensity. secondary analysis? The goal of this graph would be to help argue that an increase in tornado intensity could be resulting from factors other than climate change (e.g. new meteorological technology)
+## Additional Analysis
+
+To further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in @fig-historical-intensity-trends below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period.
 
 ```{r}
 #| label: fig-historical-intensity-trends

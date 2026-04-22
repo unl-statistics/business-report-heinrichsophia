@@ -185,30 +185,6 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Documentation</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-data-doc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Draft: Data Documentation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Draft: Results</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-intro-conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Draft: Intro/Conclusions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-exec-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Draft: Executive Summary</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -228,7 +204,6 @@ div.csl-indent {
   <li><a href="#sec-coastline-data" id="toc-sec-coastline-data" class="nav-link" data-scroll-target="#sec-coastline-data"><span class="header-section-number">2.3.1</span> US Coastline Data</a></li>
   <li><a href="#noaa-storm-event-database" id="toc-noaa-storm-event-database" class="nav-link" data-scroll-target="#noaa-storm-event-database"><span class="header-section-number">2.3.2</span> NOAA Storm Event Database</a></li>
   </ul></li>
-  <li><a href="#statistical-approach" id="toc-statistical-approach" class="nav-link" data-scroll-target="#statistical-approach"><span class="header-section-number">2.4</span> Statistical Approach</a></li>
   </ul>
 </nav>
     </div>
@@ -269,7 +244,7 @@ div.csl-indent {
 </ol>
 <p>From this, we have to also answer “What is the ‘coast’ vs what is ‘inland’?” and “What indicates a tornado is ‘strong enough’ to sustain lifting a shark?”</p>
 <p><strong>What is the “coast” vs what is “inland”?</strong></p>
-<p>For the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the share (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline <span class="citation" data-cites="NationalCoastalZone">(<a href="references.html#ref-NationalCoastalZone" role="doc-biblioref">Coastal Management n.d.</a>)</span>.</p>
+<p>For the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the shore (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline <span class="citation" data-cites="NationalCoastalZone">(<a href="references.html#ref-NationalCoastalZone" role="doc-biblioref">Coastal Management n.d.</a>)</span>.</p>
 <p>Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. <a href="technical-methodology.html#sec-coastline-data" class="quarto-xref"><span>Section A.1.1</span></a> details how this coastal buffer zone was represented in the data.</p>
 <p><strong>What indicates a tornado is “strong enough” to sustain lifting a shark?</strong></p>
 <p>Based on the physical analysis done by Dr.&nbsp;Kim Martini (discussed in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. <a href="technical-methodology.html#sec-aggregate-segments" class="quarto-xref"><span>Section A.1.2.3</span></a> details how shark-lifting potential is identified in the data.</p>
@@ -289,9 +264,8 @@ Important
 </section>
 <section id="data-sources" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">2.2</span> Data Sources</h2>
-<p>The primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States as it provides standardized metrics for storm intensity, location, and property damage.</p>
-<p>Additionally, a shapefile of the 2025 United States coastline was downloaded into R using R package <code>tigris</code>. In the analysis, this shapefile is used to establish the study’s geographic boundaries between coast and inland.</p>
-<p>TODO add the above to data documentation file?</p>
+<p>The primary data for this business report comes from the National Oceanic and Atmospheric (NOAA) Storm Events Database, which includes 75 years (1950 to 2025) of records of various types of weather events. This dataset was selected as the primary source because it is one of the most comprehensive official records of tornadic activity in the United States, as it provides standardized metrics for storm intensity, location, and property damage.</p>
+<p>Additionally, a shapefile of the 2025 United States coastline was downloaded into R using the R package <code>tigris</code>. In the analysis, this shapefile is used to establish the study’s geographic boundaries between coast and the inland.</p>
 <p>For more documentation on these data sources, please refer to <a href="data-doc.html" class="quarto-xref"><span>Appendix B</span></a>.</p>
 </section>
 <section id="data-pipeline" class="level2" data-number="2.3">
@@ -308,7 +282,7 @@ Note
 <div class="callout-body-container callout-body">
 <ul>
 <li>See <a href="technical-methodology.html#fig-data-pipeline" class="quarto-xref">Figure&nbsp;<span>A.3</span></a> for a diagram of the full data pipeline.</li>
-<li>See <a href="technical-methodology.html" class="quarto-xref"><span>Appendix A</span></a> for a more technical details on this methodology.</li>
+<li>See <a href="technical-methodology.html" class="quarto-xref"><span>Appendix A</span></a> for more technical details on this methodology.</li>
 </ul>
 </div>
 </div>
@@ -339,11 +313,11 @@ Figure&nbsp;2.1: This is a visual representation of the US Coastline 3-mile buff
 <section id="sec-aggregate-segments" class="level4" data-number="2.3.2.3">
 <h4 data-number="2.3.2.3" class="anchored" data-anchor-id="sec-aggregate-segments"><span class="header-section-number">2.3.2.3</span> Aggregate Storm Segments</h4>
 <p>NOAA Storm Events Database is structured so that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Thus, segments from the same storm were identified and stitched back together into a single row of data.</p>
-<p>From here, each tornado’s path trajectory was classified as “Moving Inland”, “Moving Coastal”, or “Other Path” based on the tornado’s start/end locations. Below further describes the characteristics of each path trajectory label, along with an illustration in <a href="draft-exec-summary.html#fig-path-trajectories" class="quarto-xref">Figure&nbsp;<span>D.1</span></a>.</p>
+<p>From here, each tornado’s path trajectory was classified as “Moving Inland”, “Moving Coastal”, or “Other Path” based on the tornado’s start/end locations. Below further describes the characteristics of each path trajectory label, along with an illustration in <a href="technical-methodology.html#fig-path-trajectories" class="quarto-xref">Figure&nbsp;<span>A.2</span></a>.</p>
 <ul>
-<li><p><strong>Moving Inland</strong>: tornado originated on the coast and moved inland</p></li>
-<li><p><strong>Moving Coastal</strong>: tornado originated on inland and moved to the coast</p></li>
-<li><p><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin</p></li>
+<li><p><strong>Moving Inland</strong>: tornado originated on the coast and moved inland.</p></li>
+<li><p><strong>Moving Coastal</strong>: tornado originated inland and moved to the coast.</p></li>
+<li><p><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin.</p></li>
 </ul>
 <div id="fig-path-trajectories" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -355,7 +329,7 @@ Figure&nbsp;2.2: This is a diagram illustrating the movement of tornadoes relati
 </figcaption>
 </figure>
 </div>
-<p>Finally, each tornado’s shark-lifting potential was classified as “High Potential” or “Low Potential”, based on the the storm’s (Enhanced) Fujita Scale RANKING. Below further describes the characteristics of these labels:</p>
+<p>Finally, each tornado’s shark-lifting potential was classified as “High Potential” or “Low Potential”, based on the storm’s (Enhanced) Fujita Scale RANKING. Below further describes the characteristics of these labels:</p>
 <ul>
 <li><strong>Low Potential</strong>: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale</li>
 <li><strong>High Potential</strong>: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale</li>
@@ -370,12 +344,8 @@ Figure&nbsp;2.3: This is a diagram illustrating the steps used to process data a
 </figcaption>
 </figure>
 </div>
-</section>
-</section>
-</section>
-<section id="statistical-approach" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="statistical-approach"><span class="header-section-number">2.4</span> Statistical Approach</h2>
-<p>TODO question: is this section necessary? or will it just blur the line between methods and results. I hesitate to add this section because the statistical analysis in my results is mostly just summary statistics and proportions.</p>
+<!-- ## Statistical Approach -->
+<!-- TODO explain the type of analysis used in results and justify. add a bit more advanced analysis -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -383,6 +353,8 @@ Figure&nbsp;2.3: This is a diagram illustrating the steps used to process data a
 Coastal Management, Office for. n.d. <span>“Coastal Zone Management Programs. Office for Coastal Management <span></span> <span>NOAA</span>.”</span> Accessed April 13, 2026. <a href="https://coast.noaa.gov/czm/mystate/">https://coast.noaa.gov/czm/mystate/</a>.
 </div>
 </div>
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

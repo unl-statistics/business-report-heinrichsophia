@@ -6,11 +6,11 @@
 
 The insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the 'Sharknado' phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe weather could lead to a higher likelihood of shark-infested weather events (as depicted in @fig-sharknado). The purpose of this report is to
 
--   **Determine the likelihood of sharknadoes forming**
--   **Determine the economic impact of sharknadoes**
+-   **Determine the likelihood of sharknadoes forming.**
+-   **Determine the economic impact of sharknadoes.**
 
 ## Background
-Historically, the majority of tornadoes have occurred in the Central United States, a region nicknamed "Tornado Alley". Since this region is not near any coasts, the plausibility of a tornado picking up a shark out of coastal waters is low. However, there have been a few recorded tornadoes near the coast leading the agency to wonder if sharknadoes are not an impossibility.
+Historically, the majority of tornadoes have occurred in the Central United States, a region nicknamed "Tornado Alley". Since this region is not near any coasts, the plausibility of a tornado picking up a shark out of coastal waters is low. However, there have been a few recorded tornadoes near the coast, leading the agency to wonder if sharknadoes are not an impossibility.
 
 While there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics. Through logical reasoning, Martini concluded that while a typical tornado travels over enough geographic area and can be strong enough to keep a shark airborne, it is highly unlikely that a tornado could lift the shark out of the water in the first place. 
 
@@ -36,7 +36,7 @@ A tornado's *shark-lifting potential* was classified as one of two labels:
 
 ## Findings & Conclusions
 
-Throughout the analysis, storms classified as "Moving Inland" and "High \[shark-lifting\] Potential" were of highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both "Moving Inland" and "High Potential" for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for "Moving Inland" storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, "Moving Inland" storm with high shark-lifting potential account for less that 0.01% of total historical property damage (\$183K over 75 years).
+Throughout the analysis, storms classified as "Moving Inland" and "High \[shark-lifting\] Potential" were of the highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both "Moving Inland" and "High Potential" for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for "Moving Inland" storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, "Moving Inland" storm with high shark-lifting potential account for less that 0.01% of total historical property damage (\$183K over 75 years).
 
 ::: callout-tip
 # Reccome

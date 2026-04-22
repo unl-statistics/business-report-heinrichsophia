@@ -10,7 +10,7 @@ All data in the set was collected between January 1950 and October 2025. The Nat
 
 ### Structure & Formatting
 
-Since 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. This analysis only used the "Event Details" file for each year of data as it contained all the needed data columns for analysis. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.
+Since 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. This analysis only used the "Event Details" file for each year of data, as it contained all the needed data columns for analysis. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.
 
 Dates are recorded as *YYYYMM* or *DD-MM-YY HH:MM:SS*. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale or the Enhanced Fujita (EF) scale, which are categorical variables (F0-F5 or EF0-EF5).
 
@@ -32,7 +32,7 @@ As a product of the U.S. Federal Government (Department of Commerce), this data 
 
 ## U.S. Census Mapping Files
 
-`tigris` is an R package that allows users to directly download and use TIGER/Line shapefiles from the US Census Bureau [@TigrisPackageRDocumentation]. This analysis utilized `tigris` to retrieve a current shapefile of the 2025 United States coastline. In the analysis, this shapefile is used to establish the study's geographic boundaries between coast and the inland.
+`tigris` is an R package that allows users to directly download and use TIGER/Line shapefiles from the US Census Bureau [@TigrisPackageRDocumentation]. This analysis utilized `tigris` to retrieve a current shapefile of the 2025 United States coastline. In the analysis, this shapefile is used to establish the study's geographic boundaries between the coast and the inland.
 
 The Census Mapping Files are entered by the U.S. Census Bureau. Broadly, these files are considered as Geographic Information System (GIS) mapping files, which contain spatial data encoded into a file format. Examples of these types of files include Shapefiles, KML, and File Geodatabase files. For this report, the "Coastline National shapefile" held data points that mapped the coastline of the U.S. TIGER stands for Topologically Integrated Geographic Encoding and Referencing system and represents the U.S. Census Bureau's geographical spatial data.
 

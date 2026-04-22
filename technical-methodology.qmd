@@ -46,7 +46,7 @@ To begin processing the NOAA Storm Events Database, we `filter` the data to only
 
 Beginning the work needed to classify tornado path trajectories, we started by engineering two new features `Start_coast` and `End_coast`, which classify the tornado segment as starting/ending in the "Atlantic", "Pacific", "Gulf", or N/A. This is done by comparing the `BEGIN_LAT`, `BEGIN_LON`, `END_LAT`, `END_LON` features to the modified coastline shapefile.
 
-From here, two more features were created `Start_location` and `End_location`, which classify the tornado segment as starting/ending on the "Coastal" or "Inland" based on if the `Start_coast` and `End_coast` columns are empty for the feature.
+From here, two more features were created `Start_location` and `End_location`, which classify the tornado segment as starting/ending on the "Coastal" or "Inland" based on whether the `Start_coast` and `End_coast` columns are empty for the feature.
 
 #### Aggregate Storm Segments {#sec-aggregate-segments}
 
@@ -69,11 +69,11 @@ Because multiple tornado segments were stitched together, we needed to consolida
 
 From here, a new feature `path_movement` was created, which classifies the path trajectory of the full tornado as "Moving Inland", "Moving Coastal", or "Other Path" based on the `Start_location` and `End_location` features. Below further describes the characteristics of each path trajectory, along with an illustration in @fig-path-trajectories.   
 
--   **Moving Inland**: tornado originated on the coast and moved inland
+-   **Moving Inland**: tornado originated on the coast and moved inland.
 
--   **Moving Coastal**: tornado originated on inland and moved to the coast
+-   **Moving Coastal**: tornado originated inland and moved to the coast.
 
--   **Other Path**: tornado originated either inland or on the coast and stayed in the same region of origin
+-   **Other Path**: tornado originated either inland or on the coast and stayed in the same region of origin.
 
 ![This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of "Moving Inland", "Moving Coastal", and "Other Path".](assets/path-trajectories.jpeg){#fig-path-trajectories}
 
@@ -82,7 +82,5 @@ Finally, a new feature `shark_lifting_potential` was created, which classifies t
 -   **Low Potential**: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale
 -   **High Potential**: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale
 
-
-TODO question: how can i better display this diagram? should it be in its own section? it's kinda just sitting there at the end of the subsection.
 
 ![This is a diagram illustrating the steps used to process data and engineer features from the NOAA Storm Events Database and US Coastline shapefile.](assets/Sharknado%20Data%20Processing.png){#fig-data-pipeline}
