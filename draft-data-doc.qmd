@@ -1,4 +1,4 @@
-# Draft: Data Documentation {#sec-data-doc}
+# Draft: Data Documentation
 
 TODO where does this go in the order of pages?
 
@@ -22,19 +22,8 @@ As an additional note, the Storm Events Database main page states that, “NCEI 
 
 ## Data Validation & Quality Control
 
-According to the “Storm Data FAQ Page”, “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”
-
-::: callout-note
-Cite the specific page using zotero, please.
-:::
+According to the “Storm Data FAQ Page” [@StormEventsDatabaseb], “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”
 
 ## Data Reuse
 
 As a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.
-
-
-::: callout-note
-
-I've taken the liberty of adjusting your formatting to use sections and subsections. Please update any other documents likewise.
-
-:::

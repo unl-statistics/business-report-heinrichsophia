@@ -1,13 +1,20 @@
 # Executive Summary {.unnumbered}
 
-![This is a fictional mockup of what a sharknado could look like if they were actually real.](assets/sharknado.webp){#fig-sharknado}
+![This is a fictional mockup of what a sharknado could look like if they were actually real.](assets/sharknado.jpeg){#fig-sharknado}
 
 ## Purpose of Report
 
-The insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the 'Sharknado' phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe storms could lead to a higher likelihood of shark-infested weather events (as depicted in @fig-sharknado). The purpose of this report is to
+The insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the 'Sharknado' phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe weather could lead to a higher likelihood of shark-infested weather events (as depicted in @fig-sharknado). The purpose of this report is to
 
--   **Determine the likelihood of sharknadoes to form**
+-   **Determine the likelihood of sharknadoes forming**
 -   **Determine the economic impact of sharknadoes**
+
+## Background
+Historically, the majority of tornadoes have occurred in the Central United States, a region nicknamed "Tornado Alley". Since this region is not near any coasts, the plausibility of a tornado picking up a shark out of coastal waters is low. However, there have been a few recorded tornadoes near the coast leading the agency to wonder if sharknadoes are not an impossibility.
+
+While there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics. Through logical reasoning, Martini concluded that while a typical tornado travels over enough geographic area and can be strong enough to keep a shark airborne, it is highly unlikely that a tornado could lift the shark out of the water in the first place. 
+
+For the sake of still conducting a statistical analysis, this report ignores this physical impossibility.
 
 ## Methods
 

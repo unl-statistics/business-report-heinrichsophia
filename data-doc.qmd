@@ -1,0 +1,57 @@
+# Data Documentation {#sec-data-doc}
+
+## NOAA Storm Events Database
+
+The Storm Events Database [@StormEventsDatabasea] was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.
+
+### Collection
+
+All data in the set was collected between January 1950 and October 2025. The National Weather Service receives its information from a variety of sources, which include but are not limited to: county, state, and federal emergency management officials, local law enforcement officials, skywarn spotters, NWS damage surveys, newspaper clipping services, the insurance industry, and the general public, among others. Because the NWS receives information from multiple sources, details are not provided on measurement instruments. New data for a given month is updated in the database 75-90 days after the end of that month.
+
+### Structure & Formatting
+
+Since 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. This analysis only used the "Event Details" file for each year of data as it contained all the needed data columns for analysis. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.
+
+Dates are recorded as *YYYYMM* or *DD-MM-YY HH:MM:SS*. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale or the Enhanced Fujita (EF) scale, which are categorical variables (F0-F5 or EF0-EF5).
+
+Another notable characteristic of the data's structure is that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. For pre-1996 storms, there was no connecting identifier across storm segments belonging to the same full storm. For post-1996 storms, the `EPISODE_ID` was used as the connecting identifier across storm segments belonging to the same full storm.
+
+As an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”
+
+[Repository](https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/)\
+[README](https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/README) - information on the naming conventions of the files.\
+[Storm Data Export Format](https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/Storm-Data-Export-Format.pdf) - description of columns across Event Details Files, Location Files, and Fatality Files
+
+### Data Validation & Quality Control
+
+According to the “Storm Data FAQ Page” [@StormEventsDatabaseb], “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”
+
+### Data Reuse
+
+As a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.
+
+## U.S. Census Mapping Files
+
+`tigris` is an R package that allows users to directly download and use TIGER/Line shapefiles from the US Census Bureau [@TigrisPackageRDocumentation]. This analysis utilized `tigris` to retrieve a current shapefile of the 2025 United States coastline. In the analysis, this shapefile is used to establish the study's geographic boundaries between coast and the inland.
+
+The Census Mapping Files are entered by the U.S. Census Bureau. Broadly, these files are considered as Geographic Information System (GIS) mapping files, which contain spatial data encoded into a file format. Examples of these types of files include Shapefiles, KML, and File Geodatabase files. For this report, the "Coastline National shapefile" held data points that mapped the coastline of the U.S. TIGER stands for Topologically Integrated Geographic Encoding and Referencing system and represents the U.S. Census Bureau's geographical spatial data.
+
+The purpose of the U.S. Census TIGER/Line Shapefiles is for "statistical data collection and tabulation purposes only. Their depiction and designation for statistical purposes does not constitute a determination of jurisdictional authority or rights of ownership or entitlement and are not legal land descriptions," [@bureauTIGERLineShapefiles}. An additional disclaimer: "TIGER/Line Shapefiles do not include demographic data, but they do contain geographic entity codes (GEOIDs) that can be linked to the Census Bureau’s demographic data," [@bureauCensusMappingFiles].
+
+More technical documentation regarding the U.S. Census Bureau TIGER/Line Shapefiles can be found at [TIGER/Line Shapefiles and TIGER/Line Files Technical Documentation](https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/tiger-geo-line.html).
+
+### Collection
+
+The Census Bureau maintains the MAF/TIGER System (Master Address File/Topologically Integrated Geographic Encoding and Referencing) through several sources, such as federal, state, and local governments, the Boundary and Annexation Survey (BAS), aerial imagery and fieldwork, and historical sources [@bureauTIGERLineShapefiles].
+
+### Structure & Formatting
+
+The Coastlines Shapefile is a national-level dataset provided as a zipped archive containing seven specific GIS file types, such as .shp for geometry and .dbf for tabular attributes. The data is formatted using the GCS NAD83 coordinate system with six decimal places of precision, ensuring high spatial accuracy for coastal mapping. Within the attribute table, each linear feature is standardized using the L4150 MAF/TIGER Feature Class Code and includes a primary name field corresponding to the bordering body of water [@bureauTIGERLineShapefiles].
+
+### Data Validation & Quality Control
+
+The Census Bureau maintains data quality through the Boundary and Annexation Survey (BAS), an annual program that verifies legal boundaries with tribal, state, and local governments to ensure the MAF/TIGER System remains current. Additionally, the Bureau employs automated validation edits and provides a Spatial Metadata Identifier (SMID) for every line segment, allowing users to track the specific source and horizontal accuracy of the data [@bureauTIGERLineShapefiles].
+
+### Data Reuse
+
+"Copyright protection is not available for any work of the United States Government (Title 17 U.S.C., Section 105). Thus, you are free to reproduce census materials as you see fit. We would ask, however, that you cite the Census Bureau as the source," [@bureauTIGERLineShapefiles].

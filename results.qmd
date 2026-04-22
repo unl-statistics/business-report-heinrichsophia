@@ -5,9 +5,9 @@
 The analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 2025. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone, and only 73 of those ultimately moved from the coast to the inland. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in @tbl-population-breakdown:
 
 ```{r}
+#| label: tbl-population-breakdown
 #| echo: false
 #| warning: false
-#| label: tbl-population-breakdown
 library(gt)
 library(tidyverse)
 #| echo: false

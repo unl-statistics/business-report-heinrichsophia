@@ -1,6 +1,8 @@
 # Conclusion & Discussion
 
-Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland ("Moving Inland") and had enough strength to carry a shark (category F3, F4, or F5).
+Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland ("Moving Inland") and had enough strength to carry a shark (category F3, F4, or F5). With this in mind, we sought to answer the research question:
+
+***What is the historical frequency, probability, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those following other trajectories?***
 
 ## Frequency & Probability of Sharknadoes
 
@@ -51,7 +53,7 @@ In the analysis, storm intensity ratings using the Fujita (F) scale and the Enha
 
 In the methodology, a rather arbitrary buffer of 3 miles was used to geographically and geometrically define the coast. The `st_buffer()` function from the `sf` package equally centers the buffer over a line (like the coastline), resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Since only 73 out of 31,345 storms were identified as "Moving Inland" (originating on the coast and traveling inland), further analysis could be conducted by testing different buffer values, especially larger ones, to see if the recorded number of "Moving Inland" storms is affected.
 
-Additionally, storm trajectories classified as "Other Path" included storms that started and remained inland, along with storms that started on the coast and remained on the coast. However, with the 3 mile buffer zone, storms that started on the coast and remained on the coast could technically include storms that originated within the 1.5 mile extension into the ocean and ended on land within the 1.5 mile extension inland. Thus, decreasing the buffer zone's size or moving the buffer zone closer to the water could shift some "Other Path" classifications to "Moving Inland".
+Additionally, storm trajectories classified as "Other Path" included storms that started and remained inland, along with storms that started on the coast and remained on the coast. However, with the 3 mile buffer zone, storms that started on the coast and remained on the coast could technically include storms that originated within the 1.5 mile extension into the ocean and ended on land within the 1.5 mile extension inland. Thus, decreasing the buffer zone's size or moving the buffer zone closer to the water could shift some "Other Path" classifications to "Moving Inland". If this change was made, it is possible the results would show an increase in sharknado frequency.
 
 ## Going Forward
 

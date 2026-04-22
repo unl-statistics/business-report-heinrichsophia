@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States</title>
+<title>Appendix A — Technical Methodology – Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./technical-methodology.html" rel="next">
-<link href="./conclusion.html" rel="prev">
+<link href="./data-doc.html" rel="next">
+<link href="./references.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -102,7 +83,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./technical-methodology.html">Appendices</a></li><li class="breadcrumb-item"><a href="./technical-methodology.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Technical Methodology</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,7 +140,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -174,7 +155,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./technical-methodology.html" class="sidebar-item-text sidebar-link">
+  <a href="./technical-methodology.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Technical Methodology</span></span></a>
   </div>
 </li>
@@ -215,15 +196,25 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link active" data-scroll-target="#data-pipeline"><span class="header-section-number">A.1</span> Data Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#sec-coastline-data" id="toc-sec-coastline-data" class="nav-link" data-scroll-target="#sec-coastline-data"><span class="header-section-number">A.1.1</span> US Coastline Data</a></li>
+  <li><a href="#noaa-storm-event-database" id="toc-noaa-storm-event-database" class="nav-link" data-scroll-target="#noaa-storm-event-database"><span class="header-section-number">A.1.2</span> NOAA Storm Event Database</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./technical-methodology.html">Appendices</a></li><li class="breadcrumb-item"><a href="./technical-methodology.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Technical Methodology</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span id="sec-tech-methods" class="quarto-section-identifier">Appendix A — Technical Methodology</span></h1>
 </div>
 
 
@@ -240,61 +231,114 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-2004HallamTornado2026" class="csl-entry" role="listitem">
-<span>“2004 Hallam Tornado.”</span> 2026. In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&amp;oldid=1345145456">https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&amp;oldid=1345145456</a>.
+<section id="data-pipeline" class="level2" data-number="A.1">
+<h2 data-number="A.1" class="anchored" data-anchor-id="data-pipeline"><span class="header-section-number">A.1</span> Data Pipeline</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="ref-NationalCoastalZone" class="csl-entry" role="listitem">
-Coastal Management, Office for. n.d. <span>“Coastal Zone Management
-Programs. Office for Coastal Management <span></span>
-<span>NOAA</span>.”</span> Accessed April 13, 2026. <a href="https://coast.noaa.gov/czm/mystate/">https://coast.noaa.gov/czm/mystate/</a>.
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<div id="ref-StormEventsDatabasea" class="csl-entry" role="listitem">
-DOC/NOAA/NESDIS/NCEI. 2026. <span>“Storm Events Database <span></span>
-National Centers for Environmental Information.”</span>
-https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. <a href="https://www.ncei.noaa.gov/stormevents/ftp.jsp">https://www.ncei.noaa.gov/stormevents/ftp.jsp</a>.
 </div>
-<div id="ref-Sharknado" class="csl-entry" role="listitem">
-Ferrante, Anthony. 2013. <em>Sharknado</em>. Syfy.
+<div class="callout-body-container callout-body">
+<p>See <a href="#fig-data-pipeline" class="quarto-xref">Figure&nbsp;<span>A.3</span></a> for a diagram of the full data pipeline.</p>
 </div>
-<div id="ref-fisheriesSharksAtlanticGulf2025" class="csl-entry" role="listitem">
-Fisheries, NOAA. 2025. <span>“Sharks in Atlantic, Gulf, and Caribbean
-Coastal Waters. <span>NOAA</span> Fisheries.”</span> <span>NOAA</span>
-Fisheries. February 26, 2025. <a href="https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters">https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters</a>.
 </div>
-<div id="ref-martiniRecipeSharknadoDeep2013" class="csl-entry" role="listitem">
-Martini, Dr. Kim. 2013. <span>“Recipe for a Sharknado <span></span> Deep
-Sea News. Deep Sea News.”</span> August 9, 2013. <a href="https://deepseanews.com/2013/08/recipe-for-a-sharknado/">https://deepseanews.com/2013/08/recipe-for-a-sharknado/</a>.
+<section id="sec-coastline-data" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="sec-coastline-data"><span class="header-section-number">A.1.1</span> US Coastline Data</h3>
+<p>To implement the above definition of “Coast” and “Inland” (see <a href="methodology.html#sec-define-sharknado" class="quarto-xref"><span>Section 2.1</span></a>), the R package <code>tigris</code> was used to provide a shapefile of the US Coastline. Once the original coastline shapefile was imported, it was filtered to only include the Atlantic, Pacific, and Gulf of Mexico coasts as requested in the original scenario prompt. The units of the coastline data were converted from degrees to meters using the <code>st_transform</code> function from the <code>tigris</code> package prepare for a meter-based buffer. Using the <code>st_buffer</code> function from the <code>tigris</code> package, a 3-mile (4828 meter) buffer was equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. Finally, any coastline details smaller than 100m were smoothed using the <code>st_simplify</code> function from the <code>tigris</code> package to increase computational efficiency without sacrificing regional accuracy. A visual representation of this data can be seen in <a href="#fig-coast-buffer" class="quarto-xref">Figure&nbsp;<span>A.1</span></a>.</p>
+<div id="fig-coast-buffer" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coast-buffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/coast-buffer.png" class="img-fluid figure-img">
 </div>
-<div id="ref-usdepartmentofcommerceEFScale" class="csl-entry" role="listitem">
-National Weather Service, NOAA’s. 2015. <span>“<span>EF</span> Scale.
-National Weather Service.”</span> <span>NOAA</span>’s National Weather
-Service. March 27, 2015. <a href="https://www.weather.gov/lsx/enhancedfujitascale">https://www.weather.gov/lsx/enhancedfujitascale</a>.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coast-buffer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;A.1: This is a visual representation of the US Coastline 3-mile buffer zone generated in the code.
+</figcaption>
+</figure>
 </div>
-<div id="ref-centerNOAAsNWSStorm" class="csl-entry" role="listitem">
-———. 2025. <span>“The Enhanced Fujita Scale (<span>EF</span> Scale).
-Storm Prediction Center.”</span> <span>NOAA</span>’s National Weather
-Service. May 21, 2025. <a href="https://www.spc.noaa.gov/efscale/">https://www.spc.noaa.gov/efscale/</a>.
+</section>
+<section id="noaa-storm-event-database" class="level3" data-number="A.1.2">
+<h3 data-number="A.1.2" class="anchored" data-anchor-id="noaa-storm-event-database"><span class="header-section-number">A.1.2</span> NOAA Storm Event Database</h3>
+<section id="pre-cleaning-filtering" class="level4" data-number="A.1.2.1">
+<h4 data-number="A.1.2.1" class="anchored" data-anchor-id="pre-cleaning-filtering"><span class="header-section-number">A.1.2.1</span> Pre-cleaning &amp; Filtering</h4>
+<p>To begin processing the NOAA Storm Events Database, we <code>filter</code> the data to only include events that are <code>EVENT_TYPE = Tornado</code>. Additionally, any entries that are missing location coordinates for the features <code>BEGIN_LAT</code>, <code>BEGIN_LON</code>, <code>END_LAT</code>, <code>END_LON</code> were removed since we wouldn’t be able to calculate their path trajectories. Finally, any features <strong>not</strong> in the following list were removed since they were not needed for the analysis:</p>
+<ul>
+<li><p><code>EPISODE_ID</code></p></li>
+<li><p><code>EVENT_ID</code></p></li>
+<li><p><code>YEAR</code></p></li>
+<li><p><code>MONTH_NAME</code></p></li>
+<li><p><code>BEGIN_DATE_TIME</code></p></li>
+<li><p><code>STATE</code></p></li>
+<li><p><code>BEGIN_LAT</code></p></li>
+<li><p><code>BEGIN_LON</code></p></li>
+<li><p><code>END_LAT</code></p></li>
+<li><p><code>END_LON</code></p></li>
+<li><p><code>TOR_F_SCALE</code></p></li>
+<li><p><code>DAMAGE_PROPERTY</code></p></li>
+</ul>
+</section>
+<section id="geographical-classifications" class="level4" data-number="A.1.2.2">
+<h4 data-number="A.1.2.2" class="anchored" data-anchor-id="geographical-classifications"><span class="header-section-number">A.1.2.2</span> Geographical Classifications</h4>
+<p>Beginning the work needed to classify tornado path trajectories, we started by engineering two new features <code>Start_coast</code> and <code>End_coast</code>, which classify the tornado segment as starting/ending in the “Atlantic”, “Pacific”, “Gulf”, or N/A. This is done by comparing the <code>BEGIN_LAT</code>, <code>BEGIN_LON</code>, <code>END_LAT</code>, <code>END_LON</code> features to the modified coastline shapefile.</p>
+<p>From here, two more features were created <code>Start_location</code> and <code>End_location</code>, which classify the tornado segment as starting/ending on the “Coastal” or “Inland” based on if the <code>Start_coast</code> and <code>End_coast</code> columns are empty for the feature.</p>
+</section>
+<section id="sec-aggregate-segments" class="level4" data-number="A.1.2.3">
+<h4 data-number="A.1.2.3" class="anchored" data-anchor-id="sec-aggregate-segments"><span class="header-section-number">A.1.2.3</span> Aggregate Storm Segments</h4>
+<p>NOAA Storm Events Database is structured so that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named <code>EPISODE_ID</code>, making the process of connecting segments relatively straightforward. However, storms occurring before 1996 do not have a value in the <code>EPISODE_ID</code> column. To connect storm segments from this era, we matched segments’ dates, times, and start/end location coordinates.</p>
+<p>Once tornado segments were stitched together into one full tornado entry, a new feature, <code>master_id</code>, was created to serve as an ultimate unique identifier for each full tornado. For pre-1996 storms, the unique <code>master_id</code> was formatted as <code>YEAR MONTH_NAME STATE BEGIN_LAT BEGIN_LON</code> (e.g., 1950 September OKLAHOMA 35 -96.25). For post-1996 storms, the <code>EPISODE_ID</code> was used for the <code>master_id</code> since it is already a unique identifier for each full storm.</p>
+<p>Because multiple tornado segments were stitched together, we needed to consolidate all of the data from each of the segments into a single entry. The following list summarizes how the data was consolidated for each feature:</p>
+<ul>
+<li><code>YEAR</code>: use the year of the first segment</li>
+<li><code>MONTH_NAME</code>: use the month name from the first segment</li>
+<li><code>Beginning_State</code>: use the state of the first segment</li>
+<li><code>End_State</code>: use the state of the last segment</li>
+<li><code>Start_location</code>: use the start location of the first segment</li>
+<li><code>End_location</code>: use the end location of the last segment</li>
+<li><code>Start_coast</code>: use the start coast of the first segment</li>
+<li><code>End_coast</code>: use the end coast of the last segment</li>
+<li><code>TOR_F_SCALE_MAX</code>: maximum (Enhanced) Fujita scale ranking across all segments</li>
+<li><code>Total_Damage</code>: sum of <code>DAMAGE_PROPERTY</code> across all segments</li>
+</ul>
+<p>From here, a new feature <code>path_movement</code> was created, which classifies the path trajectory of the full tornado as “Moving Inland”, “Moving Coastal”, or “Other Path” based on the <code>Start_location</code> and <code>End_location</code> features. Below further describes the characteristics of each path trajectory, along with an illustration in <a href="draft-exec-summary.html#fig-path-trajectories" class="quarto-xref">Figure&nbsp;<span>D.1</span></a>.</p>
+<ul>
+<li><p><strong>Moving Inland</strong>: tornado originated on the coast and moved inland</p></li>
+<li><p><strong>Moving Coastal</strong>: tornado originated on inland and moved to the coast</p></li>
+<li><p><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin</p></li>
+</ul>
+<div id="fig-path-trajectories" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-path-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/path-trajectories.jpeg" class="img-fluid figure-img">
 </div>
-<div id="ref-StormEventsDatabaseb" class="csl-entry" role="listitem">
-———. n.d. <span>“Storm Events Database - <span>FAQ</span>. National
-Centers for Environmental Information.”</span> Accessed April 9, 2026.
-<a href="https://www.ncei.noaa.gov/stormevents/faq.jsp">https://www.ncei.noaa.gov/stormevents/faq.jsp</a>.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-path-trajectories-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;A.2: This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of “Moving Inland”, “Moving Coastal”, and “Other Path”.
+</figcaption>
+</figure>
 </div>
-<div id="ref-TornadoAlley2026" class="csl-entry" role="listitem">
-<span>“Tornado Alley.”</span> 2026. In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=Tornado_Alley&amp;oldid=1339195322">https://en.wikipedia.org/w/index.php?title=Tornado_Alley&amp;oldid=1339195322</a>.
+<p>Finally, a new feature <code>shark_lifting_potential</code> was created, which classifies the shark-lifting potential of the full tornado as “High Potential” or “Low Potential”, based on the <code>TOR_F_SCALE_MAX</code> feature. Below further describes the characteristics of these labels:</p>
+<ul>
+<li><strong>Low Potential</strong>: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale</li>
+<li><strong>High Potential</strong>: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale</li>
+</ul>
+<p>TODO question: how can i better display this diagram? should it be in its own section? it’s kinda just sitting there at the end of the subsection.</p>
+<div id="fig-data-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/Sharknado Data Processing.png" class="img-fluid figure-img">
 </div>
-<div id="ref-TornadoesClimateChange" class="csl-entry" role="listitem">
-<span>“Tornadoes and Climate Change. National Geographic
-Education.”</span> 2023. October 19, 2023. <a href="https://education.nationalgeographic.org/resource/tornadoes-and-climate-change">https://education.nationalgeographic.org/resource/tornadoes-and-climate-change</a>.
-</div>
-<div id="ref-WhatTornadoLets2020" class="csl-entry" role="listitem">
-<span>“What Is a Tornado? Let’s Talk Science.”</span> 2020. February 26,
-2020. <a href="https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado">https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado</a>.
-</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;A.3: This is a diagram illustrating the steps used to process data and engineer features from the NOAA Storm Events Database and US Coastline shapefile.
+</figcaption>
+</figure>
 </div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -699,13 +743,13 @@ Education.”</span> 2023. October 19, 2023. <a href="https://education.national
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./conclusion.html" class="pagination-link" aria-label="Conclusion &amp; Discussion">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion &amp; Discussion</span></span>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./technical-methodology.html" class="pagination-link" aria-label="Technical Methodology">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Technical Methodology</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data-doc.html" class="pagination-link" aria-label="Data Documentation">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Documentation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
