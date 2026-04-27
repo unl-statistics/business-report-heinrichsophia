@@ -20,6 +20,16 @@
     ]
   },
   {
+    "objectID": "index.html#background",
+    "href": "index.html#background",
+    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
+    "section": "Background",
+    "text": "Background\nHistorically, the majority of tornadoes have occurred in the Central United States, a region nicknamed “Tornado Alley”. Since this region is not near any coasts, the plausibility of a tornado picking up a shark out of coastal waters is low. However, there have been a few recorded tornadoes near the coast, leading the agency to wonder if sharknadoes are not an impossibility.\nWhile there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics. Through logical reasoning, Martini concluded that while a typical tornado travels over enough geographic area and can be strong enough to keep a shark airborne, it is highly unlikely that a tornado could lift the shark out of the water in the first place.\nFor the sake of still conducting a statistical analysis, this report ignores this physical impossibility.",
+    "crumbs": [
+      "Executive Summary"
+    ]
+  },
+  {
     "objectID": "index.html#methods",
     "href": "index.html#methods",
     "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
@@ -90,16 +100,6 @@
     ]
   },
   {
-    "objectID": "methodology.html#statistical-approach",
-    "href": "methodology.html#statistical-approach",
-    "title": "2  Methodology",
-    "section": "2.4 Statistical Approach",
-    "text": "2.4 Statistical Approach\nTODO explain the type of analysis used in results and justify. add a bit more advanced analysis\n\n\n\n\nCoastal Management, Office for. n.d. “Coastal Zone Management Programs. Office for Coastal Management  NOAA.” Accessed April 13, 2026. https://coast.noaa.gov/czm/mystate/.",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methodology</span>"
-    ]
-  },
-  {
     "objectID": "results.html",
     "href": "results.html",
     "title": "3  Results",
@@ -135,6 +135,16 @@
     "title": "3  Results",
     "section": "3.4 Economic Impact",
     "text": "3.4 Economic Impact\nThe final phase of this analysis evaluated the economic impact of tornadoes based on their path trajectory. Across the 75-year study period, the total property damage recorded for all events summed to $3.33B with an average of $106,389 per tornado. The summary of economic impact by tornado trajectory and shark-lifting potential is in Table 3.2 below:\n\n\n\n\nTable 3.2: Categorized all tornadoes by path trajectory and calculated total and average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.\n\n\n\n\n\n\n\n\n\nEconomic Impact Analysis by Tornado Trajectory\n\n\nProperty damage and frequency (1950-2025)\n\n\nShark-Lifting Potential\nTotal Events\nCumulative Damage\nAvg. Damage per Event\n\n\n\n\nMoving Coastal\n\n\nLow Potential\n60\n$41.79M\n$696.53K\n\n\nHigh Potential\n2\n$9.47M\n$4.73M\n\n\nMoving Inland\n\n\nLow Potential\n71\n$24.79M\n$349.21K\n\n\nHigh Potential\n2\n$183.00K\n$91.50K\n\n\nOther Path\n\n\nLow Potential\n27,411\n$2.58B\n$93.97K\n\n\nHigh Potential\n3,799\n$682.77M\n$179.72K\n\n\n\n\n\n\n\n\n\n\nAs visualized in Figure 3.3 below, tornadoes following “Other Path” trajectories have contributed to 97.86% of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland (“Moving Inland”) have contributed to only 0.75% of all recorded tornado property damage, with only $183K in damages resulting from high shark-lifting potential tornadoes.\n\n\n\n\n\n\n\n\nFigure 3.3: Categorized all tornadoes by trajectory and visualized the total property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.\n\n\n\n\n\nBased on the visual analysis provided in Figure 3.4, a hasty conclusion would be that tornadoes originating inland and moving to the coast (“Moving Coastal”) result in the most property damage on average. Based on the calculations, this is technically true. However, it’s important to note that for “Moving Coastal” and “Moving Inland” tornadoes classified as high shark-lifting potential, the population consists only of 2 total recorded events for both groups.\n\n\n\n\n\n\n\n\nFigure 3.4: Categorized all tornadoes by trajectory and visualized the average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.\n\n\n\n\n\nUltimately, when looking at the tornadoes with sharknado characteristics (“Moving Inland” with high shark-lifting potential), only $183K in damages has been inflicted in the last 75 years with an average damage of $91.5K per storm. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that “Sharknado-style” events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "results.html#additional-analysis",
+    "href": "results.html#additional-analysis",
+    "title": "3  Results",
+    "section": "3.5 Additional Analysis",
+    "text": "3.5 Additional Analysis\nTo further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in Figure 3.5 below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period.\n\n\n\n\n\n\n\n\nFigure 3.5: All tornadoes categorized by (Enhanced) Fujita category and counts are plotted from 1950-2025",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
@@ -194,261 +204,9 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "“2004 Hallam Tornado.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&oldid=1345145456.\n\n\nCoastal Management, Office for. n.d. “Coastal Zone Management\nPrograms. Office for Coastal Management \nNOAA.” Accessed April 13, 2026. https://coast.noaa.gov/czm/mystate/.\n\n\nDOC/NOAA/NESDIS/NCEI. 2026. “Storm Events Database \nNational Centers for Environmental Information.”\nhttps://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nFerrante, Anthony. 2013. Sharknado. Syfy.\n\n\nFisheries, NOAA. 2025. “Sharks in Atlantic, Gulf, and Caribbean\nCoastal Waters. NOAA Fisheries.” NOAA\nFisheries. February 26, 2025. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters.\n\n\nMartini, Dr. Kim. 2013. “Recipe for a Sharknado  Deep\nSea News. Deep Sea News.” August 9, 2013. https://deepseanews.com/2013/08/recipe-for-a-sharknado/.\n\n\nNational Weather Service, NOAA’s. 2015. “EF Scale.\nNational Weather Service.” NOAA’s National Weather\nService. March 27, 2015. https://www.weather.gov/lsx/enhancedfujitascale.\n\n\n———. 2025. “The Enhanced Fujita Scale (EF Scale).\nStorm Prediction Center.” NOAA’s National Weather\nService. May 21, 2025. https://www.spc.noaa.gov/efscale/.\n\n\n———. n.d. “Storm Events Database - FAQ. National\nCenters for Environmental Information.” Accessed April 9, 2026.\nhttps://www.ncei.noaa.gov/stormevents/faq.jsp.\n\n\n“Tornado Alley.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=Tornado_Alley&oldid=1339195322.\n\n\n“Tornadoes and Climate Change. National Geographic\nEducation.” 2023. October 19, 2023. https://education.nationalgeographic.org/resource/tornadoes-and-climate-change.\n\n\n“What Is a Tornado? Let’s Talk Science.” 2020. February 26,\n2020. https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado.",
+    "text": "“2004 Hallam Tornado.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&oldid=1345145456.\n\n\nAdministration, Federal Aviation. 2025. “Next Generation Weather\nRadar (NEXRAD). Federal Aviation Administration\n United States Department of Transportation.”\nSeptember 16, 2025. https://www.faa.gov/air_traffic/weather/nexrad.\n\n\nBureau, US Census. 2025a. “TIGER/Line Shapefiles and\nTIGER/Line Files Technical Documentation.\nCensus.gov.” September 17, 2025. https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/tiger-geo-line.html.\n\n\n———. 2025b. “Census Mapping Files. Census.gov.” September\n26, 2025. https://www.census.gov/geographies/mapping-files.html.\n\n\nCoastal Management, Office for. n.d. “Coastal Zone Management\nPrograms. Office for Coastal Management \nNOAA.” Accessed April 13, 2026. https://coast.noaa.gov/czm/mystate/.\n\n\nDOC/NOAA/NESDIS/NCEI. 2026. “Storm Events Database \nNational Centers for Environmental Information.”\nhttps://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nFerrante, Anthony. 2013. Sharknado. Syfy.\n\n\nFisheries, NOAA. 2025. “Sharks in Atlantic, Gulf, and Caribbean\nCoastal Waters. NOAA Fisheries.” NOAA\nFisheries. February 26, 2025. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters.\n\n\nMartini, Dr. Kim. 2013. “Recipe for a Sharknado  Deep\nSea News. Deep Sea News.” August 9, 2013. https://deepseanews.com/2013/08/recipe-for-a-sharknado/.\n\n\nNational Weather Service, NOAA’s. 2015. “EF Scale.\nNational Weather Service.” NOAA’s National Weather\nService. March 27, 2015. https://www.weather.gov/lsx/enhancedfujitascale.\n\n\n———. 2025. “The Enhanced Fujita Scale (EF Scale).\nStorm Prediction Center.” NOAA’s National Weather\nService. May 21, 2025. https://www.spc.noaa.gov/efscale/.\n\n\n———. n.d. “Storm Events Database - FAQ. National\nCenters for Environmental Information.” Accessed April 9, 2026.\nhttps://www.ncei.noaa.gov/stormevents/faq.jsp.\n\n\n“Tornado Alley.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=Tornado_Alley&oldid=1339195322.\n\n\n“Tornadoes and Climate Change. National Geographic\nEducation.” 2023. October 19, 2023. https://education.nationalgeographic.org/resource/tornadoes-and-climate-change.\n\n\nWalker, Kylie. 2025. “Tigris Package -\nRDocumentation. Rdocumentation.” April 16, 2025. https://www.rdocumentation.org/packages/tigris/versions/2.2.1.\n\n\n“What Is a Tornado? Let’s Talk Science.” 2020. February 26,\n2020. https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "draft-data-doc.html",
-    "href": "draft-data-doc.html",
-    "title": "Appendix C — Draft: Data Documentation",
-    "section": "",
-    "text": "C.1 Collection\nTODO where does this go in the order of pages?\nThe Storm Events Database (DOC/NOAA/NESDIS/NCEI 2026) was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.\nAll data in the set was collected between January 1950 and October 2025. The National Weather Service receives its information from a variety of sources, which include but are not limited to: county, state, and federal emergency management officials, local law enforcement officials, skywarn spotters, NWS damage surveys, newspaper clipping services, the insurance industry, and the general public, among others. Because the NWS receives information from multiple sources, details are not provided on measurement instruments. New data for a given month is updated in the database 75-90 days after the end of that month.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "draft-data-doc.html#structure-formatting",
-    "href": "draft-data-doc.html#structure-formatting",
-    "title": "Appendix C — Draft: Data Documentation",
-    "section": "C.2 Structure & Formatting",
-    "text": "C.2 Structure & Formatting\nSince 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. Any given weather event entry, or row, has an eventID which links the event across each of the three data categories/file types for that year. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.\nDates are recorded as YYYYMM or DD-MM-YY HH:MM:SS. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale, which is a categorical variable (F0-F5).\nAs an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”\nRepository\nREADME - information on the naming conventions of the files.\nStorm Data Export Format - description of columns across Event Details Files, Location Files, and Fatality Files",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "draft-data-doc.html#data-validation-quality-control",
-    "href": "draft-data-doc.html#data-validation-quality-control",
-    "title": "Appendix C — Draft: Data Documentation",
-    "section": "C.3 Data Validation & Quality Control",
-    "text": "C.3 Data Validation & Quality Control\nAccording to the “Storm Data FAQ Page” (National Weather Service n.d.), “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "draft-data-doc.html#data-reuse",
-    "href": "draft-data-doc.html#data-reuse",
-    "title": "Appendix C — Draft: Data Documentation",
-    "section": "C.4 Data Reuse",
-    "text": "C.4 Data Reuse\nAs a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.\n\n\n\n\nDOC/NOAA/NESDIS/NCEI. 2026. “Storm Events Database  National Centers for Environmental Information.” https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nNational Weather Service, NOAA’s. n.d. “Storm Events Database - FAQ. National Centers for Environmental Information.” Accessed April 9, 2026. https://www.ncei.noaa.gov/stormevents/faq.jsp.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "draft-results.html",
-    "href": "draft-results.html",
-    "title": "Appendix B — Draft: Results",
-    "section": "",
-    "text": "B.1 Overview of the Study Population\nThe analysis of the tornado data from the NOAA Storm Events Database spans from 1950 through 2025. After combining individual storm segments into complete tornado events, a total of 31,345 unique tornado events were identified across the United States. Of these events, 761 started within the defined 3-mile coastal zone, and only 73 of those ultimately moved from the coast to the inland. These events were categorized by their trajectory to determine the potential for transporting sharks. The population breakdown is as follows in Table B.1:\nTable B.1: Population breakdown: categorized all tornadoes by path trajectory and calculated counts and proportions of high vs. low shark-lifting potential within each path trajectory group.\n\n\n\n\n\n\n\n\n\nTornado Path Trajectory and Shark-Lifting Potential\n\n\n1950-2025\n\n\nShark-Lifting Potential\nEvent Count\nProportion of Trajectory\n\n\n\n\nMoving Coastal\n\n\nHigh Potential\n2\n3.2%\n\n\nLow Potential\n60\n96.8%\n\n\nMoving Inland\n\n\nHigh Potential\n2\n2.7%\n\n\nLow Potential\n71\n97.3%\n\n\nOther Path\n\n\nHigh Potential\n3,799\n12.2%\n\n\nLow Potential\n27,411\n87.8%\nInitial findings indicate that “High Potential” and “Moving Inland” events are a minority of total tornado occurrences, with only 2 total tornadoes meeting the criteria for “High Potential” and “Moving Inland”. While these unique events are quite rare, they are certainly not impossible and present a specific kind of threat that current risk models might be missing.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
-    ]
-  },
-  {
-    "objectID": "draft-results.html#path-movement-intensity-analysis",
-    "href": "draft-results.html#path-movement-intensity-analysis",
-    "title": "Appendix B — Draft: Results",
-    "section": "B.2 Path Movement & Intensity Analysis",
-    "text": "B.2 Path Movement & Intensity Analysis\nTo further evaluate the relationship between tornado path trajectory and intensity, we can visualize the metrics from the previous Table B.1. In Figure B.1 below, we can see a noticeable difference in tornadoes that remained completely inland (“Other Path”) compared to tornadoes that either originated or ended on the coasts. While “Moving Inland” trajectories are the primary focus when considering the risk of sharknadoes, only 2.7% of these tornadoes moving from the coast to the inland reached high-potential intensity. In contrast, “Other Path” tornadoes exhibited a much larger high-potential rate of 12.2%.\n\n\n\n\n\n\n\n\nFigure B.1: Categorized all tornadoes by path trajectory and visualized the percentages of high vs. low shark-lifting potential within each path trajectory group.\n\n\n\n\n\nThis suggests that while the “Moving Inland” path is geographically unique, the prime atmospheric conditions needed for F3/F4/F5 tornadoes are far more prevalent once the storm has moved more inland over land. For insurance risk modeling, this indicates that while coastal-origin tornadoes are capable of transporting sharks, they are statistically much less likely to reach the extreme wind speeds of their inland counterparts.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
-    ]
-  },
-  {
-    "objectID": "draft-results.html#regional-risk-distribution",
-    "href": "draft-results.html#regional-risk-distribution",
-    "title": "Appendix B — Draft: Results",
-    "section": "B.3 Regional Risk Distribution",
-    "text": "B.3 Regional Risk Distribution\nTo identify likely areas where we could find sharknadoes forming, the data was segmented by coastal region (Atlantic, Gulf, and Pacific). The analysis in Figure B.2 reveals a geographic imbalance in risk.\nThe Gulf Coast and Atlantic Coast account for the vast majority of “Moving Inland” events, with each coast responsible for 36 “Moving Inland” tornadoes. In, contrast the Pacific Coast only recorded 1 total “Moving Inland” tornado which was identified as “Low Potential” intensity. The Atlantic Coast was the only coastal region that has recorded a “Moving Inland” tornado with high shark-lifting potential (2 total occurrences recorded). Overall, though, the majority of the “Moving Inland” tornadoes produced by any of the 3 coasts were identified as “Low Potential” intensity.\n\n\n\n\n\n\n\n\nFigure B.2: Categorized only ‘Moving Inland’ trajectory tornadoes by coastal region and visualized the percentages of high vs. low shark-lifting potential within each coastal region group.\n\n\n\n\n\nThis confirms that sharknado potential is a regional phenomenon, rather than a national one, with the Atlantic and Gulf Coasts requiring significantly different actuarial considerations than the West Coast.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
-    ]
-  },
-  {
-    "objectID": "draft-results.html#economic-impact",
-    "href": "draft-results.html#economic-impact",
-    "title": "Appendix B — Draft: Results",
-    "section": "B.4 Economic Impact",
-    "text": "B.4 Economic Impact\nThe final phase of this analysis evaluated the economic impact of tornadoes based on their path trajectory. Across the 75-year study period, the total property damage recorded for all events summed to $3.33B with an average of $106,389 per tornado. The summary of economic impact by tornado trajectory and shark-lifting potential is in Table B.2 below:\n\n\n\n\nTable B.2: Categorized all tornadoes by path trajectory and calculated total and average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.\n\n\n\n\n\n\n\n\n\nEconomic Impact Analysis by Tornado Trajectory\n\n\nProperty damage and frequency (1950-2025)\n\n\nShark-Lifting Potential\nTotal Events\nCumulative Damage\nAvg. Damage per Event\n\n\n\n\nMoving Coastal\n\n\nLow Potential\n60\n$41.79M\n$696.53K\n\n\nHigh Potential\n2\n$9.47M\n$4.73M\n\n\nMoving Inland\n\n\nLow Potential\n71\n$24.79M\n$349.21K\n\n\nHigh Potential\n2\n$183.00K\n$91.50K\n\n\nOther Path\n\n\nLow Potential\n27,411\n$2.58B\n$93.97K\n\n\nHigh Potential\n3,799\n$682.77M\n$179.72K\n\n\n\n\n\n\n\n\n\n\nAs visualized in Figure B.3 below, tornadoes following “Other Path” trajectories have contributed to 97.86% of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland (“Moving Inland”) have contributed to only 0.75% of all recorded tornado property damage, with only $183K in damages resulting from high shark-lifting potential tornadoes.\n\n\n\n\n\n\n\n\nFigure B.3: Categorized all tornadoes by trajectory and visualized the total property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.\n\n\n\n\n\nBased on the visual analysis provided in Figure B.4, a hasty conclusion would be that tornadoes originating inland and moving to the coast (“Moving Coastal”) result in the most property damage on average. Which based on the calculations, this is technically true. However, it’s important to note that for “Moving Coastal” and “Moving Inland” tornadoes classified as high shark-lifting potential, the population only consists of 2 total recorded events for both groups.\n\n\n\n\n\n\n\n\nFigure B.4: Categorized all tornadoes by trajectory and visualized the average property damage inflicted by high vs. low shark-lifting potential tornadoes within each path trajectory group.\n\n\n\n\n\nUltimately, when looking at the tornadoes with sharknado characteristics (“Moving Inland” with high shark-lifting potential), only $183K in damages has been inflicted in the last 75 years with an average damage of $91.5K per storm. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that “Sharknado-style” events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.\nTODO add a trending graph that shows trends of tornado intensity. secondary analysis? The goal of this graph would be to help argue that an increase in tornado intensity could be resulting from factors other than climate change (e.g. new meteorological technology)\n\n\n\n\n\n\n\n\nFigure B.5: All tornadoes categorized by (Enhanced) Fujita category and counts are plotted from 1950-2025",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Draft: Results</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html",
-    "href": "draft-intro-conclusions.html",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "",
-    "text": "D Introduction\nBefore the release of the movie, Sharknado (Ferrante 2013), most people probably had not thought about the possibility of a tornado close enough to water and so powerful that it could pick up a shark and hurl it onto the land. However, with the recent rise in extreme weather events due to climate change (“Tornadoes and Climate Change. National Geographic Education” 2023), Anthony Ferrante’s idea of a sharknado in today’s climate environment may not be as laughable as it was back in 2013. Thus, there exists a motivation to investigate if sharknadoes could become a real threat to the safety of our communities (and the profitability of insurance companies).\nHistorically, we have seen tornadoes primarily occurring in Central United States region, which has gained the nickname “Tornado Alley” (see Figure D.1). Tornadoes typically last for a few minutes and travel for short distances of 1 to 5 miles, though long-track events can exceed 50 miles. The intensity of a tornado is ranked on a scale of EF0 to EF5; while the original Fujita (F) scale was used historically, the modern Enhanced Fujita (EF) scale focuses on degrees of damage to better estimate wind speeds (National Weather Service 2025). Under this system, an EF1 tornado is strong enough to do moderate damage, such as stripping roof surfaces or upsetting mobile homes, while an EF5 tornado is strong enough to lift incredibly heavy objects—including automobiles and entire frame houses—and cause incredible structural devastation (see Figure D.2).\nAdditionally, the 75 years of tornado data provided by the NOAA (DOC/NOAA/NESDIS/NCEI 2026) (which we will later analyze in more detail) records a small, but not impossible, set of coastal tornado occurrences. With various species of sharks existing along the Atlantic, Pacific, and Gulf Coasts of the US, a coastal tornado’s “inventory” of sharks is not limited to any specific region (Fisheries 2025). Furthermore, with an increasing number of tornadoes in atypical regions such as the Southeastern United States (“Tornadoes and Climate Change. National Geographic Education” 2023), tornadoes’ proximity to sharks and ability to pick them up may be increasing as well.\nWhile there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics (Martini 2013). Her analysis resulted in several conclusions:\nUsing this logic, we can assume that EF3 tornadoes (and larger) are strong enough to pick up small sharks, given that the shark was transported from the water into the tornado by some odd means. This transportation of the shark from water to tornado already makes the occurrence of a sharknado highly unlikely. However, for the purposes of this report, we will ignore this improbability and assume the physical transport of sharks is possible, so we can continue analyzing the geographic and economic frequency of the storm paths themselves.\nWhile tornado intensity is well-studied and the ability for a high intensity tornado to pick up a shark has been logically proven, there is a gap in the analysis of the two together. To ensure the profitability of the insurance agency, we need to know how serious is the threat of sharknadoes to the insurance agency’s bottom line given the warming climate and shifting trends in tornado activity. Thus, we will use the historical data found in the NOAA Storm Events Database to evaluate the likelihood and economic impact of a high-intensity tornado with a coastal-origin moving inland (since these are the types of tornadoes that have the ability to transport sharks from the ocean) to answer the research question:\nWhat is the historical frequency, probability, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those following other trajectories?",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html#frequency-probability-of-sharknadoes",
-    "href": "draft-intro-conclusions.html#frequency-probability-of-sharknadoes",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.1 Frequency & Probability of Sharknadoes",
-    "text": "E.1 Frequency & Probability of Sharknadoes\nIn the last 75 years, we found that only 2 out of 31,345 recorded tornadoes exhibited characteristics of “Moving Inland” and “High Potential” for shark lifting. Thus, the empirical probability of a sharknado-like storm is 0.0064% or approximately 1 in 15,673 U.S. tornado events, indicating that storms like this are highly rare events. This frequency is significantly lower than that of high-intensity storms with a path classification of “Other Path”, which occur at a rate of roughly 12.1%. Given that the concept of a sharknado originated from a fictional movie, this result was to be expected.\nTo further reduce concern regarding high shark-lifting potential tornadoes, we identified only 2 tornadoes with this intensity for both trajectory categories of “Moving Inland” (originating on the coast and moving inland) “Moving Coastal” (originating inland and moving to the coast). This was expectedly insignificant compared to the 3,799 high shark-lifting potential tornadoes in the “Other Path” trajectory category, which makes sense since the inland Tornado Alley region breeds optimal conditions for high intensity tornadoes compared to the coasts.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html#regions-of-concern",
-    "href": "draft-intro-conclusions.html#regions-of-concern",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.2 Regions of Concern",
-    "text": "E.2 Regions of Concern\nHowever, as previously mentioned, there has been an upward trend of tornadoes in atypical regions such as the Southeastern United States (“Tornadoes and Climate Change. National Geographic Education” 2023), and perhaps unexpectedly, the majority of tornadoes categorized as “Moving Inland” originated in the Atlantic or Gulf coasts near the southeastern side of the United States. With the southeast region already exhibiting these storm characteristics and with climate change creating volatility in extreme weather events, an increase in storms with sharknado potential in the southeast is not completely out of the question.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html#economic-impact",
-    "href": "draft-intro-conclusions.html#economic-impact",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.3 Economic Impact",
-    "text": "E.3 Economic Impact\nIn terms of the economic impact of sharknadoes, tornadoes with a path “Moving Inland” accounted for only 0.75% of all recorded tornado property damage, and even less of that was contributed by high shark-lifting potential tornadoes moving inland. Over 75 years, tornadoes “Moving Inland” with a high shark-lifting potential resulted in a total cumulative damage of $183K and an average of $91K per storm, $14.9K less than the average damage caused by all recorded tornadoes. Additionally, this was significantly less damage than tornadoes classified was “Other Path” with a high shark-lifting potential, which resulted in a total cumulative damage of $682M and an average of $179K per storm. This suggests that tornadoes originating in more typical regions (such as Tornado Alley) have historically caused far more damage overall and also on a per-storm basis. Thus, an insurance company covering property damages should be less concerned with sharknadoes, and more concerned with typical inland tornadoes.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html#limitations-future-exploration",
-    "href": "draft-intro-conclusions.html#limitations-future-exploration",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.4 Limitations & Future Exploration",
-    "text": "E.4 Limitations & Future Exploration\n\nE.4.1 Physics Preventing Sharkadoes\nAs mentioned in Chapter 1, it is nearly impossible for a tornadic water spout to pickup a shark out of the water. This is because tornadic water spouts don’t typically suck up water, and the behavior of tagged sharks has shown that they usually dive deep when there are approaching storms. So, while this report analyzes the frequency, probability, and economic impact of sharknado-like storms, the actual probability of a shark being lifted by a tornado remains close to zero regardless of storm intensity. This study intentionally overlooks these mechanical improbabilities to provide a worst-case scenario baseline for the insurance agency.\n\n\nE.4.2 Dataset Structure\nThe Storm Events Database (DOC/NOAA/NESDIS/NCEI 2026) was the core data used in this report. One of the major drawbacks of the data’s structure is that a single storm may be recorded as multiple different storm segments. A new storm segments is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named EPISODE_ID, making the process of connecting segments relatively straightforward.\nHowever, storms occurring before 1996 do not have a value in the EPISODE_ID column. To connect storm segments in this case, we matched two segments’ dates, time, and start/end location coordinates. Because this is less precise than simply using a unique identifier to connect storm segments, there could be some room for error in the way full storm data was aggregated for storms occurring before 1996.\nFurther analysis could be conducted to compare the pre and post 1996 storms to ensure the difference in segment connection methods doesn’t have any unforeseen effects.\n\n\nE.4.3 Data Validity\nThe NOAA states that some of the data appearing in the Storm Events Database may be gathered from sources outside the National Weather Service. “An effort is made to use the best available information but because of time and resource constraints, information from these sources may be unverified by the NWS.” Therefore, the NOAA cautions users as the NWS does not guarantee accuracy or validity of the information (National Weather Service n.d.).\n\n\nE.4.4 Data Biases\nDue to significant advancements in meteorological technology and communication systems over the last 75 years, tornado data and records have certainly improved. In the early decades of the NOAA Storm Database, tornado records relied heavily on visual confirmation and manual reporting, which often resulted in under-reporting or less precise measurements in less populated regions. This could have an impact on time-series trends because the apparent increase in tornado frequency over time may be related to improved detection capabilities, as opposed to increased climate risk.\n\n\nE.4.5 Sample Size & Temporal Constraints\nWhile the dataset of \\(N=31345\\) events provides a solid foundation for analyzing modern tornado trends, the 75-year study period represents a relatively narrow window in terms of climate history. This limited temporal scope may not fully capture long-term climate patterns. Furthermore, the extreme rarity of “Moving Inland” and “High Potential” for shark-lifting (\\(n=2\\)) limits our ability to make causal inferences or generalizations about the economic impact to future populations.\n\n\nE.4.6 Storm Intensity Ratings\nIn the analysis, storm intensity ratings using the Fujita (F) scale and the Enhanced Fujita (EF) scale were consolidated into a single intensity metric (i.e., an F5 tornado was treated the same as an EF5 tornado). While the Enhanced Fujita Scale was derived from the original Fujita scale, there could be some unforeseen consequences as the scales are technically different. Treating an F5 tornado as exactly equivalent to an EF5 tornado may introduce a degree of measurement error, especially when comparing 20th century storms to those occurring after th 2007 implementation of the EF system (National Weather Service 2015). This inconsistency could potentially skew time-series trends, as the criteria for a “High Potential” storm may have shifted slightly between the two time periods However, for the purposes of this report, treating the scales synonymously is the most practical method for initial analysis.\n\n\nE.4.7 Definition of “Coast” and “Other Path”\nIn the methodology, a rather arbitrary buffer of 3 miles was used to geographically and geometrically define the coast. The st_buffer() function from the sf package equally centers the buffer over a line (like the coastline), resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Since only 73 out of 31,345 storms were identified as “Moving Inland” (originating on the coast and traveling inland), further analysis could be conducted by testing different buffer values, especially larger ones, to see if the recorded number of “Moving Inland” storms is affected.\nAdditionally, storm trajectories classified as “Other Path” included storms that started and remained inland, along with storms that started on the coast and remained on the coast. However, with the 3 mile buffer zone, storms that started on the coast and remained on the coast could technically include storms that originated within the 1.5 mile extension into the ocean and ended on land within the 1.5 mile extension inland. Thus, decreasing the buffer zone’s size or moving the buffer zone closer to the water could shift some “Other Path” classifications to “Moving Inland”.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-intro-conclusions.html#going-forward",
-    "href": "draft-intro-conclusions.html#going-forward",
-    "title": "Appendix C — Draft: Intro/Conclusions",
-    "section": "E.5 Going Forward",
-    "text": "E.5 Going Forward\nUltimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though, with climate change having an impact on extreme weather events, it wouldn’t hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.\n\n\n\n\n\n\nTipAction Items\n\n\n\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.\n\n\n\n\n\n\n\n“2004 Hallam Tornado.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=2004_Hallam_tornado&oldid=1345145456.\n\n\nDOC/NOAA/NESDIS/NCEI. 2026. “Storm Events Database  National Centers for Environmental Information.” https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://www.ncei.noaa.gov/stormevents/ftp.jsp.\n\n\nFerrante, Anthony. 2013. Sharknado. Syfy.\n\n\nFisheries, NOAA. 2025. “Sharks in Atlantic, Gulf, and Caribbean Coastal Waters. NOAA Fisheries.” NOAA Fisheries. February 26, 2025. https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/sharks-atlantic-gulf-and-caribbean-coastal-waters.\n\n\nMartini, Dr. Kim. 2013. “Recipe for a Sharknado  Deep Sea News. Deep Sea News.” August 9, 2013. https://deepseanews.com/2013/08/recipe-for-a-sharknado/.\n\n\nNational Weather Service, NOAA’s. 2015. “EF Scale. National Weather Service.” NOAA’s National Weather Service. March 27, 2015. https://www.weather.gov/lsx/enhancedfujitascale.\n\n\n———. 2025. “The Enhanced Fujita Scale (EF Scale). Storm Prediction Center.” NOAA’s National Weather Service. May 21, 2025. https://www.spc.noaa.gov/efscale/.\n\n\n———. n.d. “Storm Events Database - FAQ. National Centers for Environmental Information.” Accessed April 9, 2026. https://www.ncei.noaa.gov/stormevents/faq.jsp.\n\n\n“Tornado Alley.” 2026. In Wikipedia. https://en.wikipedia.org/w/index.php?title=Tornado_Alley&oldid=1339195322.\n\n\n“Tornadoes and Climate Change. National Geographic Education.” 2023. October 19, 2023. https://education.nationalgeographic.org/resource/tornadoes-and-climate-change.\n\n\n“What Is a Tornado? Let’s Talk Science.” 2020. February 26, 2020. https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Draft: Intro/Conclusions</span>"
-    ]
-  },
-  {
-    "objectID": "draft-exec-summary.html",
-    "href": "draft-exec-summary.html",
-    "title": "Appendix D — Draft: Executive Summary",
-    "section": "",
-    "text": "D.1 Purpose of Report\nThe insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the ‘Sharknado’ phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe storms could lead to a higher likelihood of shark-infested weather events. The purpose of this report is to",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
-    ]
-  },
-  {
-    "objectID": "draft-exec-summary.html#purpose-of-report",
-    "href": "draft-exec-summary.html#purpose-of-report",
-    "title": "Appendix D — Draft: Executive Summary",
-    "section": "",
-    "text": "Determine the likelihood of sharknadoes to form\nDetermine the economic impact of sharknadoes",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
-    ]
-  },
-  {
-    "objectID": "draft-exec-summary.html#methods",
-    "href": "draft-exec-summary.html#methods",
-    "title": "Appendix D — Draft: Executive Summary",
-    "section": "D.2 Methods",
-    "text": "D.2 Methods\n75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.\nA tornado’s path trajectory was classified as one of three labels:\n\n\n\n\n\n\n\n\n\nFigure D.1: This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of “Moving Inland”, “Moving Coastal”, and “Other Path”.\n\n\n\nA tornado’s shark-lifting potential was classified as one of two labels:\n\nLow Potential: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale\nHigh Potential: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
-    ]
-  },
-  {
-    "objectID": "draft-exec-summary.html#findings-conclusions",
-    "href": "draft-exec-summary.html#findings-conclusions",
-    "title": "Appendix D — Draft: Executive Summary",
-    "section": "D.3 Findings & Conclusions",
-    "text": "D.3 Findings & Conclusions\nThroughout the analysis, storms classified as “Moving Inland” and “High [shark-lifting] Potential” were of highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both “Moving Inland” and “High Potential” for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for “Moving Inland” storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, “Moving Inland” storm with high shark-lifting potential account for less that 0.01% of total historical property damage ($183K over 75 years).\n\n\n\n\n\n\nTipReccome\n\n\n\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Draft: Executive Summary</span>"
-    ]
-  },
-  {
-    "objectID": "index.html#background",
-    "href": "index.html#background",
-    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
-    "section": "Background",
-    "text": "Background\nHistorically, the majority of tornadoes have occurred in the Central United States, a region nicknamed “Tornado Alley”. Since this region is not near any coasts, the plausibility of a tornado picking up a shark out of coastal waters is low. However, there have been a few recorded tornadoes near the coast, leading the agency to wonder if sharknadoes are not an impossibility.\nWhile there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics. Through logical reasoning, Martini concluded that while a typical tornado travels over enough geographic area and can be strong enough to keep a shark airborne, it is highly unlikely that a tornado could lift the shark out of the water in the first place.\nFor the sake of still conducting a statistical analysis, this report ignores this physical impossibility.",
-    "crumbs": [
-      "Executive Summary"
-    ]
-  },
-  {
-    "objectID": "data-doc.html",
-    "href": "data-doc.html",
-    "title": "Appendix B — Data Documentation",
-    "section": "",
-    "text": "B.1 NOAA Storm Events Database\nThe Storm Events Database (DOC/NOAA/NESDIS/NCEI 2026) was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "data-doc.html#structure-formatting",
-    "href": "data-doc.html#structure-formatting",
-    "title": "Appendix B — Data Documentation",
-    "section": "B.2 Structure & Formatting",
-    "text": "B.2 Structure & Formatting\nSince 2006, NWS has supplied NCEI with data in the form of CSV text files that are imported into NCEI’s Storm Events Database. In the data set, each year of data has three different CSV files related to each, where each file contains events from that given year and is characterized by one of three data categories/file types: Event Details, Locations, and Fatalities. Any given weather event entry, or row, has an eventID which links the event across each of the three data categories/file types for that year. Notable columns that span across the three file types include start and end date/times, location (state and periodic latitude/longitude coordinates), event type (e.g., tornado), intensity, and fatalities/damage.\nDates are recorded as YYYYMM or DD-MM-YY HH:MM:SS. Location coordinates are formatted in decimal degrees. Tornado intensities are ranked using the Fujita (F) scale, which is a categorical variable (F0-F5).\nAs an additional note, the Storm Events Database main page states that, “NCEI has performed data reformatting and standardization of event types but has not changed any data values for locations, fatalities, injuries, damage, narratives, and any other event-specific information.”\nRepository\nREADME - information on the naming conventions of the files.\nStorm Data Export Format - description of columns across Event Details Files, Location Files, and Fatality Files",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "data-doc.html#data-validation-quality-control",
-    "href": "data-doc.html#data-validation-quality-control",
-    "title": "Appendix B — Data Documentation",
-    "section": "B.3 Data Validation & Quality Control",
-    "text": "B.3 Data Validation & Quality Control\nAccording to the “Storm Data FAQ Page”, “An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS. Therefore, when using information from Storm Data, customers should be cautious as the NWS does not guarantee the accuracy or validity of the information.”\n\n\n\n\n\n\nNote\n\n\n\nCite the specific page using zotero, please.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "data-doc.html#data-reuse",
-    "href": "data-doc.html#data-reuse",
-    "title": "Appendix B — Data Documentation",
-    "section": "B.4 Data Reuse",
-    "text": "B.4 Data Reuse\nAs a product of the U.S. Federal Government (Department of Commerce), this data is in the public domain and is free to use for research without a paid license.\n\n\n\n\n\n\nNote\n\n\n\nI’ve taken the liberty of adjusting your formatting to use sections and subsections. Please update any other documents likewise.\n\n\n\n\n\n\nDOC/NOAA/NESDIS/NCEI. 2026. “Storm Events Database  National Centers for Environmental Information.” https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. https://www.ncei.noaa.gov/stormevents/ftp.jsp.",
-    "crumbs": [
-      "Appendices",
-      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data Documentation</span>"
     ]
   },
   {
@@ -474,6 +232,17 @@
     ]
   },
   {
+    "objectID": "data-doc.html",
+    "href": "data-doc.html",
+    "title": "Appendix B — Data Documentation",
+    "section": "",
+    "text": "B.1 NOAA Storm Events Database\nThe Storm Events Database (DOC/NOAA/NESDIS/NCEI 2026) was entered by the National Centers for Environmental Information (NCEI) under the National Oceanic and Atmospheric Administration (NOAA), which receives data from the National Weather Service (NWS). This data set records the occurrence of intense storms and weather phenomena that have caused loss of life, injuries, significant property damage, and/or disruption to commerce. Also documented are rare, unusual weather phenomena that generate media attention, along with other record maximum or minimum meteorological events that occur in connection with another event. This data was collected and entered to create the official NOAA Storm Data publication and document significant weather events.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data Documentation</span>"
+    ]
+  },
+  {
     "objectID": "data-doc.html#noaa-storm-events-database",
     "href": "data-doc.html#noaa-storm-events-database",
     "title": "Appendix B — Data Documentation",
@@ -493,16 +262,6 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Data Documentation</span>"
-    ]
-  },
-  {
-    "objectID": "results.html#additional-analysis",
-    "href": "results.html#additional-analysis",
-    "title": "3  Results",
-    "section": "3.5 Additional Analysis",
-    "text": "3.5 Additional Analysis\nTo further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in Figure 3.5 below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period.\n\n\n\n\n\n\n\n\nFigure 3.5: All tornadoes categorized by (Enhanced) Fujita category and counts are plotted from 1950-2025",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Results</span>"
     ]
   }
 ]

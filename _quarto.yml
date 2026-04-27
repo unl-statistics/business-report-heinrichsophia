@@ -1,6 +1,8 @@
 project:
   type: book  
   output-dir: docs
+  resources:
+    - presentation.html
 
 book:
   title: "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States"
