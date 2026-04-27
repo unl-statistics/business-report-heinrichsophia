@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -139,40 +159,322 @@ Sophia Heinrich
 </div>
 
 </section>
-<section class="slide level2">
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<p>The 2013 film <em>Sharknado</em> is fiction…</p>
 
-<!-- To render: quarto render presentation.qmd -->
-</section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
+<img data-src="assets/sharknado_movie.jpg" class="r-stretch quarto-figure-center" id="fig-sharknado-movie"><p class="caption">
+Figure&nbsp;1: Sharknado Film from 2013
+</p></section>
+<section id="introduction-1" class="slide level2">
+<h2>Introduction</h2>
+<p>…but intensifying extreme weather due to climate change is a reality for our insurance agency.</p>
+
+<img data-src="assets/climate_change.jpg" class="r-stretch quarto-figure-center" id="fig-climate-change"><p class="caption">
+Figure&nbsp;2: Metaphorical representation of Earth’s climate warming.
+</p></section>
+<section id="the-problem" class="slide level2">
+<h2>The Problem</h2>
+<p>With rising property payouts, is “shark-infested weather” a valid new risk category or a statistical impossibility?</p>
+
+<img data-src="assets/sharknado.jpeg" class="r-stretch quarto-figure-center" id="fig-sharknado"><p class="caption">
+Figure&nbsp;3: This is a fictional mockup of what a sharknado could look like if they were actually real.
+</p></section>
+<section id="background" class="slide level2">
+<h2>Background</h2>
+<div style="font-size: 0.85em;">
 <ul>
-<li>Introduction &amp; Motivation</li>
-<li>Research Question</li>
-<li></li>
+<li>Tornadoes historically occur in the Central U.S. (“Tornado Alley”)</li>
+<li>Increasing number of tornades in atypical regions (Southeastern U.S.)<sup>1</sup></li>
 </ul>
+<!-- tornadoes' proximity to sharks and ability to pick them up may be increasing as well. -->
+</div>
+<div id="fig-tornado-alley" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-tornado-alley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="assets/Tornado_Alley_Diagram.png" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tornado-alley-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: This is map highlights the Central United States, historically referred to as Tornado Alley <span class="citation" data-cites="TornadoAlley2026">(<a href="#/references" role="doc-biblioref" onclick=""><span>“Tornado Alley”</span> 2026</a>)</span>.
+</figcaption>
+</figure>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Source: <span class="citation" data-cites="TornadoesClimateChange"><span>“Tornadoes and Climate Change. National Geographic Education”</span> (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span></p></li></ol></aside></section>
+<section id="background-1" class="slide level2">
+<h2>Background</h2>
+<div style="font-size: 0.85em;">
+<p>Tornado intensity is classified using the <strong>Enhanced Fujita Scale</strong> (F0-F5) based on strength, windspeed, &amp; damage. <!-- tornadoes' proximity to sharks and ability to pick them up may be increasing as well. --></p>
+</div>
+
+<img data-src="assets/EF_Scale.png" class="r-stretch quarto-figure-center" id="fig-ef-scale"><p class="caption">
+Figure&nbsp;5: This is a diagram illustrating the strength, wind speed, and damage typically caused by a tornado at each classification on the Enhanced Fujita Scale <span class="citation" data-cites="WhatTornadoLets2020">(<a href="#/references" role="doc-biblioref" onclick=""><span>“What Is a Tornado? Let’s Talk Science”</span> 2020</a>)</span>.
+</p></section>
+<section id="background-2" class="slide level2">
+<h2>Background</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div style="font-size: 0.85em;">
+<p>Dr.&nbsp;Kim Martini’s physical analysis<sup>1</sup>:</p>
+<ol type="1">
+<li>It is <strong>highly unlikely</strong> that a tornado could suck a shark out of the water.</li>
+<li>Intense tornadoes (F4) are <strong>strong enough</strong> to keep a great white shark airborne.</li>
+<li>A typical tornado flying over a typical reef could pick up about <strong>150 sharks</strong>.</li>
+</ol>
+</div>
+</div><div class="column" style="width:40%;">
+<div id="fig-water-spout" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-water-spout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="assets/tornadic-water-spout.jpeg">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-water-spout-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Tornadic water spout: tornado that exists over a body of water.
+</figcaption>
+</figure>
+</div>
+</div></div>
+
+<aside><div>
+<p><em>For the sake of still conducting a statistical analysis, this report ignores this physical infeasibility.</em></p>
+</div><ol class="aside-footnotes"><li id="fn2"><p>Source: <span class="citation" data-cites="martiniRecipeSharknadoDeep2013">Martini (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span></p></li></ol></aside></section>
+<section id="research-question" class="slide level2">
+<h2>Research Question</h2>
+<div style="text-align: center; margin-top: 1em;">
+<p><em>What is the historical frequency, probability, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to tornadoes following other trajectories?</em></p>
+</div>
 </section>
-<section id="introduction-motivation" class="slide level2">
-<h2>Introduction &amp; Motivation</h2>
+<section id="data-sources" class="slide level2">
+<h2>Data Sources</h2>
+<div class="columns" style="display: flex; gap: 40px;">
+<div class="column" style="background-color: #f0f4f8; padding: 25px; border-radius: 15px; font-size: 0.8em;">
+<p><strong>NOAA Storm Events Database<sup>1</sup></strong></p>
 <ul>
-<li></li>
+<li>Records from 1950 to 2025</li>
+<li>Comprehensive official records of US tornadic activity</li>
+<li>Provides metrics for intensity, location, and property damage</li>
 </ul>
+</div><div class="column" style="background-color: #f0f4f8; padding: 25px; border-radius: 15px; font-size: 0.8em;">
+<p><strong>US Coastline Shapefile<sup>2</sup></strong></p>
+<ul>
+<li>Established using the R package <code>tigris</code></li>
+<li>2025 United States coastline data</li>
+<li>Used to establish geographic boundaries between “Coast” and “Inland”</li>
+</ul>
+</div></div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Source: <span class="citation" data-cites="StormEventsDatabasea">DOC/NOAA/NESDIS/NCEI (<a href="#/references" role="doc-biblioref" onclick="">2026</a>)</span></p></li><li id="fn4"><p>Source: <span class="citation" data-cites="TigrisPackageRDocumentation">Walker (<a href="#/references" role="doc-biblioref" onclick="">2025</a>)</span></p></li></ol></aside></section>
+<section id="methodology" class="slide level2">
+<h2>Methodology</h2>
+<div class="columns" style="display: flex; gap: 40px;">
+<div class="column" style="width:50%;">
+<p><strong>Defining the “Sharknado”:</strong></p>
+<ol type="1">
+<li>Coastal origin</li>
+<li>High intensity (F3-F5)</li>
+<li>Inland trajectory</li>
+</ol>
+<p><strong>Defining “Coast” vs.&nbsp;“Inland”:</strong></p>
+<p>A 3-mile buffer zone (1.5 miles into water, 1.5 miles onto land).</p>
+</div><div class="column" style="width:50%;">
+<div id="fig-us-coastline" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-us-coastline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="assets/coast-buffer.png" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-us-coastline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: 3-mile U.S. coastline buffer
+</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
-<section id="methods" class="slide level2">
-<h2>Methods</h2>
+<section id="methodology-1" class="slide level2">
+<h2>Methodology</h2>
 <ul>
-<li>Keep brief and interesting</li>
+<li>Step 1: Data pre-processing &amp; filtering</li>
 </ul>
+<div style="background-color: #f0f4f8; padding: 25px; border-radius: 15px; font-size: 0.8em;">
+<ul>
+<li>Filter Storm Events Database for “Tornado” storm types</li>
+<li>Remove records with missing data</li>
+</ul>
+</div>
+</section>
+<section id="methodology-2" class="slide level2">
+<h2>Methodology</h2>
+<ul>
+<li>Step 1: Data pre-processing &amp; filtering</li>
+<li>Step 2: Classify each tornado’s trajectory</li>
+</ul>
+
+<img data-src="assets/path-trajectories.jpeg" class="r-stretch quarto-figure-center" id="fig-path-trajectories"><p class="caption">
+Figure&nbsp;8: This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of “Moving Inland”, “Moving Coastal”, and “Other Path”.
+</p></section>
+<section id="methodology-3" class="slide level2">
+<h2>Methodology</h2>
+<ul>
+<li>Step 1: Data pre-processing &amp; filtering</li>
+<li>Step 2: Classify each tornado’s trajectory</li>
+<li>Step 3: Classify each tornado’s shark-lifting potential</li>
+</ul>
+<div style="background-color: #f0f4f8; padding: 25px; border-radius: 15px; font-size: 0.8em;">
+<ul>
+<li><strong>Low Potential</strong>: F0, F1, or F2 rating on the (Enhanced) Fujita Scale</li>
+<li><strong>High Potential</strong>: F3, F4, or F5 rating on the (Enhanced) Fujita Scale</li>
+</ul>
+</div>
 </section>
 <section id="results" class="slide level2">
 <h2>Results</h2>
+<p><strong>Which tornadoes are “Sharknadoes”?</strong></p>
+<ul>
+<li>High Potential (F3-F5)</li>
+<li>Moving Inland</li>
+</ul>
 </section>
-<section id="action-items" class="slide level2">
-<h2>Action Items</h2>
-</section>
-<section id="thank-you-questions" class="slide level2">
-<h2>Thank you! Questions?</h2>
+<section id="results-frequency" class="slide level2">
+<h2>Results: Frequency</h2>
+<!-- 1 in 15,673 -->
 
+<!-- - **The Rare Event:** Out of 31,345 tornadoes, only **73** moved from coast to inland.  -->
+<!-- - Only **2** of those were "High Potential" (F3+) storms. -->
+<!-- - **Empirical Probability:** 0.0064% (roughly 1 in 15,673 events). -->
+<!-- - **Regional Risk:** Almost exclusively an Atlantic and Gulf Coast phenomenon (only 1 low-potential storm recorded on the Pacific coast). -->
+<img data-src="assets/circle-diagram.png" class="r-stretch quarto-figure-center" id="fig-circle-diagram"><p class="caption">
+Figure&nbsp;9: This diagram compares total recorded tornadoes (1950-2025) to tornadoes classified as “High (shark-lifting) Potential” and “Moving Inland” (shapes not to scale).
+</p></section>
+<section id="results-frequency-1" class="slide level2">
+<h2>Results: Frequency</h2>
+
+<!-- Categorized by path trajectory. The red is the percentage of high intensity tornadoes for that path trajectory.  -->
+<!-- Across the different trajectory types, high-intensity storms are a minority. They are more common for "Other Path" (inland) storms, they are super rare for coastal tornadoes either starting or ending on the coast. -->
+<!-- - Atmospheric conditions needed for F3/F4/F5 tornadoes are far more prevalent once a storm has moved inland. -->
+<img data-src="presentation_files/figure-revealjs/fig-trajectory-intensity-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-trajectory-intensity"><p class="caption">
+Figure&nbsp;10: Categorized all tornadoes by path trajectory and visualized the percentages of high vs.&nbsp;low shark-lifting potential within each path trajectory group.
+</p></section>
+<section id="results-regional-risk" class="slide level2">
+<h2>Results: Regional Risk</h2>
+
+<!-- Looking only at the storms that were classified as "Moving Inland" (so they started on the coast and moved inland) only two total storms were also high intensity (and they originated on the atlantic coast). -->
+<!-- Overall we can see the "Moving Inland" storms occur more in the eastern region (Atlantic and Gulf) than the western pacific coasts. So if storm intensity continues to rise with climate change, we'd want to pay attention to the eastern US coasts for sharknado risk.  -->
+<img data-src="presentation_files/figure-revealjs/fig-moving-inland-regions-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-moving-inland-regions"><p class="caption">
+Figure&nbsp;11: Categorized only ‘Moving Inland’ trajectory tornadoes by coastal region and visualized the percentages of high vs.&nbsp;low shark-lifting potential within each coastal region group.
+</p></section>
+<section id="results-economic-impact" class="slide level2">
+<h2>Results: Economic Impact</h2>
+<p>Across 75-years of data</p>
+<div style="background-color: #f0f4f8; padding: 25px; border-radius: 15px; font-size: 0.8em;">
+<ul>
+<li>Total tornado damages: <strong>$3.33B</strong></li>
+<li>Average damage per tornado: <strong>$106K</strong></li>
+</ul>
+</div>
+<div style="background-color: #FFFFFF; padding: 20px">
+
+</div>
+<div style="background-color: #f0f4f8; padding: 25px; border-radius: 15px; font-size: 0.8em;">
+<ul>
+<li>Total “sharknado” damages: <strong>$183K</strong><br>
+</li>
+<li>Average damage per “sharknado”: <strong>$91.5K</strong> (2 storms)</li>
+</ul>
+</div>
 </section>
+<section id="results-economic-impact-1" class="slide level2">
+<h2>Results: Economic Impact</h2>
+
+<!-- When comparing the different tornado path trajectories, "Other Path" (inland) tornadoes caused the majority of all time damages. The all time damage from the other categories was negligible in comparison to traditional "tornado alley" storms.-->
+<img data-src="presentation_files/figure-revealjs/fig-trajectory-damage-total-1.png" width="960" class="r-stretch quarto-figure-center" id="fig-trajectory-damage-total"><p class="caption">
+Figure&nbsp;12: Categorized all tornadoes by trajectory and visualized the total property damage inflicted by high vs.&nbsp;low shark-lifting potential tornadoes within each path trajectory group.
+</p></section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><strong>Frequency:</strong>
+<ul>
+<li>Sharknado-like events are extremely rare</li>
+<li><strong>0.0064%</strong> of cases (1 in 15,673 events)</li>
+<li>Standard inland tornadoes dominate tornadic activity</li>
+</ul></li>
+<li><strong>Regional Risks</strong></li>
+<li><strong>Economic Impacts</strong></li>
+</ul>
+</section>
+<section id="conclusion-1" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><strong>Frequency</strong></li>
+<li><strong>Regional Risks:</strong>
+<ul>
+<li>Higher potential sharknado risk in <strong>Atlantic and Gulf Coasts</strong></li>
+<li>East coast accounts for nearly all “Moving Inland” trajectories (storms are still low intensity)</li>
+<li>Pacific Coast has negligible risk</li>
+</ul></li>
+<li><strong>Economic Impacts</strong></li>
+</ul>
+</section>
+<section id="conclusion-2" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li><strong>Frequency</strong></li>
+<li><strong>Regional Risks</strong></li>
+<li><strong>Economic Impacts:</strong>
+<ul>
+<li>Economic threat of sharknadoes is minimal</li>
+<li>Only <strong>$183K</strong> (less than 0.01%) to total property damages over 75 years</li>
+</ul></li>
+</ul>
+</section>
+<section id="going-forward" class="slide level2">
+<h2>Going Forward</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Action Items</strong></p>
+</div>
+<div class="callout-content">
+<div style="font-size: 1.5em">
+<ol type="1">
+<li><strong>Treat coastal-origin events as rare risks:</strong> These are “long-tail” risks, not primary drivers of loss.</li>
+<li><strong>Maintain standard inland risk models:</strong> Continue prioritizing traditional inland tornado risk where 97.86% of historical damage occurs.</li>
+<li><strong>Monitor Southeast shifts:</strong> Track storm trends in the Southeastern U.S. where climate change may be gradually increasing coastal events.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions?</h2>
+<p><strong>Thank you for your time.</strong></p>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-StormEventsDatabasea" class="csl-entry" role="listitem">
+DOC/NOAA/NESDIS/NCEI. 2026. <span>“Storm Events Database <span></span> National Centers for Environmental Information.”</span> https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/. <a href="https://www.ncei.noaa.gov/stormevents/ftp.jsp">https://www.ncei.noaa.gov/stormevents/ftp.jsp</a>.
+</div>
+<div id="ref-martiniRecipeSharknadoDeep2013" class="csl-entry" role="listitem">
+Martini, Dr. Kim. 2013. <span>“Recipe for a Sharknado <span></span> Deep Sea News. Deep Sea News.”</span> August 9, 2013. <a href="https://deepseanews.com/2013/08/recipe-for-a-sharknado/">https://deepseanews.com/2013/08/recipe-for-a-sharknado/</a>.
+</div>
+<div id="ref-TornadoAlley2026" class="csl-entry" role="listitem">
+<span>“Tornado Alley.”</span> 2026. In <em>Wikipedia</em>. <a href="https://en.wikipedia.org/w/index.php?title=Tornado_Alley&amp;oldid=1339195322">https://en.wikipedia.org/w/index.php?title=Tornado_Alley&amp;oldid=1339195322</a>.
+</div>
+<div id="ref-TornadoesClimateChange" class="csl-entry" role="listitem">
+<span>“Tornadoes and Climate Change. National Geographic Education.”</span> 2023. October 19, 2023. <a href="https://education.nationalgeographic.org/resource/tornadoes-and-climate-change">https://education.nationalgeographic.org/resource/tornadoes-and-climate-change</a>.
+</div>
+<div id="ref-TigrisPackageRDocumentation" class="csl-entry" role="listitem">
+Walker, Kylie. 2025. <span>“Tigris Package - <span>RDocumentation</span>. Rdocumentation.”</span> April 16, 2025. <a href="https://www.rdocumentation.org/packages/tigris/versions/2.2.1">https://www.rdocumentation.org/packages/tigris/versions/2.2.1</a>.
+</div>
+<div id="ref-WhatTornadoLets2020" class="csl-entry" role="listitem">
+<span>“What Is a Tornado? Let’s Talk Science.”</span> 2020. February 26, 2020. <a href="https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado">https://letstalkscience.ca/educational-resources/stem-explained/what-a-tornado</a>.
+</div>
+</div>
+</section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -388,6 +690,44 @@ Sophia Heinrich
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

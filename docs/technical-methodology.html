@@ -165,30 +165,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Data Documentation</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-data-doc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Draft: Data Documentation</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-results.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Draft: Results</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-intro-conclusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Draft: Intro/Conclusions</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./draft-exec-summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Draft: Executive Summary</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
     </ul>
@@ -283,7 +259,7 @@ Figure&nbsp;A.1: This is a visual representation of the US Coastline 3-mile buff
 <section id="geographical-classifications" class="level4" data-number="A.1.2.2">
 <h4 data-number="A.1.2.2" class="anchored" data-anchor-id="geographical-classifications"><span class="header-section-number">A.1.2.2</span> Geographical Classifications</h4>
 <p>Beginning the work needed to classify tornado path trajectories, we started by engineering two new features <code>Start_coast</code> and <code>End_coast</code>, which classify the tornado segment as starting/ending in the “Atlantic”, “Pacific”, “Gulf”, or N/A. This is done by comparing the <code>BEGIN_LAT</code>, <code>BEGIN_LON</code>, <code>END_LAT</code>, <code>END_LON</code> features to the modified coastline shapefile.</p>
-<p>From here, two more features were created <code>Start_location</code> and <code>End_location</code>, which classify the tornado segment as starting/ending on the “Coastal” or “Inland” based on if the <code>Start_coast</code> and <code>End_coast</code> columns are empty for the feature.</p>
+<p>From here, two more features were created <code>Start_location</code> and <code>End_location</code>, which classify the tornado segment as starting/ending on the “Coastal” or “Inland” based on whether the <code>Start_coast</code> and <code>End_coast</code> columns are empty for the feature.</p>
 </section>
 <section id="sec-aggregate-segments" class="level4" data-number="A.1.2.3">
 <h4 data-number="A.1.2.3" class="anchored" data-anchor-id="sec-aggregate-segments"><span class="header-section-number">A.1.2.3</span> Aggregate Storm Segments</h4>
@@ -302,11 +278,11 @@ Figure&nbsp;A.1: This is a visual representation of the US Coastline 3-mile buff
 <li><code>TOR_F_SCALE_MAX</code>: maximum (Enhanced) Fujita scale ranking across all segments</li>
 <li><code>Total_Damage</code>: sum of <code>DAMAGE_PROPERTY</code> across all segments</li>
 </ul>
-<p>From here, a new feature <code>path_movement</code> was created, which classifies the path trajectory of the full tornado as “Moving Inland”, “Moving Coastal”, or “Other Path” based on the <code>Start_location</code> and <code>End_location</code> features. Below further describes the characteristics of each path trajectory, along with an illustration in <a href="draft-exec-summary.html#fig-path-trajectories" class="quarto-xref">Figure&nbsp;<span>D.1</span></a>.</p>
+<p>From here, a new feature <code>path_movement</code> was created, which classifies the path trajectory of the full tornado as “Moving Inland”, “Moving Coastal”, or “Other Path” based on the <code>Start_location</code> and <code>End_location</code> features. Below further describes the characteristics of each path trajectory, along with an illustration in <a href="#fig-path-trajectories" class="quarto-xref">Figure&nbsp;<span>A.2</span></a>.</p>
 <ul>
-<li><p><strong>Moving Inland</strong>: tornado originated on the coast and moved inland</p></li>
-<li><p><strong>Moving Coastal</strong>: tornado originated on inland and moved to the coast</p></li>
-<li><p><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin</p></li>
+<li><p><strong>Moving Inland</strong>: tornado originated on the coast and moved inland.</p></li>
+<li><p><strong>Moving Coastal</strong>: tornado originated inland and moved to the coast.</p></li>
+<li><p><strong>Other Path</strong>: tornado originated either inland or on the coast and stayed in the same region of origin.</p></li>
 </ul>
 <div id="fig-path-trajectories" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -323,7 +299,6 @@ Figure&nbsp;A.2: This is a diagram illustrating the movement of tornadoes relati
 <li><strong>Low Potential</strong>: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale</li>
 <li><strong>High Potential</strong>: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale</li>
 </ul>
-<p>TODO question: how can i better display this diagram? should it be in its own section? it’s kinda just sitting there at the end of the subsection.</p>
 <div id="fig-data-pipeline" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-pipeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
