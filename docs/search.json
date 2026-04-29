@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
+    "title": "Project Sharknado",
     "section": "",
     "text": "Executive Summary",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#purpose-of-report",
     "href": "index.html#purpose-of-report",
-    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
+    "title": "Project Sharknado",
     "section": "Purpose of Report",
     "text": "Purpose of Report\nThe insurance agency has seen a rise in property payouts driven by the intensifying effects of climate change on extreme weather. In the wake of the ‘Sharknado’ phenomenon sparked by the 2013 film, the agency is now investigating whether the increasing frequency of severe weather could lead to a higher likelihood of shark-infested weather events (as depicted in Figure 1). The purpose of this report is to\n\nDetermine the likelihood of sharknadoes forming.\nDetermine the economic impact of sharknadoes.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#background",
     "href": "index.html#background",
-    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
+    "title": "Project Sharknado",
     "section": "Background",
     "text": "Background\nHistorically, the majority of tornadoes have occurred in the Central United States, a region nicknamed “Tornado Alley”. Since this region is not near any coasts, the plausibility of a tornado picking up a shark out of coastal waters is low. However, there have been a few recorded tornadoes near the coast, leading the agency to wonder if sharknadoes are not an impossibility.\nWhile there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics. Through logical reasoning, Martini concluded that while a typical tornado travels over enough geographic area and can be strong enough to keep a shark airborne, it is highly unlikely that a tornado could lift the shark out of the water in the first place.\n\n\n\n\n\n\nNote\n\n\n\nFor the sake of still conducting a statistical analysis, this report ignores the above physical infeasibility.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#methods",
     "href": "index.html#methods",
-    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
+    "title": "Project Sharknado",
     "section": "Methods",
     "text": "Methods\n75 years of tornado storm data (1950-2025) from the National Weather Service was analyzed to assess the likelihood and economic impact of a sharknado. After cleaning the data, a total of 31,345 storms were classified by path trajectory and shark-lifting potential (based on the Fujita scale) and analyzed for sharknado-likeness and total property damage.\nA tornado’s path trajectory was classified as one of three labels (see Figure A.2):\n\n\n\n\n\n\n\n\n\nFigure 2: This is a diagram illustrating the movement of tornadoes relative to the coast and inland, with path trajectory labels of “Moving Inland”, “Moving Coastal”, and “Other Path”.\n\n\n\nA tornado’s shark-lifting potential was classified as one of two labels:\n\nLow Potential: tornado was given an F1 or F2 rating on the (Enhanced) Fujita Scale\nHigh Potential: tornado was given an F3, F4, or F5 rating on the (Enhanced) Fujita Scale",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "index.html#findings-conclusions",
     "href": "index.html#findings-conclusions",
-    "title": "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States",
+    "title": "Project Sharknado",
     "section": "Findings & Conclusions",
     "text": "Findings & Conclusions\nThroughout the analysis, storms classified as “Moving Inland” and “High [shark-lifting] Potential” were of the highest interest as they exhibit characteristics most similar to a sharknado. Of the 31,345 recorded storms, only 2 were classified as both “Moving Inland” and “High Potential” for lifting sharks. While the Atlantic and Gulf coasts were the primary region of origin for “Moving Inland” storms, these events statistically lacked the same shark-lifting potential of storms originating inland. In terms of economic impacts, “Moving Inland” storm with high shark-lifting potential account for less that 0.01% of total historical property damage ($183K over 75 years).\n\n\n\n\n\n\nTipReccome\n\n\n\n\nTreat Marine-Origin Events as Rare Events: High-intensity “Moving Inland” tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, “long-tail” risks rather than primary drivers of annual catastrophe loss.\nMaintain Standard Inland Risk Models: With 97.86% of historical property damage occurring in “Other Path” trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized “Sharknado” or marine-origin coverages.\nMonitor Southeast Regional Shifts: While national “Sharknado” risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change may be increasing the frequency of atypical, high-intensity coastal events.",
     "crumbs": [
