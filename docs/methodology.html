@@ -91,6 +91,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -204,6 +233,7 @@ div.csl-indent {
   <li><a href="#sec-coastline-data" id="toc-sec-coastline-data" class="nav-link" data-scroll-target="#sec-coastline-data"><span class="header-section-number">2.3.1</span> US Coastline Data</a></li>
   <li><a href="#noaa-storm-event-database" id="toc-noaa-storm-event-database" class="nav-link" data-scroll-target="#noaa-storm-event-database"><span class="header-section-number">2.3.2</span> NOAA Storm Event Database</a></li>
   </ul></li>
+  <li><a href="#statistical-analysis-approach" id="toc-statistical-analysis-approach" class="nav-link" data-scroll-target="#statistical-analysis-approach"><span class="header-section-number">2.4</span> Statistical Analysis Approach</a></li>
   </ul>
 </nav>
     </div>
@@ -245,9 +275,9 @@ div.csl-indent {
 <p>From this, we have to also answer “What is the ‘coast’ vs what is ‘inland’?” and “What indicates a tornado is ‘strong enough’ to sustain lifting a shark?”</p>
 <p><strong>What is the “coast” vs what is “inland”?</strong></p>
 <p>For the boundary between the coast and open water, the general definition of a state’s coastal zone extends 3 nautical miles into the ocean from the shore (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline <span class="citation" data-cites="NationalCoastalZone">(<a href="references.html#ref-NationalCoastalZone" role="doc-biblioref">Coastal Management n.d.</a>)</span>.</p>
-<p>Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. <a href="technical-methodology.html#sec-coastline-data" class="quarto-xref"><span>Section A.1.1</span></a> details how this coastal buffer zone was represented in the data.</p>
+<p>Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. <a href="technical-methodology.html#sec-coastline-data-tech" class="quarto-xref"><span>Section A.1.1</span></a> details how this coastal buffer zone was represented in the data.</p>
 <p><strong>What indicates a tornado is “strong enough” to sustain lifting a shark?</strong></p>
-<p>Based on the physical analysis done by Dr.&nbsp;Kim Martini (discussed in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. <a href="technical-methodology.html#sec-aggregate-segments" class="quarto-xref"><span>Section A.1.2.3</span></a> details how shark-lifting potential is identified in the data.</p>
+<p>Based on the physical analysis done by Dr.&nbsp;Kim Martini (discussed in <a href="intro.html" class="quarto-xref"><span>Chapter 1</span></a>), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it’s logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as “strong enough” to sustain lifting a shark. <a href="technical-methodology.html#sec-aggregate-segments-tech" class="quarto-xref"><span>Section A.1.2.3</span></a> details how shark-lifting potential is identified in the data.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -344,8 +374,13 @@ Figure&nbsp;2.3: This is a diagram illustrating the steps used to process data a
 </figcaption>
 </figure>
 </div>
-<!-- ## Statistical Approach -->
-<!-- TODO explain the type of analysis used in results and justify. add a bit more advanced analysis -->
+</section>
+</section>
+</section>
+<section id="statistical-analysis-approach" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="statistical-analysis-approach"><span class="header-section-number">2.4</span> Statistical Analysis Approach</h2>
+<p>The statistical analysis provided in the next section uses an empirical probability model and inferential statistics to convert raw storm counts into actionable risk metrics. The study calculates the likelihood of a “sharknado” by determining the ratio of high-intensity, “Moving Inland” tornadoes against the total study population. This approach is justified as it directly answers the research question regarding historical probability and provides a standardized frequency for insurance risk modeling. To address the uncertainty in small sample sizes, a 95% confidence interval was calculated for sharknado frequency. This moves the analysis beyond simple point estimation to provide a statistical range of certainty, which is critical for actuarial worst-case planning.</p>
+<p>While more advanced predictive modeling (such as logistic regression) was initially considered, the extreme scarcity of the target event (<span class="math inline">\(n = 2\)</span>) made more complex methods statistically inappropriate. A thorough analysis of descriptive statistics along with confidence intervals provided a straightforward evaluation method of the historical frequency of sharknado-like events.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -353,8 +388,6 @@ Figure&nbsp;2.3: This is a diagram illustrating the steps used to process data a
 Coastal Management, Office for. n.d. <span>“Coastal Zone Management Programs. Office for Coastal Management <span></span> <span>NOAA</span>.”</span> Accessed April 13, 2026. <a href="https://coast.noaa.gov/czm/mystate/">https://coast.noaa.gov/czm/mystate/</a>.
 </div>
 </div>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->

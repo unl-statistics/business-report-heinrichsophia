@@ -1,0 +1,31 @@
+project:
+  type: book  
+  output-dir: docs
+
+book:
+  title: "Project Sharknado: Evaluating the Risk of Coastal-Origin Tornadoes in the United States"
+  author: "Sophia Heinrich"
+  page-footer:
+    left: "Copyright 2026, Sophia Heinrich"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - methodology.qmd
+    - results.qmd
+    - conclusion.qmd
+    - references.qmd
+  appendices:
+    - technical-methodology.qmd
+    - data-doc.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    highlight-style: a11y
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

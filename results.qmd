@@ -63,6 +63,8 @@ shark_results_summary %>%
 
 Initial findings indicate that "High Potential" and "Moving Inland" events are a minority of total tornado occurrences, with only **2 total** tornadoes meeting the criteria for "High Potential" and "Moving Inland". While these unique events are quite rare, they are certainly not impossible and present a specific kind of threat that current risk models might be missing.
 
+Furthermore, the analysis identified an empirical frequency of **0.0064%** for sharknado-like ("Moving Inland", high shark-lifting potential) storms. To determine the precision of this estimate, a 95% confidence interval was calculated. The resulting interval, ranging from 0.0017% to 0.023%, indicates that while the true probability is extremely low, the upper bound remains nearly four times higher than the point estimate. 
+
 ## Path Movement & Intensity Analysis
 
 To further evaluate the relationship between tornado path trajectory and intensity, we can visualize the metrics from the previous @tbl-population-breakdown. In @fig-trajectory-intensity below, we can see a noticeable difference in tornadoes that remained completely inland ("Other Path") compared to tornadoes that either originated or ended on the coasts. While "Moving Inland" trajectories are the primary focus when considering the risk of sharknadoes, only **2.7%** of these tornadoes moving from the coast to the inland reached high-potential intensity. In contrast, "Other Path" tornadoes exhibited a much larger high-potential rate of **12.2%**.
@@ -203,7 +205,7 @@ table_data %>%
   )
 ```
 
-As visualized in @fig-trajectory-damage-total below, tornadoes following "Other Path" trajectories have contributed to **`r round(((682.77+2580)/3334) * 100, 2)`%** of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland ("Moving Inland") have contributed to only **`r round(((24.79+0.183)/3334) * 100, 2)`%** of all recorded tornado property damage, with only **$183K** in damages resulting from high shark-lifting potential tornadoes. 
+As visualized in @fig-trajectory-damage-total below, tornadoes following "Other Path" trajectories have contributed to **`r round(((682.77+2580)/3334) * 100, 2)`%** of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland ("Moving Inland") have contributed to only **`r round(((24.79+0.183)/3334) * 100, 2)`%** of all recorded tornado property damage, with only **$183K** in damages resulting from high shark-lifting potential tornadoes under the "Moving Inland" trajectory category. 
 
 
 ```{r}
@@ -279,9 +281,13 @@ ggplot(damage_plot_data_avg, aes(x = path_movement, y = avg_loss, fill = shark_l
 
 Ultimately, when looking at the tornadoes with sharknado characteristics ("Moving Inland" with high shark-lifting potential), only **$183K** in damages has been inflicted in the last 75 years with an average damage of **\$91.5K per storm**. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that "Sharknado-style" events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.
 
+:::{.callout-note}
+A confidence interval could not be calculated for the average damage of "Moving Inland", high shark-lifting potential tornadoes due to the extreme scarcity of data $(n=2)$. In these instances, the point estimate of $91.5K per storm serves as a historical record rather than a predictive mean.
+:::
+
 ## Additional Analysis
 
-To further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in @fig-historical-intensity-trends below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period.
+To further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in @fig-historical-intensity-trends below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period. Possible explanations for this feature in the data can be found in @sec-conclusion-freq.
 
 ```{r}
 #| label: fig-historical-intensity-trends

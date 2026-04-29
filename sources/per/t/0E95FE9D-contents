@@ -1,0 +1,70 @@
+# Conclusion & Discussion
+
+Using 75 years of tornado storm data from the NOAA, we analyzed the potential for sharknadoes to form in the US and the resulting economic impacts. We defined a storm as having the potential to produce a sharknado if it formed on the coast and moved inland ("Moving Inland") and had enough strength to carry a shark (category F3, F4, or F5). With this in mind, we sought to answer the research question:
+
+***What is the historical frequency, probability, and economic impact of high-intensity tornadoes (F3, F4, and F5) originating in coastal areas (Atlantic, Pacific, and Gulf of Mexico) and moving inland, compared to those following other trajectories?***
+
+## Frequency & Probability of Sharknadoes {#sec-conclusion-freq}
+
+In the last 75 years, we found that only 2 out of 31,345 recorded tornadoes exhibited characteristics of "Moving Inland" and "High Potential" for shark lifting. Thus, the empirical probability of a sharknado-like storm is 0.0064% or approximately 1 in 15,673 U.S. tornado events (with a 95% confidence interval of 0.0017% to 0.023%). This frequency is significantly lower than that of high-intensity storms with a path classification of "Other Path", which occur at a rate of roughly 12.1%. Given that the concept of a sharknado originated from a fictional movie, this result was to be expected. For the insurance agency, the calculated statistical range confirms that while sharknado-like are rare outliers, the uncertainty in such a small sample size ($n=2$) calls for treating sharknado risks as unpredictable long-tail volatility rather than a stable, predictable metric.
+
+To further reduce concern regarding high shark-lifting potential tornadoes, we identified only 2 tornadoes with this intensity for both trajectory categories of "Moving Inland" (originating on the coast and moving inland) and "Moving Coastal" (originating inland and moving to the coast). This was expectedly insignificant compared to the 3,799 high shark-lifting potential tornadoes in the "Other Path" trajectory category, which makes sense since the inland Tornado Alley region breeds optimal conditions for high-intensity tornadoes compared to the coasts.
+
+Additionally, the trends visualized in @fig-historical-intensity-trends showed a dramatic spike in F0 and F1 tornadoes after 1995, and this is almost certainly due to the modernization of the National Weather Service, specifically the nationwide deployment of NEXRAD (Next-Generation Radar) Doppler technology from 1992 to 1997 [@NextGenerationWeather]. Prior to this technology, fewer low-intensity tornadoes were recorded because they occurred in less populated areas or didn't cause enough visible damage to be reported. It should also be noted that the frequency of high-intensity storms has remained relatively flat throughout all years of recorded data. Thus, there is no clear upward trend in storms capable of producing sharknadoes, even with increasing climate risk.
+
+## Regions of Concern
+
+However, as previously mentioned, there has been an upward trend of tornadoes in atypical regions such as the Southeastern United States [@TornadoesClimateChange], and perhaps unexpectedly, the majority of tornadoes categorized as "Moving Inland" originated in the Atlantic or Gulf coasts near the southeastern side of the United States. With the southeast region already exhibiting these storm characteristics and with climate change creating volatility in extreme weather events, an increase in storms with sharknado potential in the southeast is not completely out of the question.
+
+## Economic Impact
+
+In terms of the economic impact of sharknadoes, tornadoes with a path "Moving Inland" accounted for only 0.75% of all recorded tornado property damage, and even less of that was contributed by high shark-lifting potential tornadoes moving inland. Over 75 years, tornadoes "Moving Inland" with a high shark-lifting potential resulted in a total cumulative damage of \$183K and an average of \$91K per storm, \$14.9K less than the average damage caused by all recorded tornadoes. Additionally, this was significantly less damage than tornadoes classified as "Other Path" with a high shark-lifting potential, which resulted in a total cumulative damage of \$682M and an average of \$179K per storm. This suggests that tornadoes originating in more typical regions (such as Tornado Alley) have historically caused far more damage overall and also on a per-storm basis. Thus, an insurance company covering property damages should be less concerned with sharknadoes, and more concerned with typical inland tornadoes.
+
+## Limitations & Future Exploration {#sec-limitations}
+
+### Physics Preventing Sharkadoes
+
+As mentioned in @sec-introduction, it is nearly impossible for a tornadic water spout to pickup a shark out of the water. This is because tornadic water spouts don't typically suck up water, and the behavior of tagged sharks has shown that they usually dive deep when storms are approaching. So, while this report analyzes the frequency, probability, and economic impact of sharknado-like storms, the actual probability of a shark being lifted by a tornado remains close to zero regardless of storm intensity. This study intentionally overlooks these mechanical improbabilities to provide a worst-case scenario baseline for the insurance agency.
+
+### Dataset Structure
+
+The Storm Events Database [@StormEventsDatabasea] was the core data used in this report. One of the major drawbacks of the data's structure is that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named `EPISODE_ID`, making the process of connecting segments relatively straightforward.
+
+However, storms occurring before 1996 do not have a value in the `EPISODE_ID` column. To connect storm segments in this case, we matched two segments' dates, time, and start/end location coordinates. Because this is less precise than simply using a unique identifier to connect storm segments, there could be some room for error in the way full storm data was aggregated for storms occurring before 1996.
+
+Further analysis could be conducted to compare the pre and post 1996 storms to ensure the difference in segment connection methods doesn't have any unforeseen effects.
+
+### Data Validity
+
+The NOAA states that some of the data appearing in the Storm Events Database may be gathered from sources outside the National Weather Service. "An effort is made to use the best available information, but because of time and resource constraints, information from these sources may be unverified by the NWS." Therefore, the NOAA cautions users that the NWS does not guarantee accuracy or validity of the information [@StormEventsDatabaseb].
+
+### Data Biases
+
+Due to significant advancements in meteorological technology and communication systems over the last 75 years, tornado data and records have certainly improved. In the early decades of the NOAA Storm Database, tornado records relied heavily on visual confirmation and manual reporting, which often resulted in under-reporting or less precise measurements in less populated regions. This could have an impact on time-series trends because the apparent increase in tornado frequency over time may be related to improved detection capabilities, as opposed to increased climate risk. 
+
+### Sample Size & Temporal Constraints
+
+While the dataset of $N=31345$ events provides a solid foundation for analyzing modern tornado trends, the 75-year study period represents a relatively narrow window in terms of climate history. This limited temporal scope may not fully capture long-term climate patterns. Furthermore, the extreme rarity of "Moving Inland" and "High Potential" for shark-lifting ($n=2$) limits our ability to make causal inferences or generalizations about the economic impact to future populations.
+
+### Storm Intensity Ratings
+
+In the analysis, storm intensity ratings using the Fujita (F) scale and the Enhanced Fujita (EF) scale were consolidated into a single intensity metric (i.e., an F5 tornado was treated the same as an EF5 tornado). While the Enhanced Fujita Scale was derived from the original Fujita scale, there could be some unforeseen consequences as the scales are technically different. Treating an F5 tornado as exactly equivalent to an EF5 tornado may introduce a degree of measurement error, especially when comparing 20th-century storms to those occurring after the 2007 implementation of the EF system [@usdepartmentofcommerceEFScale]. This inconsistency could potentially skew time-series trends, as the criteria for a "High Potential" storm may have shifted slightly between the two time periods. However, for the purposes of this report, treating the scales synonymously is the most practical method for initial analysis.
+
+
+### Definition of "Coast" and "Other Path"
+
+In the methodology, a rather arbitrary buffer of 3 miles was used to geographically and geometrically define the coast. The `st_buffer()` function from the `sf` package equally centers the buffer over a line (like the coastline), resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Since only 73 out of 31,345 storms were identified as "Moving Inland" (originating on the coast and traveling inland), further analysis could be conducted by testing different buffer values, especially larger ones, to see if the recorded number of "Moving Inland" storms is affected.
+
+Additionally, storm trajectories classified as "Other Path" included storms that started and remained inland, along with storms that started on the coast and remained on the coast. However, with the 3-mile buffer zone, storms that started on the coast and remained on the coast could technically include storms that originated within the 1.5-mile extension into the ocean and ended on land within the 1.5-mile extension inland. Thus, decreasing the buffer zone's size or moving the buffer zone closer to the water could shift some "Other Path" classifications to "Moving Inland". If this change were made, it is possible the results would show an increase in sharknado frequency.
+
+## Going Forward
+
+Ultimately, with such a small number of recorded storms exhibiting characteristics expected of a sharknado along with relatively small amounts of inflicted damage, the insurance agency should not be concerned with sharknadoes having an impact on their bottom line. Though with climate change having an impact on extreme weather events, it wouldn't hurt the agency to periodically track if there is a continuing trend in storms forming in the southeastern region of the US, which is closer to the Gulf and Atlantic Coasts.
+
+::: callout-tip
+# Action Items
+
+-   **Treat Marine-Origin Events as Rare Events:** High-intensity "Moving Inland" tornadoes remain an extreme statistical rarity, with only two recorded occurrences in 75 years. These should be categorized as low-probability, "long-tail" risks rather than primary drivers of annual catastrophe loss.
+-   **Maintain Standard Inland Risk Models**: With 97.86% of historical property damage occurring in "Other Path" trajectories, the agency should continue prioritizing traditional inland tornado risk models over specialized "Sharknado" or marine-origin coverages.
+-   **Monitor Southeast Regional Shifts:** While national "Sharknado" risk is negligible, the Gulf and Atlantic coasts account for the vast majority of coastal-to-inland storm paths. The agency should periodically track storm trends in the Southeastern U.S., where climate change *may* be increasing the frequency of atypical, high-intensity coastal events.
+:::

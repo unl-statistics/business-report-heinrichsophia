@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -218,23 +247,23 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
 </figcaption>
 <div aria-describedby="tbl-population-breakdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="zdppqvucpb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zdppqvucpb table {
+<div id="mwnsahxrti" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mwnsahxrti table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zdppqvucpb thead, #zdppqvucpb tbody, #zdppqvucpb tfoot, #zdppqvucpb tr, #zdppqvucpb td, #zdppqvucpb th {
+#mwnsahxrti thead, #mwnsahxrti tbody, #mwnsahxrti tfoot, #mwnsahxrti tr, #mwnsahxrti td, #mwnsahxrti th {
   border-style: none;
 }
 
-#zdppqvucpb p {
+#mwnsahxrti p {
   margin: 0;
   padding: 0;
 }
 
-#zdppqvucpb .gt_table {
+#mwnsahxrti .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -260,12 +289,12 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-left-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_caption {
+#mwnsahxrti .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zdppqvucpb .gt_title {
+#mwnsahxrti .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -277,7 +306,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-bottom-width: 0;
 }
 
-#zdppqvucpb .gt_subtitle {
+#mwnsahxrti .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -289,7 +318,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-top-width: 0;
 }
 
-#zdppqvucpb .gt_heading {
+#mwnsahxrti .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -301,13 +330,13 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-right-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_bottom_border {
+#mwnsahxrti .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_col_headings {
+#mwnsahxrti .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -322,7 +351,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-right-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_col_heading {
+#mwnsahxrti .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,7 +371,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   overflow-x: hidden;
 }
 
-#zdppqvucpb .gt_column_spanner_outer {
+#mwnsahxrti .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -354,15 +383,15 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   padding-right: 4px;
 }
 
-#zdppqvucpb .gt_column_spanner_outer:first-child {
+#mwnsahxrti .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zdppqvucpb .gt_column_spanner_outer:last-child {
+#mwnsahxrti .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zdppqvucpb .gt_column_spanner {
+#mwnsahxrti .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -374,11 +403,11 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   width: 100%;
 }
 
-#zdppqvucpb .gt_spanner_row {
+#mwnsahxrti .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zdppqvucpb .gt_group_heading {
+#mwnsahxrti .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -404,7 +433,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   text-align: left;
 }
 
-#zdppqvucpb .gt_empty_group_heading {
+#mwnsahxrti .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -419,15 +448,15 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   vertical-align: middle;
 }
 
-#zdppqvucpb .gt_from_md > :first-child {
+#mwnsahxrti .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zdppqvucpb .gt_from_md > :last-child {
+#mwnsahxrti .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zdppqvucpb .gt_row {
+#mwnsahxrti .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -446,7 +475,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   overflow-x: hidden;
 }
 
-#zdppqvucpb .gt_stub {
+#mwnsahxrti .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -459,7 +488,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   padding-right: 5px;
 }
 
-#zdppqvucpb .gt_stub_row_group {
+#mwnsahxrti .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -473,15 +502,15 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   vertical-align: top;
 }
 
-#zdppqvucpb .gt_row_group_first td {
+#mwnsahxrti .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zdppqvucpb .gt_row_group_first th {
+#mwnsahxrti .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zdppqvucpb .gt_summary_row {
+#mwnsahxrti .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -491,16 +520,16 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   padding-right: 5px;
 }
 
-#zdppqvucpb .gt_first_summary_row {
+#mwnsahxrti .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_first_summary_row.thick {
+#mwnsahxrti .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zdppqvucpb .gt_last_summary_row {
+#mwnsahxrti .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -510,7 +539,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-bottom-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_grand_summary_row {
+#mwnsahxrti .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -520,7 +549,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   padding-right: 5px;
 }
 
-#zdppqvucpb .gt_first_grand_summary_row {
+#mwnsahxrti .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +559,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-top-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_last_grand_summary_row_top {
+#mwnsahxrti .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -540,11 +569,11 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-bottom-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_striped {
+#mwnsahxrti .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zdppqvucpb .gt_table_body {
+#mwnsahxrti .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -553,7 +582,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-bottom-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_footnotes {
+#mwnsahxrti .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -567,7 +596,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-right-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_footnote {
+#mwnsahxrti .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -576,7 +605,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   padding-right: 5px;
 }
 
-#zdppqvucpb .gt_sourcenotes {
+#mwnsahxrti .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -590,7 +619,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   border-right-color: #D3D3D3;
 }
 
-#zdppqvucpb .gt_sourcenote {
+#mwnsahxrti .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -598,72 +627,72 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
   padding-right: 5px;
 }
 
-#zdppqvucpb .gt_left {
+#mwnsahxrti .gt_left {
   text-align: left;
 }
 
-#zdppqvucpb .gt_center {
+#mwnsahxrti .gt_center {
   text-align: center;
 }
 
-#zdppqvucpb .gt_right {
+#mwnsahxrti .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zdppqvucpb .gt_font_normal {
+#mwnsahxrti .gt_font_normal {
   font-weight: normal;
 }
 
-#zdppqvucpb .gt_font_bold {
+#mwnsahxrti .gt_font_bold {
   font-weight: bold;
 }
 
-#zdppqvucpb .gt_font_italic {
+#mwnsahxrti .gt_font_italic {
   font-style: italic;
 }
 
-#zdppqvucpb .gt_super {
+#mwnsahxrti .gt_super {
   font-size: 65%;
 }
 
-#zdppqvucpb .gt_footnote_marks {
+#mwnsahxrti .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zdppqvucpb .gt_asterisk {
+#mwnsahxrti .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zdppqvucpb .gt_indent_1 {
+#mwnsahxrti .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zdppqvucpb .gt_indent_2 {
+#mwnsahxrti .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zdppqvucpb .gt_indent_3 {
+#mwnsahxrti .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zdppqvucpb .gt_indent_4 {
+#mwnsahxrti .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zdppqvucpb .gt_indent_5 {
+#mwnsahxrti .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zdppqvucpb .katex-display {
+#mwnsahxrti .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zdppqvucpb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#mwnsahxrti div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -732,6 +761,7 @@ Table&nbsp;3.1: Population breakdown: categorized all tornadoes by path trajecto
 </div>
 </div>
 <p>Initial findings indicate that “High Potential” and “Moving Inland” events are a minority of total tornado occurrences, with only <strong>2 total</strong> tornadoes meeting the criteria for “High Potential” and “Moving Inland”. While these unique events are quite rare, they are certainly not impossible and present a specific kind of threat that current risk models might be missing.</p>
+<p>Furthermore, the analysis identified an empirical frequency of <strong>0.0064%</strong> for sharknado-like (“Moving Inland”, high shark-lifting potential) storms. To determine the precision of this estimate, a 95% confidence interval was calculated. The resulting interval, ranging from 0.0017% to 0.023%, indicates that while the true probability is extremely low, the upper bound remains nearly four times higher than the point estimate.</p>
 </section>
 <section id="path-movement-intensity-analysis" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="path-movement-intensity-analysis"><span class="header-section-number">3.2</span> Path Movement &amp; Intensity Analysis</h2>
@@ -783,23 +813,23 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
 </figcaption>
 <div aria-describedby="tbl-trajectory-damage-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="omcepzlxxk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#omcepzlxxk table {
+<div id="limqscoxht" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#limqscoxht table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#omcepzlxxk thead, #omcepzlxxk tbody, #omcepzlxxk tfoot, #omcepzlxxk tr, #omcepzlxxk td, #omcepzlxxk th {
+#limqscoxht thead, #limqscoxht tbody, #limqscoxht tfoot, #limqscoxht tr, #limqscoxht td, #limqscoxht th {
   border-style: none;
 }
 
-#omcepzlxxk p {
+#limqscoxht p {
   margin: 0;
   padding: 0;
 }
 
-#omcepzlxxk .gt_table {
+#limqscoxht .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -825,12 +855,12 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-left-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_caption {
+#limqscoxht .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#omcepzlxxk .gt_title {
+#limqscoxht .gt_title {
   color: #333333;
   font-size: 20px;
   font-weight: initial;
@@ -842,7 +872,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-bottom-width: 0;
 }
 
-#omcepzlxxk .gt_subtitle {
+#limqscoxht .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -854,7 +884,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-top-width: 0;
 }
 
-#omcepzlxxk .gt_heading {
+#limqscoxht .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -866,13 +896,13 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-right-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_bottom_border {
+#limqscoxht .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_col_headings {
+#limqscoxht .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -887,7 +917,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-right-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_col_heading {
+#limqscoxht .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -907,7 +937,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   overflow-x: hidden;
 }
 
-#omcepzlxxk .gt_column_spanner_outer {
+#limqscoxht .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -919,15 +949,15 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   padding-right: 4px;
 }
 
-#omcepzlxxk .gt_column_spanner_outer:first-child {
+#limqscoxht .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#omcepzlxxk .gt_column_spanner_outer:last-child {
+#limqscoxht .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#omcepzlxxk .gt_column_spanner {
+#limqscoxht .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -939,11 +969,11 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   width: 100%;
 }
 
-#omcepzlxxk .gt_spanner_row {
+#limqscoxht .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#omcepzlxxk .gt_group_heading {
+#limqscoxht .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -969,7 +999,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   text-align: left;
 }
 
-#omcepzlxxk .gt_empty_group_heading {
+#limqscoxht .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -984,15 +1014,15 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   vertical-align: middle;
 }
 
-#omcepzlxxk .gt_from_md > :first-child {
+#limqscoxht .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#omcepzlxxk .gt_from_md > :last-child {
+#limqscoxht .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#omcepzlxxk .gt_row {
+#limqscoxht .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1011,7 +1041,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   overflow-x: hidden;
 }
 
-#omcepzlxxk .gt_stub {
+#limqscoxht .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1024,7 +1054,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   padding-right: 5px;
 }
 
-#omcepzlxxk .gt_stub_row_group {
+#limqscoxht .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1038,15 +1068,15 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   vertical-align: top;
 }
 
-#omcepzlxxk .gt_row_group_first td {
+#limqscoxht .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#omcepzlxxk .gt_row_group_first th {
+#limqscoxht .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#omcepzlxxk .gt_summary_row {
+#limqscoxht .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1056,16 +1086,16 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   padding-right: 5px;
 }
 
-#omcepzlxxk .gt_first_summary_row {
+#limqscoxht .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_first_summary_row.thick {
+#limqscoxht .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#omcepzlxxk .gt_last_summary_row {
+#limqscoxht .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1075,7 +1105,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-bottom-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_grand_summary_row {
+#limqscoxht .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1085,7 +1115,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   padding-right: 5px;
 }
 
-#omcepzlxxk .gt_first_grand_summary_row {
+#limqscoxht .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1095,7 +1125,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-top-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_last_grand_summary_row_top {
+#limqscoxht .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1105,11 +1135,11 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-bottom-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_striped {
+#limqscoxht .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#omcepzlxxk .gt_table_body {
+#limqscoxht .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1118,7 +1148,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-bottom-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_footnotes {
+#limqscoxht .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1132,7 +1162,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-right-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_footnote {
+#limqscoxht .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1141,7 +1171,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   padding-right: 5px;
 }
 
-#omcepzlxxk .gt_sourcenotes {
+#limqscoxht .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1155,7 +1185,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   border-right-color: #D3D3D3;
 }
 
-#omcepzlxxk .gt_sourcenote {
+#limqscoxht .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1163,72 +1193,72 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
   padding-right: 5px;
 }
 
-#omcepzlxxk .gt_left {
+#limqscoxht .gt_left {
   text-align: left;
 }
 
-#omcepzlxxk .gt_center {
+#limqscoxht .gt_center {
   text-align: center;
 }
 
-#omcepzlxxk .gt_right {
+#limqscoxht .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#omcepzlxxk .gt_font_normal {
+#limqscoxht .gt_font_normal {
   font-weight: normal;
 }
 
-#omcepzlxxk .gt_font_bold {
+#limqscoxht .gt_font_bold {
   font-weight: bold;
 }
 
-#omcepzlxxk .gt_font_italic {
+#limqscoxht .gt_font_italic {
   font-style: italic;
 }
 
-#omcepzlxxk .gt_super {
+#limqscoxht .gt_super {
   font-size: 65%;
 }
 
-#omcepzlxxk .gt_footnote_marks {
+#limqscoxht .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#omcepzlxxk .gt_asterisk {
+#limqscoxht .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#omcepzlxxk .gt_indent_1 {
+#limqscoxht .gt_indent_1 {
   text-indent: 5px;
 }
 
-#omcepzlxxk .gt_indent_2 {
+#limqscoxht .gt_indent_2 {
   text-indent: 10px;
 }
 
-#omcepzlxxk .gt_indent_3 {
+#limqscoxht .gt_indent_3 {
   text-indent: 15px;
 }
 
-#omcepzlxxk .gt_indent_4 {
+#limqscoxht .gt_indent_4 {
   text-indent: 20px;
 }
 
-#omcepzlxxk .gt_indent_5 {
+#limqscoxht .gt_indent_5 {
   text-indent: 25px;
 }
 
-#omcepzlxxk .katex-display {
+#limqscoxht .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#omcepzlxxk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#limqscoxht div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1303,7 +1333,7 @@ Table&nbsp;3.2: Categorized all tornadoes by path trajectory and calculated tota
 </figure>
 </div>
 </div>
-<p>As visualized in <a href="#fig-trajectory-damage-total" class="quarto-xref">Figure&nbsp;<span>3.3</span></a> below, tornadoes following “Other Path” trajectories have contributed to <strong>97.86%</strong> of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland (“Moving Inland”) have contributed to only <strong>0.75%</strong> of all recorded tornado property damage, with only <strong>$183K</strong> in damages resulting from high shark-lifting potential tornadoes.</p>
+<p>As visualized in <a href="#fig-trajectory-damage-total" class="quarto-xref">Figure&nbsp;<span>3.3</span></a> below, tornadoes following “Other Path” trajectories have contributed to <strong>97.86%</strong> of property damage in the last 75 years, which makes sense since they are the most commonly occurring tornadoes. In contrast, tornadoes that originated on the coast and moved inland (“Moving Inland”) have contributed to only <strong>0.75%</strong> of all recorded tornado property damage, with only <strong>$183K</strong> in damages resulting from high shark-lifting potential tornadoes under the “Moving Inland” trajectory category.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-trajectory-damage-total" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1334,10 +1364,23 @@ Figure&nbsp;3.4: Categorized all tornadoes by trajectory and visualized the aver
 </div>
 </div>
 <p>Ultimately, when looking at the tornadoes with sharknado characteristics (“Moving Inland” with high shark-lifting potential), only <strong>$183K</strong> in damages has been inflicted in the last 75 years with an average damage of <strong>$91.5K per storm</strong>. From a risk management perspective, this indicates that while high-intensity coastal-to-inland events are physically possible, their historical financial impact is negligible compared to standard inland tornadic activity. For an insurance agency, these figures suggest that “Sharknado-style” events represent an extremely rare risk rather than a primary cause of annual losses from catastrophes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A confidence interval could not be calculated for the average damage of “Moving Inland”, high shark-lifting potential tornadoes due to the extreme scarcity of data <span class="math inline">\((n=2)\)</span>. In these instances, the point estimate of $91.5K per storm serves as a historical record rather than a predictive mean.</p>
+</div>
+</div>
 </section>
 <section id="additional-analysis" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="additional-analysis"><span class="header-section-number">3.5</span> Additional Analysis</h2>
-<p>To further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in <a href="#fig-historical-intensity-trends" class="quarto-xref">Figure&nbsp;<span>3.5</span></a> below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period.</p>
+<p>To further analyze the historical trends of tornado weather intensity, the (Enhanced) Fujita scale classifications for every recorded tornado from 1950-2025 were plotted on the line graph shown in <a href="#fig-historical-intensity-trends" class="quarto-xref">Figure&nbsp;<span>3.5</span></a> below. In the figure, there is a clear spike in F0 and F1 tornadoes after 1995. Higher intensity tornadoes remained relatively constant throughout the time period. Possible explanations for this feature in the data can be found in <a href="conclusion.html#sec-conclusion-freq" class="quarto-xref"><span>Section 4.1</span></a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-historical-intensity-trends" class="quarto-float quarto-figure quarto-figure-center anchored">

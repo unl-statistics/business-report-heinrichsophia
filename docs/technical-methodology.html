@@ -179,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#data-pipeline" id="toc-data-pipeline" class="nav-link active" data-scroll-target="#data-pipeline"><span class="header-section-number">A.1</span> Data Pipeline</a>
   <ul class="collapse">
-  <li><a href="#sec-coastline-data" id="toc-sec-coastline-data" class="nav-link" data-scroll-target="#sec-coastline-data"><span class="header-section-number">A.1.1</span> US Coastline Data</a></li>
+  <li><a href="#sec-coastline-data-tech" id="toc-sec-coastline-data-tech" class="nav-link" data-scroll-target="#sec-coastline-data-tech"><span class="header-section-number">A.1.1</span> US Coastline Data</a></li>
   <li><a href="#noaa-storm-event-database" id="toc-noaa-storm-event-database" class="nav-link" data-scroll-target="#noaa-storm-event-database"><span class="header-section-number">A.1.2</span> NOAA Storm Event Database</a></li>
   </ul></li>
   </ul>
@@ -222,8 +222,8 @@ Note
 <p>See <a href="#fig-data-pipeline" class="quarto-xref">Figure&nbsp;<span>A.3</span></a> for a diagram of the full data pipeline.</p>
 </div>
 </div>
-<section id="sec-coastline-data" class="level3" data-number="A.1.1">
-<h3 data-number="A.1.1" class="anchored" data-anchor-id="sec-coastline-data"><span class="header-section-number">A.1.1</span> US Coastline Data</h3>
+<section id="sec-coastline-data-tech" class="level3" data-number="A.1.1">
+<h3 data-number="A.1.1" class="anchored" data-anchor-id="sec-coastline-data-tech"><span class="header-section-number">A.1.1</span> US Coastline Data</h3>
 <p>To implement the above definition of “Coast” and “Inland” (see <a href="methodology.html#sec-define-sharknado" class="quarto-xref"><span>Section 2.1</span></a>), the R package <code>tigris</code> was used to provide a shapefile of the US Coastline. Once the original coastline shapefile was imported, it was filtered to only include the Atlantic, Pacific, and Gulf of Mexico coasts as requested in the original scenario prompt. The units of the coastline data were converted from degrees to meters using the <code>st_transform</code> function from the <code>tigris</code> package prepare for a meter-based buffer. Using the <code>st_buffer</code> function from the <code>tigris</code> package, a 3-mile (4828 meter) buffer was equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the “Coast” for the purposes of this analysis. Any point further inland than the buffer zone is considered “Inland”. Finally, any coastline details smaller than 100m were smoothed using the <code>st_simplify</code> function from the <code>tigris</code> package to increase computational efficiency without sacrificing regional accuracy. A visual representation of this data can be seen in <a href="#fig-coast-buffer" class="quarto-xref">Figure&nbsp;<span>A.1</span></a>.</p>
 <div id="fig-coast-buffer" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -261,8 +261,8 @@ Figure&nbsp;A.1: This is a visual representation of the US Coastline 3-mile buff
 <p>Beginning the work needed to classify tornado path trajectories, we started by engineering two new features <code>Start_coast</code> and <code>End_coast</code>, which classify the tornado segment as starting/ending in the “Atlantic”, “Pacific”, “Gulf”, or N/A. This is done by comparing the <code>BEGIN_LAT</code>, <code>BEGIN_LON</code>, <code>END_LAT</code>, <code>END_LON</code> features to the modified coastline shapefile.</p>
 <p>From here, two more features were created <code>Start_location</code> and <code>End_location</code>, which classify the tornado segment as starting/ending on the “Coastal” or “Inland” based on whether the <code>Start_coast</code> and <code>End_coast</code> columns are empty for the feature.</p>
 </section>
-<section id="sec-aggregate-segments" class="level4" data-number="A.1.2.3">
-<h4 data-number="A.1.2.3" class="anchored" data-anchor-id="sec-aggregate-segments"><span class="header-section-number">A.1.2.3</span> Aggregate Storm Segments</h4>
+<section id="sec-aggregate-segments-tech" class="level4" data-number="A.1.2.3">
+<h4 data-number="A.1.2.3" class="anchored" data-anchor-id="sec-aggregate-segments-tech"><span class="header-section-number">A.1.2.3</span> Aggregate Storm Segments</h4>
 <p>NOAA Storm Events Database is structured so that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named <code>EPISODE_ID</code>, making the process of connecting segments relatively straightforward. However, storms occurring before 1996 do not have a value in the <code>EPISODE_ID</code> column. To connect storm segments from this era, we matched segments’ dates, times, and start/end location coordinates.</p>
 <p>Once tornado segments were stitched together into one full tornado entry, a new feature, <code>master_id</code>, was created to serve as an ultimate unique identifier for each full tornado. For pre-1996 storms, the unique <code>master_id</code> was formatted as <code>YEAR MONTH_NAME STATE BEGIN_LAT BEGIN_LON</code> (e.g., 1950 September OKLAHOMA 35 -96.25). For post-1996 storms, the <code>EPISODE_ID</code> was used for the <code>master_id</code> since it is already a unique identifier for each full storm.</p>
 <p>Because multiple tornado segments were stitched together, we needed to consolidate all of the data from each of the segments into a single entry. The following list summarizes how the data was consolidated for each feature:</p>

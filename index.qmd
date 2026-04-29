@@ -14,7 +14,9 @@ Historically, the majority of tornadoes have occurred in the Central United Stat
 
 While there has not been any formal scientific literature that has studied the likelihood and impacts of tornadoes carrying sharks, one scholar, Dr. Kim Martini, entertained the idea and provided an analysis on the likelihood of a sharknado with her knowledge in marine biology and physics. Through logical reasoning, Martini concluded that while a typical tornado travels over enough geographic area and can be strong enough to keep a shark airborne, it is highly unlikely that a tornado could lift the shark out of the water in the first place. 
 
-For the sake of still conducting a statistical analysis, this report ignores this physical impossibility.
+:::{.callout-note}
+For the sake of still conducting a statistical analysis, this report ignores the above physical infeasibility.
+:::
 
 ## Methods
 

@@ -19,11 +19,11 @@ From this, we have to also answer "What is the 'coast' vs what is 'inland'?" and
 
 For the boundary between the coast and open water, the general definition of a state's coastal zone extends 3 nautical miles into the ocean from the shore (with some states having their own exceptions). For the boundary between the coast and the inland, states define their coastal zone as an extension anywhere from 1,000 feet to 5 miles inland of the shoreline [@NationalCoastalZone].
 
-Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the "Coast" for the purposes of this analysis. Any point further inland than the buffer zone is considered "Inland". @sec-coastline-data details how this coastal buffer zone was represented in the data.
+Since there is no singular standard, a 3-mile buffer was used to define the coastal zone along the coastline. This buffer is equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the "Coast" for the purposes of this analysis. Any point further inland than the buffer zone is considered "Inland". @sec-coastline-data-tech details how this coastal buffer zone was represented in the data.
 
 **What indicates a tornado is "strong enough" to sustain lifting a shark?**
 
-Based on the physical analysis done by Dr. Kim Martini (discussed in @sec-introduction), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it's logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as "strong enough" to sustain lifting a shark. @sec-aggregate-segments details how shark-lifting potential is identified in the data.
+Based on the physical analysis done by Dr. Kim Martini (discussed in @sec-introduction), a strong EF4 tornado has enough vertical wind speed to keep a great white shark suspended in the air. Because great white sharks are significantly larger than many other shark species, it's logical to believe an EF3 tornado has enough vertical wind speed to suspend much smaller sharks in the air. Since a shark is a shark, no matter how big or small, this analysis defines tornadoes classified as (E)F3 and higher on the (Enhanced) Fujita Scale as "strong enough" to sustain lifting a shark. @sec-aggregate-segments-tech details how shark-lifting potential is identified in the data.
 
 :::callout-important
 For the purposes of this analysis, tornado classifications from the Fujita and Enhanced Fujita Scales were treated synonymously (i.e., EF5 = F5). @sec-limitations discusses potential limitations of this.
@@ -81,7 +81,8 @@ Finally, each tornado's shark-lifting potential was classified as "High Potentia
 
 ![This is a diagram illustrating the steps used to process data and engineer features from the NOAA Storm Events Database and US Coastline shapefile.](assets/Sharknado%20Data%20Processing.png){#fig-data-pipeline}
 
-<!-- ## Statistical Approach -->
+## Statistical Analysis Approach
 
-<!-- TODO explain the type of analysis used in results and justify. add a bit more advanced analysis -->
+The statistical analysis provided in the next section uses an empirical probability model and inferential statistics to convert raw storm counts into actionable risk metrics. The study calculates the likelihood of a "sharknado" by determining the ratio of high-intensity, "Moving Inland" tornadoes against the total study population. This approach is justified as it directly answers the research question regarding historical probability and provides a standardized frequency for insurance risk modeling. To address the uncertainty in small sample sizes, a 95% confidence interval was calculated for sharknado frequency. This moves the analysis beyond simple point estimation to provide a statistical range of certainty, which is critical for actuarial worst-case planning.
 
+While more advanced predictive modeling (such as logistic regression) was initially considered, the extreme scarcity of the target event ($n = 2$) made more complex methods statistically inappropriate. A thorough analysis of descriptive statistics along with confidence intervals provided a straightforward evaluation method of the historical frequency of sharknado-like events.

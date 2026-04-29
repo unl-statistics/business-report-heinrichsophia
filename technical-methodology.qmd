@@ -6,7 +6,7 @@
 See @fig-data-pipeline for a diagram of the full data pipeline.
 ::: 
 
-### US Coastline Data {#sec-coastline-data}
+### US Coastline Data {#sec-coastline-data-tech}
 
 To implement the above definition of "Coast" and "Inland" (see @sec-define-sharknado), the R package `tigris` was used to provide a shapefile of the US Coastline. Once the original coastline shapefile was imported, it was filtered to only include the Atlantic, Pacific, and Gulf of Mexico coasts as requested in the original scenario prompt. The units of the coastline data were converted from degrees to meters using the `st_transform` function from the `tigris` package prepare for a meter-based buffer. Using the `st_buffer` function from the `tigris` package, a 3-mile (4828 meter) buffer was equally centered over the coastline, resulting in a zone that extends 1.5 miles into the ocean and 1.5 miles onto the land. Any point within this buffer zone is considered the "Coast" for the purposes of this analysis. Any point further inland than the buffer zone is considered "Inland". Finally, any coastline details smaller than 100m were smoothed using the `st_simplify` function from the `tigris` package to increase computational efficiency without sacrificing regional accuracy. A visual representation of this data can be seen in @fig-coast-buffer.
 
@@ -48,7 +48,7 @@ Beginning the work needed to classify tornado path trajectories, we started by e
 
 From here, two more features were created `Start_location` and `End_location`, which classify the tornado segment as starting/ending on the "Coastal" or "Inland" based on whether the `Start_coast` and `End_coast` columns are empty for the feature.
 
-#### Aggregate Storm Segments {#sec-aggregate-segments}
+#### Aggregate Storm Segments {#sec-aggregate-segments-tech}
 
 NOAA Storm Events Database is structured so that a single storm may be recorded as multiple different storm segments. A new storm segment is created when the tornado enters a new county or zone, resulting in multiple data rows corresponding to one storm. Post-1996, segments belonging to the same storm have been connected using a unique identifier found in the column named `EPISODE_ID`, making the process of connecting segments relatively straightforward. However, storms occurring before 1996 do not have a value in the `EPISODE_ID` column. To connect storm segments from this era, we matched segments' dates, times, and start/end location coordinates.
 

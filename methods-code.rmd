@@ -3,29 +3,6 @@ title: "methods-code"
 format: html
 ---
 
-
-<!-- # STATISTICAL METHOD -->
-<!-- # Make sure data is representative/enough to do either below. Visualize data -->
-<!-- # Proportion: Find what proportion of all high intesity tornadoes follow the coast-inland path -->
-<!-- # Logistic Regression: Predict liklihood of tornado being high intesity based on its origin and movement -->
-<!-- #   ex. HighIntesity ~ Trajecotry + Season + Region -->
-
-
-<!-- # Questions: inland -> coast? or coast -> inland? both? -->
-<!-- # how specific in defining these? -->
-
-<!-- # IDEAS -->
-
-<!-- #  use flow chart for data filtering -->
-
-<!-- # Get descriptive statistics of data set before filtering and after. -->
-<!-- # Show this on a plot? -->
-<!-- # include caption of plot -->
-<!-- Waterspouts (tornadoes over water) - https://www.spc.noaa.gov/faq/tornado/#:~:text=What%20is%20a%20waterspout,UP%20TO%20THE%20TOP -->
-
-<!-- Do more interesting research related to shark size and tornado strength -->
-
-
 ```{r}
 library(sf)
 library(tigris)
@@ -221,6 +198,24 @@ path_intensity_table <- final_glued_events %>%
   )
 
 print(path_intensity_table)
+```
+```{r}
+# Confidence interval for Sharknado Frequency
+
+sharknado_count <- 2
+total_observations <- 31345
+
+# Perform a one-sample proportion test
+# correct = FALSE provides the standard 'textbook' interval
+# conf.level = 0.95 gives us the 95% certainty range
+proportion_results <- prop.test(x = sharknado_count, 
+                                n = total_observations, 
+                                conf.level = 0.95, 
+                                correct = FALSE)
+
+# Display the 95% Confidence Interval
+proportion_results$conf.int
+
 ```
 
 ```{r}
